@@ -1,60 +1,60 @@
 @import "https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap";
 
-@import "./homepage/header.css";
-@import "./homepage/intro.css";
-@import "./homepage/courses.css";
-@import "./homepage/coaching.css";
-@import "./homepage/instructors.css";
-@import "./homepage/blog.css";
-@import "./homepage/testmonials.css";
-@import "./homepage/partners.css";
-@import "./homepage/footer.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/header.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/intro.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/courses.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/coaching.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/instructors.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/blog.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/testmonials.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/partners.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/footer.css";
 
-@import "./aboutus/video-intro.css";
-@import "./aboutus/who.css";
-@import "./aboutus/nums.css";
-@import "./aboutus/gallery.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/video-intro.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/who.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/nums.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/gallery.css";
 
-@import "./faq/faq.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/faq/faq.css";
 
-@import "./privacy/privacy.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/privacy/privacy.css";
 
-@import "./terms/terms.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/terms/terms.css";
 
-@import "./contact/contact.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/contact/contact.css";
 
-@import "./team/team.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/team/team.css";
 
-@import "./photo-viewer/photo-viewer.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/photo-viewer/photo-viewer.css";
 
-@import "./login/login.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/login/login.css";
 
-@import "./signup/signup.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/signup/signup.css";
 
-@import "./404/404.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/404/404.css";
 
-@import "./blog/sidebar.css";
-@import "./blog/card.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/blog/sidebar.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/blog/card.css";
 
-@import "./courses/intro.css";
-@import "./courses/courses-list.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/courses/intro.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/courses/courses-list.css";
 
-@import "./courses/courses-list.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/courses/courses-list.css";
 
-@import "./course/intro.css";
-@import "./course/content.css";
-@import "./course/instructor.css";
-@import "./course/price.css";
-@import "./course/feedback.css";
-@import "./course/suggest-courses.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/intro.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/content.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/instructor.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/price.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/feedback.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/suggest-courses.css";
 
-@import "./thanks/thanks.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/thanks/thanks.css";
 
-@import "./coaching/coaches.css";
-@import "./coaching/intro.css";
-@import "./coaching/testmonials.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/coaching/coaches.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/coaching/intro.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/coaching/testmonials.css";
 
-@import "./lifeevent/lifeevent.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/lifeevent/lifeevent.css";
 
 * {
   margin: 0;
