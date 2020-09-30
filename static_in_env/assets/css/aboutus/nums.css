@@ -1,14 +1,14 @@
 #nums .card .icon.icon1 {
-  background-image: url(/assets/icons/Establish.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Establish.svg);
 }
 #nums .card .icon.icon2 {
-  background-image: url(/assets/icons/Students.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Students.svg);
 }
 #nums .card .icon.icon3 {
-  background-image: url(/assets/icons/Training.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Training.svg);
 }
 #nums .card .icon.icon4 {
-  background-image: url(/assets/icons/Certificate.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Certificate.svg);
 }
 
 #nums .bg1 {

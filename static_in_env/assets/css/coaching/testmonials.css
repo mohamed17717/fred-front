@@ -89,22 +89,22 @@
 }
 
 #coaching-testmonials .card .avatar.author1 {
-  background-image: url(/assets/image/author1.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg);
 }
 #coaching-testmonials .card .avatar.author2 {
-  background-image: url(/assets/image/author2.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author2.jpg);
 }
 #coaching-testmonials .card .avatar.author3 {
-  background-image: url(/assets/image/author3.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author3.jpg);
 }
 #coaching-testmonials .card .avatar.author4 {
-  background-image: url(/assets/image/author4.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author4.jpg);
 }
 #coaching-testmonials .card .avatar.author5 {
-  background-image: url(/assets/image/author5.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author5.jpg);
 }
 #coaching-testmonials .card .avatar.author6 {
-  background-image: url(/assets/image/author6.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author6.jpg);
 }
 
 @media (max-width: 900px) {

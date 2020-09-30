@@ -172,34 +172,34 @@ main {
 
 /* images for static content */
 .avatar1 {
-  background-image: url(/assets/image/author1.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg);
 }
 .avatar2 {
-  background-image: url(/assets/image/author2.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author2.jpg);
 }
 .avatar3 {
-  background-image: url(/assets/image/author3.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author3.jpg);
 }
 .avatar4 {
-  background-image: url(/assets/image/author4.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author4.jpg);
 }
 .avatar5 {
-  background-image: url(/assets/image/author5.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author5.jpg);
 }
 .avatar6 {
-  background-image: url(/assets/image/author6.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author6.jpg);
 }
 .avatar7 {
-  background-image: url(/assets/image/g6.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g6.jpg);
 }
 .avatar8 {
-  background-image: url(/assets/image/g7.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g7.jpg);
 }
 .avatar9 {
-  background-image: url(/assets/image/g8.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g8.jpg);
 }
 .avatar10 {
-  background-image: url(/assets/image/g9.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g9.jpg);
 }
 
 button,
@@ -210,26 +210,26 @@ a,
 }
 
 .fred-pp {
-  background-image: url(/assets/authors/mr-fred.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/authors/mr-fred.jpg);
 }
 .nada-pp {
-  background-image: url(/assets/authors/nada.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/authors/nada.jpg);
 }
 .dalia-pp {
-  background-image: url(/assets/authors/dalia.png);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/authors/dalia.png);
 }
 .rana-pp {
-  background-image: url(/assets/authors/rana.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/authors/rana.jpg);
 }
 .sliem-pp {
-  background-image: url(/assets/authors/dr-sliem.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/authors/dr-sliem.jpg);
 }
 .ebtsam-pp {
-  background-image: url(/assets/testmonials/ebtsam.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/testmonials/ebtsam.jpg);
 }
 .martin-pp {
-  background-image: url(/assets/testmonials/martin.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/testmonials/martin.jpg);
 }
 .ahmed-pp {
-  background-image: url(/assets/testmonials/ahmed.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/testmonials/ahmed.jpg);
 }

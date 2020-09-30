@@ -33,40 +33,40 @@
 }
 
 #course-suggest-courses .card .thumbnail-course-1 {
-  background-image: url(/assets/image/c1.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c1.jpg);
 }
 
 #course-suggest-courses .card .thumbnail-course-2 {
-  background-image: url(/assets/image/c2.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c2.jpg);
 }
 
 #course-suggest-courses .card .thumbnail-course-3 {
-  background-image: url(/assets/image/c3.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c3.jpg);
 }
 
 #course-suggest-courses .card .thumbnail-course-4 {
-  background-image: url(/assets/image/c4.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c4.jpg);
 }
 
 #course-suggest-courses .card .thumbnail-course-5 {
-  background-image: url(/assets/image/c5.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c5.jpg);
 }
 
 #course-suggest-courses .card .thumbnail-course-6 {
-  background-image: url(/assets/image/c6.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c6.jpg);
 }
 
 #course-suggest-courses .card .thumbnail-course-7 {
-  background-image: url(/assets/image/b1.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/b1.jpg);
 }
 #course-suggest-courses .card .thumbnail-course-8 {
-  background-image: url(/assets/image/b2.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/b2.jpg);
 }
 #course-suggest-courses .card .thumbnail-course-9 {
-  background-image: url(/assets/image/b3.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/b3.jpg);
 }
 #course-suggest-courses .card .thumbnail-course-10 {
-  background-image: url(/assets/image/b4.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/b4.jpg);
 }
 
 #course-suggest-courses .card .info {
@@ -108,41 +108,42 @@
 
   margin-right: calc(15px * var(--ratio));
 
-  background: url(/assets/image/author1.jpg) no-repeat center center;
+  background: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg)
+    no-repeat center center;
   background-size: cover;
 
   border-radius: 50%;
 }
 
 #course-suggest-courses .card .info .footer .author .avatar1 {
-  background-image: url(/assets/image/author1.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg);
 }
 #course-suggest-courses .card .info .footer .author .avatar2 {
-  background-image: url(/assets/image/author2.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author2.jpg);
 }
 #course-suggest-courses .card .info .footer .author .avatar3 {
-  background-image: url(/assets/image/author3.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author3.jpg);
 }
 #course-suggest-courses .card .info .footer .author .avatar4 {
-  background-image: url(/assets/image/author4.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author4.jpg);
 }
 #course-suggest-courses .card .info .footer .author .avatar5 {
-  background-image: url(/assets/image/author5.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author5.jpg);
 }
 #course-suggest-courses .card .info .footer .author .avatar6 {
-  background-image: url(/assets/image/author6.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author6.jpg);
 }
 #course-suggest-courses .card .info .footer .author .avatar7 {
-  background-image: url(/assets/image/g6.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g6.jpg);
 }
 #course-suggest-courses .card .info .footer .author .avatar8 {
-  background-image: url(/assets/image/g7.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g7.jpg);
 }
 #course-suggest-courses .card .info .footer .author .avatar9 {
-  background-image: url(/assets/image/g8.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g8.jpg);
 }
 #course-suggest-courses .card .info .footer .author .avatar10 {
-  background-image: url(/assets/image/g9.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g9.jpg);
 }
 
 #course-suggest-courses .card .info .footer .author .avatar img {
@@ -182,10 +183,10 @@
   margin-left: calc(3px * var(--ratio));
 }
 #course-suggest-courses .card .info .rating .stars .icon.icon-star-fill {
-  background-image: url(/assets/icons/Star-Fill.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Star-Fill.svg);
 }
 #course-suggest-courses .card .info .rating .stars .icon.icon-star-outline {
-  background-image: url(/assets/icons/Star-Outline.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Star-Outline.svg);
 }
 #course-suggest-courses .card .info .rating > * {
   margin-right: calc(12px * var(--ratio));

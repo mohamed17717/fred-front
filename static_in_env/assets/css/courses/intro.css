@@ -35,7 +35,8 @@
 #courses-intro .search-box button i {
   width: calc(25px * var(--ratio));
   height: calc(25px * var(--ratio));
-  background: url(/assets/icons/Search.svg) no-repeat center center;
+  background: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Search.svg)
+    no-repeat center center;
   background-size: contain;
   display: inline-block;
 }

@@ -11,7 +11,8 @@
 
 #intro .banner {
   width: 100%;
-  background: url(/assets/image/intro-bg.jpg) no-repeat center center;
+  background: url(http://thegoodzone.pythonanywhere.com/static/assets/image/intro-bg.jpg)
+    no-repeat center center;
   background-size: cover;
   position: relative;
   height: 100%;

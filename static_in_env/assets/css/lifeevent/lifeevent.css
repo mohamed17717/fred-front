@@ -46,10 +46,10 @@
   padding: calc(50px * var(--ratio));
 }
 #live-event .card.card1 {
-  background-image: url(/assets/image/c5.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c5.jpg);
 }
 #live-event .card.card2 {
-  background-image: url(/assets/image/c4.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c4.jpg);
 }
 
 #live-event .card::before {

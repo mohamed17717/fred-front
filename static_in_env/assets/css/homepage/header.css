@@ -59,7 +59,8 @@ header .menu-icon {
   width: calc(35px * var(--ratio));
   height: calc(35px * var(--ratio));
 
-  background: url("/assets/icons/menu.svg") no-repeat center center;
+  background: url("http://thegoodzone.pythonanywhere.com/static/assets/icons/menu.svg")
+    no-repeat center center;
   background-size: contain;
 
   display: none;
@@ -166,7 +167,8 @@ header .drop-down .icon img {
 .drop-down-box .search-box button i {
   width: calc(20px * var(--ratio));
   height: calc(20px * var(--ratio));
-  background: url(/assets/icons/Search.svg) no-repeat center center;
+  background: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Search.svg)
+    no-repeat center center;
   background-size: contain;
   display: inline-block;
 }

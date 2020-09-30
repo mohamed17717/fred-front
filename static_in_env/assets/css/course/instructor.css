@@ -13,21 +13,21 @@
   background-size: cover;
 }
 #course-instructor .card .image.image1 {
-  background-image: url(/assets/image/author1.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg);
 }
 #course-instructor .card .image.image2 {
-  background-image: url(/assets/image/author2.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author2.jpg);
 }
 #course-instructor .card .image.image3 {
-  background-image: url(/assets/image/author3.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author3.jpg);
 }
 
 #course-instructor .card .image.image4 {
-  background-image: url(/assets/image/author4.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author4.jpg);
 }
 
 #course-instructor .card .image.image5 {
-  background-image: url(/assets/image/author5.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author5.jpg);
 }
 
 #course-instructor .card .info {
@@ -65,16 +65,16 @@
   margin: 0 calc(10px * var(--ratio));
 }
 #course-instructor .card .info .social .icon.icon-insta {
-  background-image: url(/assets/icons/Instagram.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Instagram.svg);
 }
 #course-instructor .card .info .social .icon.icon-twt {
-  background-image: url(/assets/icons/Twitter.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Twitter.svg);
 }
 #course-instructor .card .info .social .icon.icon-fb {
-  background-image: url(/assets/icons/Facebook.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Facebook.svg);
 }
 #course-instructor .card .info .social .icon.icon-site {
-  background-image: url(/assets/icons/Site.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Site.svg);
 }
 
 @media (max-width: 700px) {

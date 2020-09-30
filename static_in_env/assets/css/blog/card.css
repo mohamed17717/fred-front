@@ -17,7 +17,7 @@
 }
 
 #blog-cards .card .thumbnail.image1 {
-  background-image: url(/assets/image/b3.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/b3.jpg);
 }
 
 #blog-cards .card .info {
@@ -65,7 +65,7 @@
 }
 
 #blog-cards .card .info .author .profile-pic.author2 {
-  background-image: url(/assets/image/b1.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/b1.jpg);
 }
 
 #blog-cards .card .info .bottom {
@@ -96,11 +96,11 @@
 }
 
 #blog-cards .pagination .btn.prev {
-  background-image: url(/assets/icons/Previous.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Previous.svg);
 }
 
 #blog-cards .pagination .btn.next {
-  background-image: url(/assets/icons/Next.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Next.svg);
 }
 
 #blog-cards .pagination ul {

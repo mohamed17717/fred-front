@@ -1,4 +1,4 @@
-@import "/assets/css/homepage/slider.css";
+@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/slider.css";
 
 #courses .title {
   margin-bottom: calc(50px * var(--ratio));
@@ -53,27 +53,27 @@
 }
 
 #courses .slider .item .thumbnail-course-1 {
-  background-image: url(/assets/image/c1.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c1.jpg);
 }
 
 #courses .slider .item .thumbnail-course-2 {
-  background-image: url(/assets/image/c2.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c2.jpg);
 }
 
 #courses .slider .item .thumbnail-course-3 {
-  background-image: url(/assets/image/c3.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c3.jpg);
 }
 
 #courses .slider .item .thumbnail-course-4 {
-  background-image: url(/assets/image/c4.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c4.jpg);
 }
 
 #courses .slider .item .thumbnail-course-5 {
-  background-image: url(/assets/image/c5.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c5.jpg);
 }
 
 #courses .slider .item .thumbnail-course-6 {
-  background-image: url(/assets/image/c6.jpg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c6.jpg);
 }
 
 #courses .slider .item .info {
@@ -115,7 +115,8 @@
 
   margin-right: calc(15px * var(--ratio));
 
-  background: url(/assets/image/author1.jpg) no-repeat center center;
+  background: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg)
+    no-repeat center center;
   background-size: cover;
 
   border-radius: 50%;
@@ -177,10 +178,10 @@
   margin-left: calc(3px * var(--ratio));
 }
 #courses .slider .item .info .rating .stars .icon.icon-star-fill {
-  background-image: url(/assets/icons/Star-Fill.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Star-Fill.svg);
 }
 #courses .slider .item .info .rating .stars .icon.icon-star-outline {
-  background-image: url(/assets/icons/Star-Outline.svg);
+  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Star-Outline.svg);
 }
 #courses .slider .item .info .rating > * {
   margin-right: calc(12px * var(--ratio));
