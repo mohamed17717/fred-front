@@ -14,7 +14,9 @@ SECRET_KEY = 's%kxhk+hk#n3fg_mv(d&jz%l0^e6da23664mwje#z)0j6n1dym'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'thegoodzone.pythonanywhere.com'
+]
 
 
 # Application definition
