@@ -1,0 +1,235 @@
+@import "https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap";
+
+@import "./homepage/header.css";
+@import "./homepage/intro.css";
+@import "./homepage/courses.css";
+@import "./homepage/coaching.css";
+@import "./homepage/instructors.css";
+@import "./homepage/blog.css";
+@import "./homepage/testmonials.css";
+@import "./homepage/partners.css";
+@import "./homepage/footer.css";
+
+@import "./aboutus/video-intro.css";
+@import "./aboutus/who.css";
+@import "./aboutus/nums.css";
+@import "./aboutus/gallery.css";
+
+@import "./faq/faq.css";
+
+@import "./privacy/privacy.css";
+
+@import "./terms/terms.css";
+
+@import "./contact/contact.css";
+
+@import "./team/team.css";
+
+@import "./photo-viewer/photo-viewer.css";
+
+@import "./login/login.css";
+
+@import "./signup/signup.css";
+
+@import "./404/404.css";
+
+@import "./blog/sidebar.css";
+@import "./blog/card.css";
+
+@import "./courses/intro.css";
+@import "./courses/courses-list.css";
+
+@import "./courses/courses-list.css";
+
+@import "./course/intro.css";
+@import "./course/content.css";
+@import "./course/instructor.css";
+@import "./course/price.css";
+@import "./course/feedback.css";
+@import "./course/suggest-courses.css";
+
+@import "./thanks/thanks.css";
+
+@import "./coaching/coaches.css";
+@import "./coaching/intro.css";
+@import "./coaching/testmonials.css";
+
+@import "./lifeevent/lifeevent.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  /* colors */
+  --body-bg: #f5f5f5;
+  --text-color: #000000;
+  --sub-text-color: #808080;
+  --invert-color: #ffffff;
+  --card1: #7c4ddb;
+  --card2: #3a6ee8;
+  --card3: #33c5d2;
+  --card4: #f26d7e;
+  --main-color: #f36523;
+  --shadow1: #695b5b29;
+  --shadow2: #e4e4e4;
+
+  /* spacing */
+  --ratio: calc(1080 / 1440);
+  --space-v: calc(28px * var(--ratio));
+  --space-h: calc(85px * var(--ratio));
+}
+
+body {
+  font-size: 16px;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 300;
+
+  background-color: var(--body-bg);
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  margin-bottom: calc(70px * var(--ratio));
+  /* width: 850px; */
+
+  max-width: 850px;
+  width: 80%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  section {
+    width: 90%;
+  }
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus,
+video:focus {
+  outline: none;
+}
+
+button.solid {
+  text-transform: uppercase;
+  color: var(--invert-color);
+  padding: calc(18px * var(--ratio)) calc(30px * var(--ratio));
+  background-color: var(--main-color);
+  border-radius: calc(4px * var(--ratio));
+}
+
+button.outline {
+  color: var(--main-color);
+  border: 1px solid currentColor;
+  padding: calc(18px * var(--ratio)) calc(30px * var(--ratio));
+  font-weight: normal;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-radius: calc(4px * var(--ratio));
+}
+button.outline.light {
+  padding: calc(10px * var(--ratio)) calc(30px * var(--ratio));
+  border: 1px solid var(--main-color);
+  text-transform: capitalize;
+  font-weight: normal;
+}
+
+button.outline:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+button.solid:hover {
+  background-color: #000;
+}
+
+input,
+textarea {
+  border: 1px solid #ccc;
+}
+
+main {
+  padding-top: 91.02px;
+}
+
+/* images for static content */
+.avatar1 {
+  background-image: url(/assets/image/author1.jpg);
+}
+.avatar2 {
+  background-image: url(/assets/image/author2.jpg);
+}
+.avatar3 {
+  background-image: url(/assets/image/author3.jpg);
+}
+.avatar4 {
+  background-image: url(/assets/image/author4.jpg);
+}
+.avatar5 {
+  background-image: url(/assets/image/author5.jpg);
+}
+.avatar6 {
+  background-image: url(/assets/image/author6.jpg);
+}
+.avatar7 {
+  background-image: url(/assets/image/g6.jpg);
+}
+.avatar8 {
+  background-image: url(/assets/image/g7.jpg);
+}
+.avatar9 {
+  background-image: url(/assets/image/g8.jpg);
+}
+.avatar10 {
+  background-image: url(/assets/image/g9.jpg);
+}
+
+button,
+a,
+[role="button"],
+[role="link"] {
+  cursor: pointer;
+}
+
+.fred-pp {
+  background-image: url(/assets/authors/mr-fred.jpg);
+}
+.nada-pp {
+  background-image: url(/assets/authors/nada.jpg);
+}
+.dalia-pp {
+  background-image: url(/assets/authors/dalia.png);
+}
+.rana-pp {
+  background-image: url(/assets/authors/rana.jpg);
+}
+.sliem-pp {
+  background-image: url(/assets/authors/dr-sliem.jpg);
+}
+.ebtsam-pp {
+  background-image: url(/assets/testmonials/ebtsam.jpg);
+}
+.martin-pp {
+  background-image: url(/assets/testmonials/martin.jpg);
+}
+.ahmed-pp {
+  background-image: url(/assets/testmonials/ahmed.jpg);
+}

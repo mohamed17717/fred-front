@@ -1,0 +1,133 @@
+footer {
+  background-color: #000;
+  position: relative;
+  color: white;
+
+  font-size: calc(16px * var(--ratio));
+  padding: calc(85px * var(--ratio)) calc(85px * var(--ratio)) 0;
+
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  display: inline-block;
+  width: calc(300px * var(--ratio));
+  height: calc(300px * var(--ratio));
+  background: url(/assets/icons/Logo-Watermark.svg) no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  top: -10%;
+  right: -5%;
+}
+
+footer h3 {
+  color: #808080;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: calc(30px * var(--ratio));
+  font-size: inherit;
+}
+
+footer .lists {
+  width: calc(100% - 225px);
+
+  width: calc(100% - 169px + 63px);
+
+  max-width: 840px;
+  /* min-width: 650px; */
+
+  margin-bottom: calc(85px * var(--ratio));
+
+  display: flex;
+  /* justify-content: space-between; */
+
+  flex-wrap: wrap;
+}
+
+footer .lists .list {
+  width: 25%;
+  min-width: 160px;
+  margin-bottom: calc(50px * var(--ratio));
+}
+
+footer .lists li {
+  margin-bottom: calc(20px * var(--ratio));
+}
+
+footer .bottom {
+  border-top: 1px solid currentColor;
+  padding: calc(40px * var(--ratio)) 0;
+
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+
+  text-align: center;
+  line-height: 1.6;
+}
+
+footer .bottom > div:first-child {
+  margin-bottom: 5px;
+}
+
+footer .lists .list.social li {
+  display: flex;
+  align-items: center;
+}
+
+footer .lists .list.social .icon {
+  width: calc(20px * var(--ratio));
+  height: calc(20px * var(--ratio));
+  /* margin: 0 calc(13px * var(--ratio)); */
+  margin-right: calc(13px * var(--ratio));
+
+  display: inline-block;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+footer .lists .list.social .icon.insta-icon {
+  background-image: url(/assets/icons/Instagram.svg);
+}
+footer .lists .list.social .icon.twt-icon {
+  background-image: url(/assets/icons/Twitter.svg);
+}
+footer .lists .list.social .icon.fb-icon {
+  background-image: url(/assets/icons/Facebook.svg);
+}
+
+@media (max-width: 553px) {
+  footer {
+    padding-left: calc(50px * var(--ratio));
+    padding-right: calc(50px * var(--ratio));
+  }
+}
+
+@media (max-width: 360px) {
+  footer {
+    padding-top: calc(60px * var(--ratio));
+    padding-left: calc(30px * var(--ratio));
+    padding-right: calc(30px * var(--ratio));
+  }
+
+  footer::before {
+    display: none;
+  }
+
+  footer .lists {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  footer .lists .list {
+    /* text-align: center; */
+    min-width: 116px;
+  }
+
+  footer .bottom .copy {
+    text-align: center;
+    line-height: 1.6;
+  }
+}

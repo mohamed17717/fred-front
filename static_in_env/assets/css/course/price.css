@@ -1,0 +1,46 @@
+#course-price {
+  background-color: #fff;
+  padding: calc(70px * var(--ratio)) 0;
+  margin-bottom: calc(70px * var(--ratio));
+}
+
+#course-price section {
+  margin-bottom: 0;
+}
+
+#course-price .option {
+  max-width: calc(400px * var(--ratio));
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+
+  margin-bottom: calc(70px * var(--ratio));
+}
+
+#course-price .check {
+  /* width: calc(16px * var(--ratio));
+  height: calc(16px * var(--ratio));
+
+  background-color: var(--main-color); */
+  margin-right: calc(20px * var(--ratio));
+  flex-shrink: 0;
+}
+
+#course-price .option .name {
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-size: calc(22px * var(--ratio));
+  font-weight: bold;
+  margin-bottom: calc(20px * var(--ratio));
+}
+
+#course-price .bottom {
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  #course-price section {
+    width: 90%;
+  }
+}

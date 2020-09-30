@@ -1,0 +1,87 @@
+#nums .card .icon.icon1 {
+  background-image: url(/assets/icons/Establish.svg);
+}
+#nums .card .icon.icon2 {
+  background-image: url(/assets/icons/Students.svg);
+}
+#nums .card .icon.icon3 {
+  background-image: url(/assets/icons/Training.svg);
+}
+#nums .card .icon.icon4 {
+  background-image: url(/assets/icons/Certificate.svg);
+}
+
+#nums .bg1 {
+  background-color: var(--card3);
+}
+#nums .bg2 {
+  background-color: var(--card1);
+}
+#nums .bg3 {
+  background-color: var(--card4);
+}
+#nums .bg4 {
+  background-color: var(--card2);
+}
+
+#nums .cards {
+  display: flex;
+}
+#nums .card {
+  width: calc(280px * var(--ratio));
+  height: calc(310px * var(--ratio));
+  color: white;
+  text-align: center;
+  font-weight: bold;
+
+  font-size: calc(20px * var(--ratio));
+
+  padding-top: calc(46px * var(--ratio));
+  transition: transform 0.1s ease-out;
+}
+
+#nums .card .icon {
+  width: calc(100px * var(--ratio));
+  height: calc(100px * var(--ratio));
+  margin-left: auto;
+  margin-right: auto;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#nums .card .num {
+  margin-top: calc(34px * var(--ratio));
+  margin-bottom: calc(23px * var(--ratio));
+}
+
+/* #nums .card .num::after {
+  content: " +";
+} */
+
+#nums .card .name {
+  text-transform: capitalize;
+}
+
+#nums .card:hover {
+  transform: translateY(-10%);
+}
+
+@media (max-width: 850px) {
+  #nums .cards {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #nums .cards .card {
+    width: 100%;
+    max-width: 400px;
+    max-width: 300px;
+    margin: auto;
+  }
+
+  #nums .card:hover {
+    transform: translateX(-10%);
+    transform: scale(1.1);
+  }
+}

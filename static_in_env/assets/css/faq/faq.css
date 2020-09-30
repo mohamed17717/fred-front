@@ -1,0 +1,77 @@
+#faq .title {
+  margin-bottom: calc(50px * var(--ratio));
+}
+
+#faq .title h1 {
+  font-size: calc(40px * var(--ratio));
+  text-align: center;
+  margin-bottom: calc(15px * var(--ratio));
+}
+
+#faq .title .line {
+  width: calc(115px * var(--ratio));
+  margin: auto;
+}
+#faq .title .line div {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--main-color);
+}
+#faq .title .line div:nth-child(1) {
+  margin-bottom: 2px;
+}
+
+#faq .title {
+  margin-top: calc(55px * var(--ratio));
+  margin-bottom: calc(55px * var(--ratio));
+}
+
+#faq .qs .box {
+  display: block;
+  background-color: #fff;
+  border-radius: calc(4px * var(--ratio));
+  padding: calc(25px * var(--ratio)) calc(40px * var(--ratio));
+  margin-bottom: calc(25px * var(--ratio));
+  line-height: 1.6;
+}
+#faq .qs .box .top {
+  color: var(--main-color);
+  font-size: calc(22px * var(--ratio));
+  font-weight: bold;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#faq .qs .box .top .icon {
+  display: inline-block;
+  width: calc(15px * var(--ratio));
+  height: calc(15px * var(--ratio));
+  background: url(/assets/icons/Down-Arrow.svg) no-repeat center center;
+  background-size: contain;
+}
+#faq .box .a {
+  font-size: calc(17px * var(--ratio));
+  max-height: 0;
+  margin-top: 8px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+#faq .box .a ol {
+  list-style: decimal;
+  margin-left: calc(30px * var(--ratio));
+  line-height: 1.6;
+}
+#faq .box .a a {
+  text-decoration: underline;
+}
+
+#faq .qs .a.show-sub {
+  max-height: 180px;
+}
+
+#faq .footer {
+  text-align: center;
+  margin: calc(45px * var(--ratio)) auto calc(60px * var(--ratio));
+}

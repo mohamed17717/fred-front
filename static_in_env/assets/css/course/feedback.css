@@ -1,0 +1,281 @@
+#course-feedback .content {
+  background-color: #fff;
+  border-radius: calc(5px * var(--ratio));
+  padding: calc(70px * var(--ratio));
+}
+
+#course-feedback .rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: calc(30px * var(--ratio));
+  border-bottom: 2px solid #eee;
+  margin-bottom: calc(70px * var(--ratio));
+}
+
+#course-feedback .rating .total {
+  text-align: center;
+  font-size: calc(16px * var(--ratio));
+
+  /* padding-right: calc(70px * var(--ratio)); */
+  /* margin-right: calc(70px * var(--ratio)); */
+  /* border-right: 1px solid #ccc; */
+
+  display: inline-block;
+}
+
+#course-feedback .rating .total .num {
+  font-size: calc(57px * var(--ratio));
+  font-weight: bold;
+  margin-bottom: calc(25px * var(--ratio));
+}
+
+#course-feedback .stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: calc(13px * var(--ratio));
+}
+#course-feedback .stars .icon {
+  width: calc(18px * var(--ratio));
+  height: calc(18px * var(--ratio));
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+
+  margin-left: calc(3px * var(--ratio));
+}
+#course-feedback .stars .icon.icon-star-fill {
+  background-image: url(/assets/icons/Star-Fill.svg);
+}
+#course-feedback .stars .icon.icon-star-outline {
+  background-image: url(/assets/icons/Star-Outline.svg);
+}
+
+#course-feedback .meta .stars {
+  margin-bottom: 0;
+}
+
+#course-feedback .detail {
+  padding-right: calc(70px * var(--ratio));
+  padding-left: calc(70px * var(--ratio));
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
+}
+
+#course-feedback .detail .progress {
+  max-width: calc(300px * var(--ratio));
+  width: calc(300px * var(--ratio));
+
+  height: calc(8px * var(--ratio));
+  border-radius: calc(10px * var(--ratio));
+  background-color: #e8e8e8;
+  overflow: hidden;
+
+  margin-right: calc(20px * var(--ratio));
+}
+
+#course-feedback .detail .progress .fill {
+  width: 0;
+  height: 100%;
+  background-color: var(--main-color);
+}
+#course-feedback .detail .progress .fill.fill5 {
+  width: 50%;
+}
+#course-feedback .detail .progress .fill.fill4 {
+  width: 70%;
+}
+#course-feedback .detail .progress .fill.fill3 {
+  width: 23%;
+}
+#course-feedback .detail .progress .fill.fill2 {
+  width: 14%;
+}
+#course-feedback .detail .progress .fill.fill1 {
+  width: 80%;
+}
+
+#course-feedback .detail li {
+  display: flex;
+  align-items: center;
+  font-size: calc(16px * var(--ratio));
+  margin-bottom: calc(16px * var(--ratio));
+}
+
+#course-feedback .rate h3 {
+  text-align: center;
+  font-size: calc(20px * var(--ratio));
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: calc(30px * var(--ratio));
+}
+
+#course-feedback .rate .stars .icon {
+  width: calc(30px * var(--ratio));
+  height: calc(30px * var(--ratio));
+
+  margin-left: calc(7px * var(--ratio));
+  filter: invert(0%) sepia(38%) saturate(7%) hue-rotate(119deg) brightness(90%)
+    contrast(53%);
+}
+
+#course-feedback .reviews .review,
+#course-feedback .reviews .write {
+  display: flex;
+  margin-bottom: calc(50px * var(--ratio));
+}
+
+#course-feedback .reviews .author {
+  /* text-align: center; */
+  margin-right: calc(25px * var(--ratio));
+}
+#course-feedback .reviews .author .avatar {
+  /* display: inline-block; */
+  width: calc(65px * var(--ratio));
+  height: calc(65px * var(--ratio));
+  margin: auto;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+
+  margin-bottom: calc(10px * var(--ratio));
+}
+
+#course-feedback .reviews .author .avatar.author1 {
+  background-image: url(/assets/image/author1.jpg);
+}
+
+#course-feedback .reviews .author .avatar.author4 {
+  background-image: url(/assets/image/author4.jpg);
+}
+
+#course-feedback .reviews .author .bow {
+  padding: calc(7px * var(--ratio)) calc(15px * var(--ratio));
+  background-color: #f365230d;
+  color: var(--main-color);
+  border: 1px solid #f3652333;
+  border-radius: calc(5px * var(--ratio));
+}
+
+#course-feedback .reviews .info {
+  padding: calc(30px * var(--ratio)) calc(40px * var(--ratio));
+  background-color: #f365230d;
+  border: 1px solid #f3652333;
+  border-radius: calc(5px * var(--ratio));
+
+  flex-grow: 1;
+  position: relative;
+}
+#course-feedback .reviews .info .name {
+  text-transform: capitalize;
+  margin-bottom: calc(12px * var(--ratio));
+}
+#course-feedback .reviews .info .stars {
+  justify-content: flex-start;
+  margin-right: calc(12px * var(--ratio));
+}
+#course-feedback .reviews .info .meta {
+  display: flex;
+  align-items: center;
+  font-size: calc(16px * var(--ratio));
+  color: var(--sub-text-color);
+  margin-bottom: calc(18px * var(--ratio));
+}
+#course-feedback .reviews .info .opinion {
+  font-weight: bold;
+  font-size: calc(18px * var(--ratio));
+  line-height: 1.6;
+}
+
+#course-feedback .reviews .write .name {
+  margin-bottom: calc(30px * var(--ratio));
+}
+#course-feedback .reviews textarea {
+  width: 100%;
+  min-height: calc(200px * var(--ratio));
+  padding: calc(20px * var(--ratio)) calc(26px * var(--ratio));
+}
+
+#course-feedback .reviews .bottom {
+  text-align: right;
+  margin-top: calc(30px * var(--ratio));
+}
+
+#course-feedback .reviews button {
+  padding: calc(18px * var(--ratio)) calc(30px * var(--ratio));
+}
+
+@media (max-width: 1000px) {
+  #course-feedback {
+    width: 90%;
+  }
+}
+
+@media (max-width: 870px) {
+  #course-feedback {
+    width: 90%;
+  }
+
+  #course-feedback .rating {
+    flex-direction: column;
+  }
+
+  #course-feedback .rating .detail {
+    padding: 0;
+    padding-top: calc(35px * var(--ratio));
+    padding-bottom: calc(35px * var(--ratio));
+
+    border: 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+
+    margin: 0;
+    margin-top: calc(35px * var(--ratio));
+    margin-bottom: calc(35px * var(--ratio));
+  }
+}
+
+@media (max-width: 650px) {
+  #course-feedback .content {
+    padding: calc(70px * var(--ratio)) calc(30px * var(--ratio));
+  }
+
+  #course-feedback .reviews .review,
+  #course-feedback .reviews .write {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #course-feedback .reviews .author {
+    /* text-align: center; */
+    margin-right: calc(0 * var(--ratio));
+    margin-bottom: calc(25px * var(--ratio));
+  }
+
+  #course-feedback .reviews .info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  #course-feedback .detail li > div:nth-last-child(1) {
+    display: none;
+  }
+
+  #course-feedback .detail {
+    width: 100%;
+  }
+
+  #course-feedback .detail li .progress {
+    width: 100%;
+    margin: auto;
+  }
+
+  #course-feedback .reviews .info {
+    padding: calc(30px / 2 * var(--ratio)) calc(40px / 2 * var(--ratio));
+  }
+}

@@ -1,0 +1,18 @@
+#who {
+  padding: calc(30px * var(--ratio));
+  background-color: #fff;
+  border-radius: calc(4px * var(--ratio));
+}
+
+#who h2 {
+  font-size: calc(22px * var(--ratio));
+  font-weight: bold;
+  color: var(--main-color);
+  margin-bottom: calc(18px * var(--ratio));
+  text-transform: capitalize;
+}
+#who p {
+  font-size: calc(16px * var(--ratio));
+  line-height: 1.6;
+  margin-bottom: calc(20px * var(--ratio));
+}

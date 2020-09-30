@@ -1,0 +1,145 @@
+#intro {
+  /* width: 100vw; */
+  height: 100vh;
+  width: 100%;
+  max-width: 100%;
+
+  margin-bottom: calc((310px / 2 + 70px) * var(--ratio));
+  margin-bottom: calc((310px * 1) * var(--ratio));
+  margin-bottom: calc((192px * 1) * var(--ratio));
+}
+
+#intro .banner {
+  width: 100%;
+  background: url(/assets/image/intro-bg.jpg) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  height: 100%;
+}
+
+#intro .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: #000;
+  opacity: 0.5;
+}
+
+#intro .text {
+  width: 100%;
+  text-transform: uppercase;
+  position: absolute;
+  text-align: center;
+
+  color: white;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  opacity: 1;
+}
+
+#intro .text h1 {
+  font-size: calc(27px * var(--ratio));
+  word-spacing: 6px;
+  line-height: 2.3;
+}
+
+#intro .text h3 {
+  font-size: calc(60px * var(--ratio));
+}
+
+#intro .cards {
+  display: flex;
+
+  flex-wrap: wrap;
+  width: 100%;
+
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -127%);
+  transform: translateX(-50%);
+  top: 127%;
+  top: calc(100vh - 107px);
+}
+
+#intro .card {
+  width: calc(280px * var(--ratio));
+  height: calc(310px * var(--ratio));
+  background-color: red;
+  transition: transform 0.1s ease-out;
+
+  text-align: center;
+  color: var(--invert-color);
+
+  padding: calc(35px * var(--ratio)) calc(15px * var(--ratio));
+}
+
+#intro .card1 {
+  background-color: var(--card1);
+}
+#intro .card2 {
+  background-color: var(--card2);
+}
+#intro .card3 {
+  background-color: var(--card3);
+}
+#intro .card4 {
+  background-color: var(--card4);
+}
+
+#intro .card:hover {
+  transform: scale(1.1);
+}
+
+#intro .card > * {
+  margin-bottom: calc(18px * var(--ratio));
+}
+
+#intro .card .icon {
+  height: calc(100px * var(--ratio));
+  /* display: inline-block;
+  width: auto;
+  margin: auto; */
+}
+
+#intro .card img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(83deg) brightness(102%)
+    contrast(101%);
+  /* width: 100%; */
+  height: 100%;
+}
+
+#intro .card .card-title {
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: calc(22px * var(--ratio));
+}
+
+#intro .card .desc {
+  font-size: calc(17px * var(--ratio));
+  line-height: 1.5;
+}
+
+@media (max-width: 839px) {
+  #intro {
+    margin-bottom: calc((225px * 2) * var(--ratio));
+  }
+
+  #intro .cards {
+    /* left: 50%;
+    transform: translateX(-50%); */
+    /* top: 80%; */
+  }
+}
+
+@media (max-width: 419px) {
+  #intro {
+    margin-bottom: calc((268px * 4) * var(--ratio));
+  }
+}

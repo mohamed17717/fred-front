@@ -1,0 +1,149 @@
+#instructors {
+  background-color: var(--invert-color);
+  padding: calc(35px * var(--ratio)) 0 calc(70px * var(--ratio));
+  /* margin-bottom: calc(70px * var(--ratio)); */
+}
+
+#instructors section {
+  margin-bottom: 0;
+}
+
+#instructors .title {
+  margin-bottom: calc(50px * var(--ratio));
+}
+
+#instructors .title h1 {
+  font-size: calc(40px * var(--ratio));
+  text-align: center;
+  margin-bottom: calc(15px * var(--ratio));
+}
+
+#instructors .title .line {
+  width: calc(115px * var(--ratio));
+  margin: auto;
+}
+#instructors .title .line div {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--main-color);
+}
+#instructors .title .line div:nth-child(1) {
+  margin-bottom: 2px;
+}
+
+#instructors .cards {
+  width: calc((260px * 4 + 30px * 3) * var(--ratio));
+  width: 100%;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+#instructors .card {
+  width: calc(260px * var(--ratio));
+  height: calc(260px * var(--ratio));
+
+  width: 100%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  justify-self: center;
+}
+
+#instructors .card {
+  position: relative;
+  color: white;
+  text-transform: capitalize;
+  padding: calc(50px * var(--ratio)) calc(20px * var(--ratio));
+  text-align: center;
+  border-radius: calc(5px * var(--ratio));
+  overflow: hidden;
+}
+#instructors .card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#instructors .card .info {
+  position: relative;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#instructors .card .info .name {
+  font-weight: bold;
+  font-size: calc(20px * var(--ratio));
+}
+#instructors .card .info .brief {
+  font-size: calc(16px * var(--ratio));
+  margin-top: calc(30px * var(--ratio));
+  margin-bottom: calc(60px * var(--ratio));
+}
+#instructors .card .info .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#instructors .card .info .social .icon {
+  width: calc(20px * var(--ratio));
+  height: calc(20px * var(--ratio));
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-right: 10px;
+}
+
+#instructors .card .info .social .icon:last-child {
+  margin-left: 0;
+}
+
+#instructors .card:hover::before {
+  opacity: 0.5;
+}
+#instructors .card:hover .info {
+  opacity: 1;
+}
+
+#instructors .card .info .social .icon.icon-insta {
+  background-image: url(/assets/icons/Instagram.svg);
+}
+#instructors .card .info .social .icon.icon-twt {
+  background-image: url(/assets/icons/Twitter.svg);
+}
+#instructors .card .info .social .icon.icon-fb {
+  background-image: url(/assets/icons/Facebook.svg);
+}
+#instructors .card .info .social .icon.icon-site {
+  background-image: url(/assets/icons/Site.svg);
+}
+
+@media (max-width: 1080px) {
+  #instructors .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 840px) {
+  #instructors .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  #instructors .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

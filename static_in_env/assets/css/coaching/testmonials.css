@@ -1,0 +1,134 @@
+#coaching-testmonials {
+  background-color: #fff;
+  padding: calc(70px * var(--ratio)) 0;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+#coaching-testmonials section {
+  margin-bottom: 0;
+}
+
+#coaching-testmonials .cards {
+  max-width: 850px;
+  margin: auto;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  */
+  /* width: calc((360px * 3 + 20px * 2) * var(--ratio)); */
+  /* margin: auto; */
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 20px;
+
+  /* grid-gap: calc(28px * var(--ratio)); */
+  /* grid-auto-rows: minmax(100px, auto); */
+
+  /* grid-template-rows: 1fr; */
+  /* grid-template: item item item item; */
+}
+#coaching-testmonials .card {
+  /* width: calc(260px * var(--ratio));
+  height: calc(260px * var(--ratio)); */
+
+  /* margin: auto; */
+  /* max-width: calc(360px * var(--ratio)); */
+
+  background-color: #e4e4e4;
+  justify-self: center;
+
+  text-align: center;
+
+  border: 2px solid transparent;
+
+  padding: calc(30px * var(--ratio)) calc(40px * var(--ratio));
+
+  transition: border-color 0.3s ease-in-out;
+}
+
+#coaching-testmonials .card:hover {
+  border-color: var(--main-color);
+}
+
+#coaching-testmonials .card:hover .name {
+  color: var(--main-color);
+
+  transition: color 0.3s ease-in-out;
+}
+
+#coaching-testmonials .card > * {
+  margin-bottom: calc(18px * var(--ratio));
+}
+
+#coaching-testmonials .card .name {
+  font-size: calc(22px * var(--ratio));
+  font-weight: bold;
+  text-transform: capitalize;
+}
+#coaching-testmonials .card p {
+  font-size: calc(16px * var(--ratio));
+  line-height: 1.6;
+}
+
+#coaching-testmonials .card .avatar {
+  width: calc(100px * var(--ratio));
+  height: calc(100px * var(--ratio));
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#coaching-testmonials .card .avatar.author1 {
+  background-image: url(/assets/image/author1.jpg);
+}
+#coaching-testmonials .card .avatar.author2 {
+  background-image: url(/assets/image/author2.jpg);
+}
+#coaching-testmonials .card .avatar.author3 {
+  background-image: url(/assets/image/author3.jpg);
+}
+#coaching-testmonials .card .avatar.author4 {
+  background-image: url(/assets/image/author4.jpg);
+}
+#coaching-testmonials .card .avatar.author5 {
+  background-image: url(/assets/image/author5.jpg);
+}
+#coaching-testmonials .card .avatar.author6 {
+  background-image: url(/assets/image/author6.jpg);
+}
+
+@media (max-width: 900px) {
+  #coaching-testmonials .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  #coaching-testmonials .cards {
+    grid-template-columns: 1fr;
+  }
+
+  #coaching-testmonials .cards .card {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 330px) {
+  #coaching-testmonials {
+    padding: calc(30px * var(--ratio));
+  }
+  #coaching-testmonials .card {
+    padding-left: calc(20px * var(--ratio));
+    padding-right: calc(20px * var(--ratio));
+  }
+}

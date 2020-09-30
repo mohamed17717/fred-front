@@ -1,0 +1,27 @@
+#course-content {
+  background-color: #fff;
+  width: 100%;
+  padding: calc(70px * var(--ratio)) 0;
+  margin-bottom: calc(70px * var(--ratio));
+}
+
+#course-content section > div:first-child {
+  margin-bottom: calc(70px * var(--ratio));
+}
+
+#course-content section {
+  margin-bottom: 0;
+}
+
+#course-content p {
+  text-align: center;
+  font-size: calc(20px * var(--ratio));
+  max-width: 90%;
+  margin: auto;
+}
+
+@media (max-width: 700px) {
+  #course-content section {
+    width: 90%;
+  }
+}

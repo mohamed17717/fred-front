@@ -1,0 +1,125 @@
+#live-event {
+  background-color: #fff;
+  width: 100%;
+  padding: calc(70px * var(--ratio));
+}
+#live-event section {
+  margin-bottom: 0;
+}
+
+#live-event section .title {
+  text-transform: capitalize;
+  margin-bottom: calc(50px * var(--ratio));
+}
+
+#live-event section .title h1 {
+  font-size: calc(40px * var(--ratio));
+  text-align: center;
+  margin-bottom: calc(15px * var(--ratio));
+}
+
+#live-event section .title .line {
+  width: calc(115px * var(--ratio));
+  margin: auto;
+}
+#live-event section .title .line div {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--main-color);
+}
+#live-event section .title .line div:nth-child(1) {
+  margin-bottom: 2px;
+}
+
+#live-event .card {
+  min-height: calc(700px * var(--ratio));
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+
+  border-radius: calc(5px * var(--ratio));
+  overflow: hidden;
+
+  padding: calc(50px * var(--ratio));
+}
+#live-event .card.card1 {
+  background-image: url(/assets/image/c5.jpg);
+}
+#live-event .card.card2 {
+  background-image: url(/assets/image/c4.jpg);
+}
+
+#live-event .card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background-color: #000; */
+  background: linear-gradient(to top, black, rgba(0, 0, 0, 0));
+  /* opacity: 0.5; */
+}
+#live-event .card .date {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  background-color: #00000066;
+  padding: calc(15px * var(--ratio)) calc(30px * var(--ratio));
+  border-radius: 0 calc(20px * var(--ratio)) calc(20px * var(--ratio)) 0;
+  text-align: left;
+  font-weight: bold;
+  line-height: 1.2;
+}
+#live-event .card .date .d {
+  font-size: calc(45px * var(--ratio));
+}
+#live-event .card .date .m-y {
+  font-size: calc(22px * var(--ratio));
+}
+#live-event .card .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: calc(50px * var(--ratio));
+}
+#live-event .card .info .name {
+  font-size: calc(32px * var(--ratio));
+  margin-bottom: calc(30px * var(--ratio));
+
+  text-transform: uppercase;
+  color: var(--main-color);
+  font-weight: bold;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+}
+#live-event .card .info p {
+  font-size: calc(20px * var(--ratio));
+  margin-bottom: calc(30px * var(--ratio));
+  line-height: 1.6;
+}
+#live-event .card .info .time {
+  font-size: calc(16px * var(--ratio));
+  font-weight: bold;
+}
+
+#live-event button {
+  display: block;
+  margin: calc(45px * var(--ratio)) auto calc(60px * var(--ratio));
+}
+
+@media (max-width: 800px) {
+  #live-event {
+    padding: calc(70px * var(--ratio)) 0;
+  }
+}
+
+@media (max-width: 400px) {
+  #live-event .card .info {
+    padding: calc(50px * var(--ratio)) 5px;
+  }
+}

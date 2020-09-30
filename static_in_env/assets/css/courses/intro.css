@@ -1,0 +1,67 @@
+#courses-intro {
+  width: 100%;
+  padding: calc(60px * var(--ratio)) calc(85px * var(--ratio));
+  padding: calc(60px * var(--ratio)) 0;
+  background-color: #fff;
+  margin-bottom: calc(70px * var(--ratio));
+}
+#courses-intro section {
+  margin-bottom: 0;
+}
+
+#courses-intro .search-box {
+  max-width: calc(600px * var(--ratio));
+  width: 90%;
+  display: flex;
+  margin: 0 auto calc(60px * var(--ratio));
+  border-radius: calc(5px * var(--ratio));
+  overflow: hidden;
+}
+#courses-intro .search-box input {
+  padding: calc(19px * var(--ratio)) calc(25px * var(--ratio));
+  flex-grow: 1;
+  width: 80%;
+  border-radius: calc(5px * var(--ratio)) 0 0 calc(5px * var(--ratio));
+
+  /* margin-bottom: calc(25px * var(--ratio)); */
+}
+#courses-intro .search-box button {
+  background-color: var(--main-color);
+  /* width: calc(80px * var(--ratio)); */
+  max-width: calc(80px * var(--ratio));
+  width: 20%;
+  min-width: 30px;
+}
+#courses-intro .search-box button i {
+  width: calc(25px * var(--ratio));
+  height: calc(25px * var(--ratio));
+  background: url(/assets/icons/Search.svg) no-repeat center center;
+  background-size: contain;
+  display: inline-block;
+}
+
+#courses-intro .tags {
+  text-align: center;
+}
+#courses-intro .tags a {
+  font-size: calc(15px * var(--ratio));
+  font-weight: bold;
+
+  border-radius: calc(5px * var(--ratio));
+  padding: calc(10px * var(--ratio)) calc(30px * var(--ratio));
+  margin-right: calc(10px * var(--ratio));
+  margin-bottom: calc(10px * var(--ratio));
+  background-color: #e4e4e4;
+  text-transform: capitalize;
+  display: inline-block;
+}
+#courses-intro .tags a:hover {
+  background-color: #000;
+  color: white;
+}
+
+@media (max-width: 400px) {
+  #courses-intro section {
+    width: 90%;
+  }
+}
