@@ -14,7 +14,7 @@ footer::before {
   display: inline-block;
   width: calc(300px * var(--ratio));
   height: calc(300px * var(--ratio));
-  background: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Logo-Watermark.svg)
+  background: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/Logo-Watermark.svg)
     no-repeat center center;
   background-size: contain;
   position: absolute;
@@ -90,13 +90,13 @@ footer .lists .list.social .icon {
   background-size: contain;
 }
 footer .lists .list.social .icon.insta-icon {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Instagram.svg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/Instagram.svg);
 }
 footer .lists .list.social .icon.twt-icon {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Twitter.svg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/Twitter.svg);
 }
 footer .lists .list.social .icon.fb-icon {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Facebook.svg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/Facebook.svg);
 }
 
 @media (max-width: 553px) {

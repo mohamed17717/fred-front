@@ -47,7 +47,7 @@
   display: inline-block;
   width: calc(15px * var(--ratio));
   height: calc(15px * var(--ratio));
-  background: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Down-Arrow.svg)
+  background: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/Down-Arrow.svg)
     no-repeat center center;
   background-size: contain;
 }

@@ -118,16 +118,16 @@
 }
 
 #instructors .card .info .social .icon.icon-insta {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Instagram.svg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/Instagram.svg);
 }
 #instructors .card .info .social .icon.icon-twt {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Twitter.svg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/Twitter.svg);
 }
 #instructors .card .info .social .icon.icon-fb {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Facebook.svg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/Facebook.svg);
 }
 #instructors .card .info .social .icon.icon-site {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Site.svg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/Site.svg);
 }
 
 @media (max-width: 1080px) {

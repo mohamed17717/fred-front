@@ -37,7 +37,7 @@
 #blog-sidebar .search-box button i {
   width: calc(20px * var(--ratio));
   height: calc(20px * var(--ratio));
-  background: url(http://thegoodzone.pythonanywhere.com/static/assets/icons/Search.svg)
+  background: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/Search.svg)
     no-repeat center center;
   background-size: contain;
   display: inline-block;
@@ -65,13 +65,13 @@
 }
 
 #blog-sidebar .recent-posts .post .image1 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g2.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g2.jpg);
 }
 #blog-sidebar .recent-posts .post .image2 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g4.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g4.jpg);
 }
 #blog-sidebar .recent-posts .post .image3 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g5.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g5.jpg);
 }
 
 #blog-sidebar .recent-posts .post .info .name {

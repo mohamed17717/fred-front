@@ -1,60 +1,60 @@
 @import "https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/header.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/intro.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/courses.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/coaching.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/instructors.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/blog.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/testmonials.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/partners.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/homepage/footer.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/homepage/header.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/homepage/intro.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/homepage/courses.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/homepage/coaching.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/homepage/instructors.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/homepage/blog.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/homepage/testmonials.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/homepage/partners.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/homepage/footer.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/video-intro.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/who.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/nums.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/gallery.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/video-intro.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/who.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/nums.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/aboutus/gallery.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/faq/faq.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/faq/faq.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/privacy/privacy.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/privacy/privacy.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/terms/terms.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/terms/terms.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/contact/contact.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/contact/contact.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/team/team.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/team/team.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/photo-viewer/photo-viewer.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/photo-viewer/photo-viewer.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/login/login.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/login/login.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/signup/signup.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/signup/signup.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/404/404.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/404/404.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/blog/sidebar.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/blog/card.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/blog/sidebar.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/blog/card.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/courses/intro.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/courses/courses-list.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/courses/intro.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/courses/courses-list.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/courses/courses-list.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/courses/courses-list.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/intro.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/content.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/instructor.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/price.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/feedback.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/course/suggest-courses.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/intro.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/content.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/instructor.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/price.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/feedback.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/suggest-courses.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/thanks/thanks.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/thanks/thanks.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/coaching/coaches.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/coaching/intro.css";
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/coaching/testmonials.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/coaching/coaches.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/coaching/intro.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/coaching/testmonials.css";
 
-@import "http://thegoodzone.pythonanywhere.com/static/assets/css/lifeevent/lifeevent.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/lifeevent/lifeevent.css";
 
 * {
   margin: 0;
@@ -172,34 +172,34 @@ main {
 
 /* images for static content */
 .avatar1 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg);
 }
 .avatar2 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author2.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author2.jpg);
 }
 .avatar3 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author3.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author3.jpg);
 }
 .avatar4 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author4.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author4.jpg);
 }
 .avatar5 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author5.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author5.jpg);
 }
 .avatar6 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author6.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author6.jpg);
 }
 .avatar7 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g6.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g6.jpg);
 }
 .avatar8 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g7.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g7.jpg);
 }
 .avatar9 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g8.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g8.jpg);
 }
 .avatar10 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/g9.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g9.jpg);
 }
 
 button,
@@ -210,26 +210,26 @@ a,
 }
 
 .fred-pp {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/authors/mr-fred.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/authors/mr-fred.jpg);
 }
 .nada-pp {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/authors/nada.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/authors/nada.jpg);
 }
 .dalia-pp {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/authors/dalia.png);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/authors/dalia.png);
 }
 .rana-pp {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/authors/rana.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/authors/rana.jpg);
 }
 .sliem-pp {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/authors/dr-sliem.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/authors/dr-sliem.jpg);
 }
 .ebtsam-pp {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/testmonials/ebtsam.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/testmonials/ebtsam.jpg);
 }
 .martin-pp {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/testmonials/martin.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/testmonials/martin.jpg);
 }
 .ahmed-pp {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/testmonials/ahmed.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/testmonials/ahmed.jpg);
 }

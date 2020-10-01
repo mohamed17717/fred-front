@@ -41,27 +41,27 @@
 }
 
 #blog .bolgs-view .item .thumbnail-course-1 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c1.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/c1.jpg);
 }
 
 #blog .bolgs-view .item .thumbnail-course-2 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c2.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/c2.jpg);
 }
 
 #blog .bolgs-view .item .thumbnail-course-3 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c3.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/c3.jpg);
 }
 
 #blog .bolgs-view .item .thumbnail-course-4 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c4.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/c4.jpg);
 }
 
 #blog .bolgs-view .item .thumbnail-course-5 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c5.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/c5.jpg);
 }
 
 #blog .bolgs-view .item .thumbnail-course-6 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/c6.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/c6.jpg);
 }
 
 #blog .bolgs-view .item .info {
@@ -97,7 +97,7 @@
 
   margin-right: calc(15px * var(--ratio));
 
-  background: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg)
+  background: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg)
     no-repeat center center;
   background-size: cover;
 
@@ -105,22 +105,22 @@
 }
 
 #blog .bolgs-view .item .info .footer .author .avatar1 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg);
 }
 #blog .bolgs-view .item .info .footer .author .avatar2 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author2.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author2.jpg);
 }
 #blog .bolgs-view .item .info .footer .author .avatar3 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author3.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author3.jpg);
 }
 #blog .bolgs-view .item .info .footer .author .avatar4 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author4.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author4.jpg);
 }
 #blog .bolgs-view .item .info .footer .author .avatar5 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author5.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author5.jpg);
 }
 #blog .bolgs-view .item .info .footer .author .avatar6 {
-  background-image: url(http://thegoodzone.pythonanywhere.com/static/assets/image/author6.jpg);
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author6.jpg);
 }
 
 #blog .bolgs-view .item .info .footer .author .avatar img {
