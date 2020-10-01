@@ -63,4 +63,11 @@ document.addEventListener('DOMContentLoaded', e => {
   links.forEach(link => {
     link.addEventListener('click', e => window.location.href = link.dataset.to)
   })
+
+  // slider next & prev
+  const slider = document.querySelector('.slider');
+  const prev = slider.parentElement.querySelector('.prev');
+  const next = slider.parentElement.querySelector('.next');
+  next.addEventListener('click', (e) => slider.querySelector('ul').scrollBy(200, 0))
+  prev.addEventListener('click', (e) => slider.querySelector('ul').scrollBy(-200, 0))
 })

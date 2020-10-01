@@ -38,6 +38,8 @@
   scroll-snap-type: x proximity;
   padding-bottom: calc(0.75 * var(--gutter));
   margin-bottom: calc(-0.25 * var(--gutter));
+
+  scroll-behavior: smooth;
 }
 
 .hs:before,
