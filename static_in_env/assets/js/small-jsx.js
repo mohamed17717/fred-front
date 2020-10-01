@@ -53,16 +53,21 @@ function setStyles(el, styles) {
 
 function appendAttrs(elm, attrs) {
   Object.keys(attrs).forEach((attr) => {
-    if (attr in elm || attributeExceptions.includes(attr)) {
+    // if (attr in elm) {
       const value = attrs[attr];
 
       if (attr === `style`)
         setStyles(elm, value);
-      else if (value)
-        elm[attr] = value;
+      else if (value){
+        // console.log('elm: ', elm)
+        // console.log('attr:', attr)
+        
+        // elm[attr] = value;
+        elm.setAttribute(attr, value)
+      }
 
-    } else
-      console.warn(`${attr} is not a valid property of a <${type}>`);
+    // } else
+      // console.warn(`${attr} is not a valid property of a <${type}>`);
 
   });
 }
@@ -84,32 +89,12 @@ const h1 = (...args) => createElm(`h1`, ...args);
 const header = (...args) => createElm(`header`, ...args);
 const p = (...args) => createElm(`p`, ...args);
 const span = (...args) => createElm(`span`, ...args);
+const img = (...args) => createElm(`img`, ...args);
+const i = (...args) => createElm(`i`, ...args);
+const nav = (...args) => createElm(`nav`, ...args);
+const ul = (...args) => createElm(`ul`, ...args);
+const li = (...args) => createElm(`li`, ...args);
+const input = (...args) => createElm(`input`, ...args);
+const footer = (...args) => createElm(`footer`, ...args);
+const h3 = (...args) => createElm(`h3`, ...args);
 
-
-
-// test
-document.body.appendChild(
-  div({
-      id: `app`
-    },
-    header({
-        className: `header`
-      },
-      h1({
-        className: `header__title`
-      }, `Know It All`),
-      a({
-          className: `header__help`,
-          target: `_blank`,
-          rel: `noopener noreferrer`,
-          title: `Find out more about know it all`,
-          href: `https://hackernoon.com/what-you-dont-know-about-web-development-d7d631f5d468#.ex2yp6d64`,
-        },
-        `What is this?`,
-      ),
-    ),
-    div({
-      className: `skill-table`
-    }),
-  )
-);

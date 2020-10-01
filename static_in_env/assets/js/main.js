@@ -57,4 +57,10 @@ document.addEventListener('DOMContentLoaded', e => {
 
   const backgrounds = document.querySelectorAll('[data-bgimgurl]');
   backgrounds.forEach(elm => elm.style.backgroundImage = `url(${elm.dataset.bgimgurl})`)
+
+
+  const links = document.querySelectorAll('[data-to]')
+  links.forEach(link => {
+    link.addEventListener('click', e => window.location.href = link.dataset.to)
+  })
 })
