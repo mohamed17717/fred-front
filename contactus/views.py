@@ -14,6 +14,7 @@ def validEmail(email):
 
 def sendMail(subject, msg):
   fredMail = 'mo.err17@gmail.com'
+  fredMail = 'support@thegoodzone.org'
 
   yag = yagmail.SMTP("thegoodzone.help@gmail.com", 'the best school')
   yag.send(
