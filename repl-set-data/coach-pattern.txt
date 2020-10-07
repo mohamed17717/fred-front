@@ -1,0 +1,53 @@
+map <options|options>, --default--, {{ normal text }}, (note)
+
+#type<coach|live event> --default is coach--
+{{ description }}
+
+
+
+
+
+#for coach only
+-----------------
+#type
+{{ description }}
+#urls
+{{ facebook }}
+{{ instagram }}
+{{ website }}
+{{ twitter }}
+{{ calendly }}
+
+www.calendly.com
+www.facebook.com
+
+
+#for live event
+----------------
+#type
+{{ description }}
+
+#author_name
+{{ name }}
+
+#time
+{{ hh:mm }}
+
+#date
+{{ dd-mm-yyyy }}
+
+#urlss
+{{ calendly }}
+
+
+#blog
+-------
+blog must have img to use it in the card
+
+# course instructor must be coach 
+to have a coach card (description-img-name-social-etc)
+becuse regular image is very small
+# otherwise remove instructor from course
+or change size of his image
+
+(author_name) must be equal to (coach_name)

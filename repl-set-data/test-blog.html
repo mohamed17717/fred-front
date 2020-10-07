@@ -1,0 +1,828 @@
+
+<!DOCTYPE html>
+<head>
+  <link href='https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:32,height:32/https://www.filepicker.io/api/file/cjUH98RT6OGLfcwrOLop' rel='icon' type='image/png'>
+<link href='https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:72,height:72/https://www.filepicker.io/api/file/cjUH98RT6OGLfcwrOLop' rel='apple-touch-icon' type='image/png'>
+<link href='https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:144,height:144/https://www.filepicker.io/api/file/cjUH98RT6OGLfcwrOLop' rel='apple-touch-icon' type='image/png'>
+<link href='https://assets.teachablecdn.com/splash-images/teachable-apple-startup-image.png' rel='apple-touch-startup-image' type='image/png'>
+<link href='https://assets.teachablecdn.com/splash-images/teachable-apple-startup-image_2x.png' rel='apple-touch-startup-image' type='image/png'>
+<meta name='apple-mobile-web-app-capable' content='yes' />
+<meta charset="UTF-8">
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="+d2lfqNvtHMLENrBPez6Sh9fkN+7A/Faqq1FzHgopQyqKCVKWKaIf9exsrHaOYW96lCqITvrBmmqLVmVMprxng==" />
+<link rel="stylesheet" media="screen" href="https://fedora.teachablecdn.com/assets/bootstrap-d989a3f5b1f1bca0585c204acf93e7e781ab3db1f16f403a5e77336f1c4d4c0f.css" data-turbolinks-track="true" /><link href="https://themes2.teachablecdn.com/themecss/production/base.css?_=0c867d455541&amp;brand_course_heading=%23ffffff&amp;brand_heading=%23120074&amp;brand_homepage_heading=%23ffffff&amp;brand_navbar_fixed_text=%23ffffff&amp;brand_navbar_text=%23ffffff&amp;brand_primary=%23000000&amp;brand_secondary=%2354bab1&amp;brand_text=%2319568b&amp;font=Merriweather&amp;logged_out_homepage_background_image_overlay=0.0&amp;show_login=true&amp;show_signup=true" rel="stylesheet" data-turbolinks-track="true"></link>
+<title>The Good Zone</title>
+<meta name="brand_video_player_color" content="#f36523">
+<style></style>
+<script src='//fast.wistia.com/assets/external/E-v1.js'></script>
+<script src='https://www.recaptcha.net/recaptcha/api.js' async defer></script>
+
+
+    <meta name="asset_host" content="https://fedora.teachablecdn.com">
+   <script src="https://fedora.teachablecdn.com/packs/student-globals-60881800760e1075aec6.js"></script><script src="https://fedora.teachablecdn.com/packs/student-legacy-4e851746857ec69a9e96.js"></script><script src="https://fedora.teachablecdn.com/packs/student-f6c07043b82990d493d1.js"></script>
+
+<script>
+//  clean styles
+stopCode = ['courses/enrolled', 'blog']
+currentLocation = window.location.pathname
+isStrictArea = stopCode.filter(location => currentLocation.includes(location));
+
+if (isStrictArea.length === 0) {
+
+
+  document.querySelector('link[href^="https://fedora.teachablecdn.com/assets"]').remove()
+
+  document.addEventListener('DOMContentLoaded', e => {
+    document.querySelectorAll('body style').forEach(style => style.remove())
+
+    const elmsWithInlineStyle = document.querySelectorAll("[style]");
+    elmsWithInlineStyle.forEach(elm => {
+      if(elm.tagName === 'svg' || elm.tagName === 'IFRAME'){}
+      else
+        elm.style = ""
+    })
+  })
+
+
+}
+
+
+
+// get user elm data given in prev header
+const userELm = document.querySelector('header button[onclick="toggleMenu(\'user-menu\')"]')
+let user = {}
+if (userELm){
+  user = {
+    img: userELm.querySelector('img').getAttribute('src'),
+    email: userELm.querySelector('img').getAttribute('alt'),
+    name: userELm.querySelector('span').innerText
+  }
+}
+</script>
+
+<!-- style to thanks page -->
+<style>
+#thanks-intro h2 ,
+#recommended-courses h2 ,
+#course-intro h2,
+#course-content h2,
+#course-instructor h2,
+#course-price h2,
+#course-feedback h2,
+#course-suggest-courses h2 {
+  color: var(--main-color);
+  font-size: calc(30px * var(--ratio));
+  text-transform: capitalize;
+  margin-bottom: calc(53px * var(--ratio));
+  text-align: center;
+}
+</style>
+
+<!-- code only in blog -->
+<script>
+if (window.location.pathname.includes('blog')){
+document.addEventListener('DOMContentLoaded', e => {
+  let sebling = document.querySelector('footer').parentElement.nextElementSibling;
+  while(sebling){
+    let current = sebling;
+    sebling = sebling.nextElementSibling || null
+    current.remove();
+  }
+
+  document.body.style.padding = 0;
+})
+}
+</script>
+
+
+<link rel="stylesheet" href="https://thegoodzone.pythonanywhere.com/static/assets/css/style.css" />
+
+
+<!-- js to act like jsx -->
+<script>
+
+function updateELm(elm, child) {
+if (Array.isArray(child))
+  appendArray(elm, child);
+
+else if (child instanceof window.Element)
+  appendChild(elm, child);
+
+else if (typeof child === `string`)
+  appendText(elm, child);
+
+else if (typeof child === `object`)
+  appendAttrs(elm, child);
+}
+
+function appendArray(elm, children) {
+children.forEach((child) => {
+  updateELm(elm, child)
+});
+}
+
+function appendChild(elm, child) {
+elm.appendChild(child);
+}
+
+function appendText(elm, text) {
+const textNode = document.createTextNode(text);
+elm.appendChild(textNode);
+}
+
+function setStyles(el, styles) {
+if (!styles) {
+  el.removeAttribute(`styles`);
+  return;
+}
+
+Object.keys(styles).forEach((styleName) => {
+  if (styleName in el.style)
+    el.style[styleName] = styles[styleName];
+  else
+    console.warn(`${styleName} is not a valid style for a <${el.tagName.toLowerCase()}>`);
+});
+}
+
+function appendAttrs(elm, attrs) {
+Object.keys(attrs).forEach((attr) => {
+  // if (attr in elm) {
+    const value = attrs[attr];
+
+    if (attr === `style`)
+      setStyles(elm, value);
+    else if (value){
+      // console.log('elm: ', elm)
+      // console.log('attr:', attr)
+      
+      // elm[attr] = value;
+      elm.setAttribute(attr, value)
+    }
+
+  // } else
+    // console.warn(`${attr} is not a valid property of a <${type}>`);
+
+});
+}
+
+function createElm(tagName, textOrPropsOrChild, ...otherChildren) {
+const elm = document.createElement(tagName);
+
+updateELm(elm, textOrPropsOrChild)
+
+if (otherChildren) appendArray(elm, otherChildren);
+
+return elm;
+}
+
+const a = (...args) => createElm(`a`, ...args);
+const button = (...args) => createElm(`button`, ...args);
+const div = (...args) => createElm(`div`, ...args);
+const h1 = (...args) => createElm(`h1`, ...args);
+const header = (...args) => createElm(`header`, ...args);
+const p = (...args) => createElm(`p`, ...args);
+const span = (...args) => createElm(`span`, ...args);
+const img = (...args) => createElm(`img`, ...args);
+const i = (...args) => createElm(`i`, ...args);
+const nav = (...args) => createElm(`nav`, ...args);
+const ul = (...args) => createElm(`ul`, ...args);
+const li = (...args) => createElm(`li`, ...args);
+const input = (...args) => createElm(`input`, ...args);
+const footer = (...args) => createElm(`footer`, ...args);
+const h3 = (...args) => createElm(`h3`, ...args);
+
+
+</script>
+
+<!-- loading style -->
+<style>
+#loading-page {
+  --main-color: #f36523;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  height: 100vh;
+  background-color: white;
+  z-index: 99;
+}
+
+#loading-page .sk-folding-cube {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  -webkit-transform: rotateZ(45deg);
+  transform: translateY(-50%) rotateZ(45deg);
+  top: 50%;
+}
+
+#loading-page .sk-folding-cube .sk-cube {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+#loading-page .sk-folding-cube .sk-cube:before {
+
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color, #333);
+  -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+  animation: sk-foldCubeAngle 2.4s infinite linear both;
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+
+#loading-page .sk-folding-cube .sk-cube2 {
+  -webkit-transform: scale(1.1) rotateZ(90deg);
+  transform: scale(1.1) rotateZ(90deg);
+}
+
+#loading-page .sk-folding-cube .sk-cube3 {
+  -webkit-transform: scale(1.1) rotateZ(180deg);
+  transform: scale(1.1) rotateZ(180deg);
+}
+
+#loading-page .sk-folding-cube .sk-cube4 {
+  -webkit-transform: scale(1.1) rotateZ(270deg);
+  transform: scale(1.1) rotateZ(270deg);
+}
+
+#loading-page .sk-folding-cube .sk-cube2:before {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+#loading-page .sk-folding-cube .sk-cube3:before {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+#loading-page .sk-folding-cube .sk-cube4:before {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+
+@-webkit-keyframes sk-foldCubeAngle {
+
+  0%,
+  10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+
+  25%,
+  75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  90%,
+  100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-foldCubeAngle {
+
+  0%,
+  10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+
+  25%,
+  75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  90%,
+  100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+</style>
+<div id="loading-page">
+<div class="sk-folding-cube">
+  <div class="sk-cube1 sk-cube"></div>
+  <div class="sk-cube2 sk-cube"></div>
+  <div class="sk-cube4 sk-cube"></div>
+  <div class="sk-cube3 sk-cube"></div>
+</div>
+</div>
+
+<!-- dom minapulation -->
+<script>
+function cleanElm(elm) {
+  // remove attrs
+  Object.values(elm.attributes)
+    .forEach(attr => {
+      elm.removeAttribute(attr.name)
+    })
+
+  // remove innerHTML
+  elm.innerHTML = '';
+}
+
+function hideElm(elm) {
+  elm.style.transition = 'opacity .5s ease';
+  elm.style.opacity = 0;
+
+  setTimeout(() => elm.remove(), 1000)
+}
+
+function startLoading() {
+  document.appendChild(
+    div({
+        id: 'loading-page'
+      },
+      div({
+        className: 'sk-folding-cube'
+      }, [
+        div({
+          className: 'sk-cube1 sk-cube'
+        }),
+        div({
+          className: 'sk-cube2 sk-cube'
+        }),
+        div({
+          className: 'sk-cube4 sk-cube'
+        }),
+        div({
+          className: 'sk-cube3 sk-cube'
+        }),
+      ])
+    )
+  )
+}
+
+function endLoading() {
+  const loadingElm = document.getElementById('loading-page');
+  hideElm(loadingElm)
+}
+</script>
+
+
+
+
+
+<!-- execute -->
+<script>
+stopCode = ['courses/enrolled/']
+currentLocation = window.location.pathname
+isStrictArea = stopCode.filter(location => currentLocation.includes(location));
+
+if (isStrictArea.length === 0) {
+  
+    // startLoading()
+  
+    document.addEventListener('DOMContentLoaded', e => {
+      const headerElm = document.querySelector('header');
+      const footerElm = document.querySelector('footer');
+      // cleanElm(headerElm);
+      // cleanElm(footerElm);
+  
+      const newHeaderELm =
+      header(
+    div(
+      div({class:"logo" ,role:"link", "data-to": "/"},
+        img({src:"https://thegoodzone.pythonanywhere.com/static/assets/icons/Logo.svg", alt:"The good zone logo."})
+      ),
+      nav(
+        ul(
+          li({'data-box': '#box1'},
+            div({class: 'icon'},
+              img({src:"https://thegoodzone.pythonanywhere.com/static/assets/icons/Search.svg", alt:"search icon."})
+            )
+          ),
+          li(a({href: "/"}, 'home')),
+          li({class: "drop-down", 'data-box': "#box2"},
+            span('services '),
+            div({class: 'icon'},
+              img({src:"https://thegoodzone.pythonanywhere.com/static/assets/icons/Down Arrow.svg", alt:"down arrow to the drop down menu."})
+            )
+          ),
+          li(a({href: "/blog"}, 'blog')),
+          li(a({href: "/p/team"}, 'team')),
+          li(a({href: "/p/contact-us"}, 'contact')),
+          li(
+            button({class:"solid", role:"link", "data-to": "/sign_in"}, 'login')
+          ),
+        )
+      ),
+      div({role:"button" ,"data-box":"#box3" ,class:"menu-icon"})
+    ),
+    div({id:"box1", class:"drop-down-box box-1"},
+      div({class: 'search-box'},
+        input({type:"text" ,name:"q" ,id:"search" ,placeholder:"Search...", autocomplete: "off"}),
+        button({class:"solid"}, 
+          i({class:"icon icon-search"})
+        )
+      )
+    ),
+    div({id:"box2", class:"drop-down-box box-2"},
+      div({class:"menu-box"},
+        ul(
+          li(a({href: "/p/courses"}, 'Courses')),
+          li(a({href: "/p/coaching"}, 'coaching')),
+          li(a({href: "/p/courses?q=meditation"}, 'MEDITATION')),
+          li(a({href: "/p/live-event"}, 'LIVE EVENTS')),
+        )
+      )
+    ),
+    div({id:"box3", class:"drop-down-box box-3 box-mob"},
+      div({class: 'search-box'},
+        input({type:"text" ,name:"q" ,id:"search" ,placeholder:"Search...", autocomplete: "off"}),
+        button({class:"solid"}, 
+          i({class:"icon icon-search"})
+        )
+      ),
+  
+      nav(
+        ul(
+          li(a({href: "/"}, 'home')),
+          li({class: "drop-down", 'data-subbox': "#nav-mob-sub-menu"},
+            div(
+              span('services '),
+              div({class: 'icon'},
+                img({src:"https://thegoodzone.pythonanywhere.com/static/assets/icons/Down Arrow.svg", alt:"down arrow to the drop down menu."})
+              )
+            ),
+  
+            div({id:"nav-mob-sub-menu", class:"sub-menu"},
+              div({class:"menu-box"},
+                ul(
+                  li(a({href: "/p/courses"}, 'Courses')),
+                  li(a({href: "/p/coaching"}, 'coaching')),
+                  li(a({href: "/p/courses?q=meditation"}, 'MEDITATION')),
+                  li(a({href: "/p/live-event"}, 'LIVE EVENTS')),
+                )
+              )
+            )
+          ),
+          li(a({href: "/blog"}, 'blog')),
+          li(a({href: "/p/team"}, 'team')),
+          li(a({href: "/p/contact-us"}, 'contact')),
+          li(
+            button({class:"solid", role:"link", "data-to": "/sign_in"}, 'login')
+          ),
+        )
+      )
+    ),
+  )
+  
+      const newFooterElm =
+      footer(
+    div({class: 'lists'},
+      div({class: 'list'}, 
+        h3('COMPANY'),
+        ul(
+          li(a({href: '/p/about-us'}, 'about us')),
+          li(a({href: '/p/team'}, 'our team')),
+          li(a({href: '#'}, 'careers')),
+          li(a({href: '/p/live-events'}, 'live events')),
+          li(a({href: '/blog'}, 'blog')),
+        )
+      ),
+      div({class: 'list social'}, 
+        h3('CUSTOMER SERVICE'),
+        ul(
+          li(a({href: '/p/contact-us'}, 'contact us')),
+          li(a({href: '#'}, 'my zones')),
+          li(a({href: '/p/faqs'}, 'FAQs')),
+          li(
+            i({class: "icon insta-icon"}),
+            a({href: '#'}, 'YouTube')
+          ),
+          li(
+            i({class: "icon insta-icon"}),
+            a({href: '#'}, 'Linkedin')
+          ),
+        )
+      ),
+      div({class: 'list'}, 
+        h3('explore'),
+        ul(
+          li(a({href: '/p/courses'}, 'courses')),
+          li(a({href: '/p/coaching'}, 'coaching')),
+          li(a({href: '/p/courses?q=meditation'}, 'Meditation')),
+        )
+      ),
+      div({class: 'list social'}, 
+        h3('social'),
+        ul(
+          li(
+            i({class: "icon fb-icon"}),
+            a({href: 'https://www.facebook.com/thegoodzoneorg'}, 'facebook')
+          ),
+          li(
+            i({class: "icon insta-icon"}),
+            a({href: 'https://www.instagram.com/thegoodzoneorg/'}, 'instagram')
+          ),
+          li(
+            i({class: "icon twt-icon"}),
+            a({href: 'https://twitter.com/thegoodzoneorg'}, 'twitter')
+          ),
+        )
+      ),
+    ),
+    div({class: 'bottom'},
+      div(a({href: '/p/terms'},'Terms of Use'), ' | ', a({href: '/p/privacy-policy'},'Privacy Policy')),
+      div({class: 'copy'}, 'Copyright © 2020 The Good Zone, All rights reserved'),
+    ),
+  )
+  
+      
+      headerElm.replaceWith(newHeaderELm);
+      footerElm.replaceWith(newFooterElm);
+  
+      endLoading();
+  
+    })
+
+
+
+  
+}
+
+</script>
+
+<script src="https://thegoodzone.pythonanywhere.com/static/assets/js/main.js"></script>
+
+
+<script>
+if(typeof ga != 'function') {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+}
+ga('create', 'UA-44397410-1', 'auto', {'name': 'fedoraTracker', 'allowLinker': true});
+ga('fedoraTracker.set', 'anonymizeIp', false);
+ga('fedoraTracker.require', 'linker');
+ga('fedoraTracker.linker:autoLink', ['www.thegoodzone.org'] );
+ga('fedoraTracker.require', 'ecommerce');
+ga('fedoraTracker.require', 'ec');
+ga('fedoraTracker.send', 'pageview');
+ga('create', 'UA-44397410-4', 'auto', {'name': 'teachableTracker', 'allowLinker': true});
+ga('teachableTracker.set', 'anonymizeIp', false);
+ga('teachableTracker.require', 'linker');
+ga('teachableTracker.linker:autoLink', ['www.thegoodzone.org'] );
+ga('teachableTracker.require', 'ecommerce');
+ga('teachableTracker.require', 'ec');
+ga('teachableTracker.send', 'pageview');
+</script>
+
+<meta id='iris-url' data-iris-url=https://eventable.teachable.cloud />
+<link href="/blog/rss" rel="alternate" title="RSS Feed" type="application/rss+xml" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<script async src='/cdn-cgi/bm/cv/2172558837/api.js'></script></head>
+<body>
+        <meta http-content='IE=Edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width,initial-scale=1.0,user-scalable=no' name='viewport'>
+<meta id="fedora-keys" data-commit-sha="0c867d4555415354f1114c09d85efdccb1db796d" data-env="production" data-sentry-public-dsn="https://8149a85a83fa4ec69640c43ddd69017d@sentry.io/120346" data-stripe="pk_live_hkgvgSBxG4TAl3zGlXiB1KUX" data-track-all-ahoy="false" data-track-changes-ahoy="false" data-track-clicks-ahoy="false" data-track-sumbits-ahoy="false" data-filepicker="ADNupMnWyR7kCWRvm76Laz" data-taxamo="public_3adAdeo6B9dUufD_mJMEMkTXmxbK-vffcybxQEvrshk" data-iris-url="https://eventable.teachable.cloud" /><meta id="fedora-data" data-id="40668884" data-name="Fred El Khodary" data-email="fred@thegoodzone.org" data-school-id="652996" data-joined-at="&quot;2020-06-13T17:58:25Z&quot;" data-wistia-identifier="652996:student:40668884" data-gravatar-url="https://s.gravatar.com/avatar/c5e3ae22a5021a3d7caba389e542edb2?d=mm" data-custom-role-course-permissions="false" data-report-card="{&quot;meta&quot;:{&quot;cached_at&quot;:&quot;2020-08-01T07:00:26Z&quot;}}" data-course-ids="[]" data-role="owner" data-completed-lecture-ids="[null]" data-school-id="652996" data-school-launched="false" data-preview="logged_in" data-turn-off-fedora-branding="true" data-plan-supports-whitelabeling="true" data-powered-by-text="Powered by" data-asset-path="//https://fedora.teachablecdn.com/assets/footer/teachable-logomark-white-31d2296978598bacace50e6d48a2e1223c20a9b074af424acdd465676f81560f.svg" data-school-preferences="{&quot;ssl_forced&quot;:&quot;true&quot;,&quot;anonymize_ips&quot;:&quot;false&quot;,&quot;paypal_enabled&quot;:&quot;false&quot;,&quot;autoplay_lectures&quot;:&quot;true&quot;,&quot;comments_threaded&quot;:&quot;true&quot;,&quot;course_blocks_beta&quot;:&quot;true&quot;,&quot;eu_vat_tax_enabled&quot;:&quot;false&quot;,&quot;legacy_back_office&quot;:&quot;false&quot;,&quot;themeable_disabled&quot;:&quot;false&quot;,&quot;back_office_enabled&quot;:&quot;false&quot;,&quot;comments_moderation&quot;:&quot;false&quot;,&quot;eu_vat_tax_eligible&quot;:&quot;true&quot;,&quot;charge_exclusive_tax&quot;:&quot;true&quot;,&quot;send_receipts_emails&quot;:&quot;true&quot;,&quot;autocomplete_lectures&quot;:&quot;false&quot;,&quot;class_periods_enabled&quot;:&quot;false&quot;,&quot;authors_can_manage_pbc&quot;:&quot;true&quot;,&quot;css_properties_enabled&quot;:&quot;false&quot;,&quot;preenrollments_enabled&quot;:&quot;false&quot;,&quot;new_text_editor_enabled&quot;:&quot;false&quot;,&quot;require_terms_agreement&quot;:&quot;true&quot;,&quot;send_new_comment_emails&quot;:&quot;true&quot;,&quot;send_drip_content_emails&quot;:&quot;true&quot;,&quot;ssl_forced_from_creation&quot;:&quot;true&quot;,&quot;turn_off_fedora_branding&quot;:&quot;true&quot;,&quot;allow_comment_attachments&quot;:&quot;true&quot;,&quot;authors_can_email_students&quot;:&quot;false&quot;,&quot;authors_can_manage_coupons&quot;:&quot;false&quot;,&quot;teachable_accounts_enabled&quot;:&quot;true&quot;,&quot;teachable_payments_enabled&quot;:&quot;true&quot;,&quot;authors_can_import_students&quot;:&quot;false&quot;,&quot;authors_can_publish_courses&quot;:&quot;false&quot;,&quot;internal_subscriptions_beta&quot;:&quot;true&quot;,&quot;recaptcha_enabled_on_signup&quot;:&quot;true&quot;,&quot;display_vat_inclusive_prices&quot;:&quot;true&quot;,&quot;single_page_checkout_enabled&quot;:&quot;true&quot;,&quot;authors_can_set_course_prices&quot;:&quot;false&quot;,&quot;affiliate_cookie_duration_days&quot;:&quot;365&quot;,&quot;authors_can_issue_certificates&quot;:&quot;false&quot;,&quot;store_student_cards_separately&quot;:&quot;true&quot;,&quot;authors_can_manage_certificates&quot;:&quot;false&quot;,&quot;authors_can_manage_course_pages&quot;:&quot;false&quot;,&quot;disable_js_course_event_tracking&quot;:&quot;false&quot;,&quot;exclusive_vat_on_custom_gateways&quot;:&quot;true&quot;,&quot;is_edit_site_onboarding_complete&quot;:&quot;false&quot;,&quot;send_certificate_issuance_emails&quot;:&quot;true&quot;,&quot;prevent_payment_plan_cancellation&quot;:&quot;true&quot;,&quot;send_subscription_reminder_emails&quot;:&quot;true&quot;,&quot;automatically_add_disqus_attachments&quot;:&quot;true&quot;,&quot;recalc_course_pct_on_lecture_publish&quot;:&quot;false&quot;,&quot;send_confirmation_instructions_emails&quot;:&quot;true&quot;,&quot;send_limited_time_unenrollment_emails&quot;:&quot;true&quot;,&quot;turn_off_myteachable_sign_up_branding&quot;:&quot;true&quot;}" data-accessible-features="[&quot;bulk_enroll_students&quot;,&quot;manually_importing_users&quot;,&quot;native_certificates&quot;,&quot;earnings_statements&quot;,&quot;teachable_payments&quot;,&quot;teachable_u&quot;,&quot;course_compliance&quot;,&quot;page_editor_v2&quot;,&quot;page_editor_v2_only&quot;,&quot;certificates_editor_v2&quot;,&quot;drip_content&quot;,&quot;custom_domain&quot;,&quot;coupons&quot;,&quot;graded_quizzes&quot;,&quot;email&quot;,&quot;course_reports&quot;,&quot;webhooks&quot;,&quot;integrations&quot;,&quot;zapier_action_create_user&quot;,&quot;teachable_payments_payout_view&quot;,&quot;pbc&quot;,&quot;upsells&quot;,&quot;facebook_pixel&quot;,&quot;user_search_filters&quot;,&quot;multiple_course_pages&quot;,&quot;proration_upgrade_flow&quot;,&quot;cross_border_payments&quot;,&quot;new_teachable_payments&quot;,&quot;limited_time_enrollments&quot;,&quot;new_device_confirmation&quot;,&quot;elasticsearch_users&quot;,&quot;elasticsearch_transactions&quot;,&quot;reset_progress&quot;,&quot;fraud_warnings&quot;,&quot;paypal_through_tp&quot;]" data-course-data="{}" /><meta id="analytics-keys" name="analytics" data-analytics="{}" />
+  
+  
+  <!-- HEADER -->
+<header class=''>
+<!-- Navbar -->
+<div
+  class="navbar navbar-fedora navbar-fixed-top is-at-top bs-docs-nav is-signed-in is-blog"
+  id='navbar'
+  role='navigation'>
+  <div class='container'>
+    <div class='navbar-header navbar-header-courses'>
+      <button class='navbar-toggle' data-target='.navbar-header-collapse' data-toggle='collapse' type='button'>
+        <span class='sr-only'>
+          Toggle navigation
+        </span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <!-- Site logo -->
+      
+        <a class='navbar-brand header-logo' href='https://www.thegoodzone.org?sa=70436eb6-5665-4b5c-b731-5177a16805d3'>
+          <img src="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=height:60/https://www.filepicker.io/api/file/0hJUoMQSNyCkSotMeYHg" alt="The Good Zone" srcset="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=height:120/https://www.filepicker.io/api/file/0hJUoMQSNyCkSotMeYHg 2x" />
+        </a>
+        
+
+      <!-- Header Menu -->
+      <div class='collapse navbar-collapse navbar-header-collapse'>
+        <ul class='nav navbar-nav navbar-right'>
+
+<li>
+  <a class='navbar-link fedora-navbar-link' data-no-turbolink='true' href='/admin'>
+    
+      Admin
+    
+  </a>
+</li>
+
+
+
+
+<!-- If more than 5 links, collapse the rest in a dropdown -->
+
+
+
+<!-- User Menu -->
+<li class='dropdown'>
+  <a aria-expanded='false' aria-haspopup='true' class='fedora-navbar-link navbar-link dropdown-toggle open-my-profile-dropdown' data-toggle='dropdown'>
+<img class='gravatar' src='https://s.gravatar.com/avatar/c5e3ae22a5021a3d7caba389e542edb2?d=mm' alt="fred@thegoodzone.org">
+<span class='navbar-current-user'>Fred El Khodary</span>
+</a>
+<ul class='dropdown-menu'>
+<li class='user-profile'>
+  <a href='/current_user/profile'>
+    Edit Profile
+  </a>
+</li>
+<li>
+  <a href='/current_user/subscriptions'>
+    Manage Subscriptions
+  </a>
+</li>
+<li>
+  <a href='/current_user/credit_card'>
+    Add / Change Credit Card
+  </a>
+</li>
+<li>
+  <a href='/current_user/contact'>
+    Contact
+  </a>
+</li>
+<li class='user-signout'>
+  <a href='/sign_out'>
+    Log Out
+  </a>
+</li>
+</ul>
+
+</li>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+  
+  <div class='view-school'>
+    
+<div class='homepage-hero blog'>
+<div class='container'>
+  <div class='row text-center'>
+    <h2 class='headline'><a href="/blog">The Good Zone - Blog</a></h2>
+    <h3 class='subtitle'>مدونة</h3>
+  </div>
+</div>
+</div>
+
+    <div class="blog-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9">
+            
+<div class="post">
+<h1><a href="/blog/217599/second-1">Second</a></h1>
+<div class="post-byline">
+  
+    <img src="https://fedora.teachablecdn.com/assets/user-0ae68ba67e6ead32c4ff1cc668d501f896bddd5ef1667ac3e9ff29ce601ed653.png" alt="author" aria-describedby="author-name">
+  
+  <div id="author-name" class="post-author-name">The GOOD Zone Team</div>
+  <div class="post-date">01 September, 2020</div>
+</div>
+<div class="post-content">
+  Second
+
+Test
+
+Test
+
+Test
+
+  <p class="read-more"><a href="/blog/second-1">READ MORE</a></p>
+</div>
+</div>
+
+
+<div class="post">
+<h1><a href="/blog/217596/first">First</a></h1>
+<div class="post-byline">
+  
+    <img src="https://fedora.teachablecdn.com/assets/user-0ae68ba67e6ead32c4ff1cc668d501f896bddd5ef1667ac3e9ff29ce601ed653.png" alt="author" aria-describedby="author-name">
+  
+  <div id="author-name" class="post-author-name">The GOOD Zone Team</div>
+  <div class="post-date">01 September, 2020</div>
+</div>
+<div class="post-content">
+  Test
+
+
+
+Test
+
+Test
+
+
+
+  <p class="read-more"><a href="/blog/first">READ MORE</a></p>
+</div>
+</div>
+
+
+<center>
+<br>
+
+
+</center>
+
+          </div>
+          <div class="col-sm-3">
+            <div class="sidebar-block">
+<h2>ABOUT</h2>
+<div class="content">
+  <p>Our Blog
+</p>
+<p>About Test
+</p>
+<p><img src="https://www.filepicker.io/api/file/0KOWkQYTWyVweBLe3kGw" class="img-responsive">
+</p>
+</div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+<footer class='bottom-menu bottom-menu-inverse'>
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12 col-sm-4 col-md-4 footer-column'>
+      <p>
+        &copy;
+        The Good Zone
+        2020
+      </p>
+    </div>
+    <div class='col-xs-12 col-sm-4 col-md-4 footer-column'>
+      <ul class='list-unstyled'>
+        <li>
+          <a href="/p/terms">
+            Terms of Use
+          </a>
+        </li>
+        <li>
+          <a href="/p/privacy">
+            Privacy Policy
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class='col-xs-12 col-sm-4 col-md-4 footer-column'>
+      
+      
+        
+      
+      </div>
+
+    </div>
+  </div>
+</div>
+</footer>
+
+
+    
+  </div>
+  
+  
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'5de7deb37f180493',m:'a10627a6f76e8f7bf426229f35fbeed28f7db212-1602076307-1800-AR9V8L7CHO7ZQcnl3efikLm7HXy74+yU+Ll2HCinuKTyr3rNYeNFpJJF5zXmww/b2BfGqugkaRfdjacUKI+cTA1+RYiBvBpk6RwPKVYcV2T/51BK7bc7l3HDDdVtgy3yiw==',s:[0x6b98f718b7,0xffaaa1ecea],}})();</script></body>
+</html>
