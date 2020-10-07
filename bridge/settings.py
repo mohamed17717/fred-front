@@ -15,7 +15,7 @@ SECRET_KEY = 's%kxhk+hk#n3fg_mv(d&jz%l0^e6da23664mwje#z)0j6n1dym'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'thegoodzone.pythonanywhere.com'
+    # 'thegoodzone.pythonanywhere.com'
 ]
 
 
@@ -37,7 +37,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
