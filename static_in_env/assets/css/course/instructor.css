@@ -1,3 +1,7 @@
+#course-instructor {
+  margin-top: calc(70px * var(--ratio));
+}
+
 #course-instructor .card {
   width: 100%;
   display: flex;

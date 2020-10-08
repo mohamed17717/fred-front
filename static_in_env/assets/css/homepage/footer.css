@@ -99,6 +99,14 @@ footer .lists .list.social .icon.fb-icon {
   background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/Facebook.svg);
 }
 
+footer .lists .list.social .icon.yt-icon {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/youtube.svg);
+}
+
+footer .lists .list.social .icon.ln-icon {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/icons/linkedin.svg);
+}
+
 @media (max-width: 553px) {
   footer {
     padding-left: calc(50px * var(--ratio));

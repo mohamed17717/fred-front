@@ -43,14 +43,14 @@
   display: inline-block;
 }
 
-#blog-sidebar .recent-posts .post {
+#blog-sidebar .recent-posts .poost {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   line-height: 1.6;
   margin-bottom: calc(30px * var(--ratio));
 }
-#blog-sidebar .recent-posts .post .image {
+#blog-sidebar .recent-posts .poost .image {
   width: calc(80px * var(--ratio));
   height: calc(60px * var(--ratio));
   background-repeat: no-repeat;
@@ -59,27 +59,27 @@
   background-color: red;
   margin-right: calc(20px * var(--ratio));
 }
-#blog-sidebar .recent-posts .post:last-child,
+#blog-sidebar .recent-posts .poost:last-child,
 #blog-sidebar > :last-child {
   margin-bottom: 0;
 }
 
-#blog-sidebar .recent-posts .post .image1 {
+#blog-sidebar .recent-posts .poost .image1 {
   background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g2.jpg);
 }
-#blog-sidebar .recent-posts .post .image2 {
+#blog-sidebar .recent-posts .poost .image2 {
   background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g4.jpg);
 }
-#blog-sidebar .recent-posts .post .image3 {
+#blog-sidebar .recent-posts .poost .image3 {
   background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g5.jpg);
 }
 
-#blog-sidebar .recent-posts .post .info .name {
+#blog-sidebar .recent-posts .poost .info .name {
   font-size: calc(18px * var(--ratio));
   font-weight: bold;
 }
 
-#blog-sidebar .recent-posts .post .info .date {
+#blog-sidebar .recent-posts .poost .info .date {
   font-size: calc(15px * var(--ratio));
   color: var(--sub-text-color);
 }

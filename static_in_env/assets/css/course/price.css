@@ -8,7 +8,16 @@
   margin-bottom: 0;
 }
 
-#course-price .option {
+#course-price .course-block section {
+  max-width: 850px;
+  width: 80%;
+
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#course-price .option,
+#course-price .block__pricing__plan {
   max-width: calc(400px * var(--ratio));
   width: 90%;
   display: flex;
@@ -18,7 +27,8 @@
   margin-bottom: calc(70px * var(--ratio));
 }
 
-#course-price .check {
+#course-price .check,
+#course-price .block__pricing__plan__radio-wrapper {
   /* width: calc(16px * var(--ratio));
   height: calc(16px * var(--ratio));
 
@@ -27,15 +37,30 @@
   flex-shrink: 0;
 }
 
-#course-price .option .name {
+.block__pricing__plan__price {
+  font-size: calc(16px * var(--ratio));
+  font-weight: bold;
+}
+
+#course-price .option .name,
+#course-price .block__pricing__plan__name {
   color: var(--main-color);
   text-transform: uppercase;
   font-size: calc(22px * var(--ratio));
   font-weight: bold;
-  margin-bottom: calc(20px * var(--ratio));
+  margin-bottom: calc(15px * var(--ratio));
+}
+.block__pricing__plan__description__container {
+  margin-top: 10px;
 }
 
-#course-price .bottom {
+.block__pricing__plan__description__show-button__text,
+.block__pricing__plan__description__show-button {
+  display: none;
+}
+
+#course-price .bottom,
+#course-price .block__pricing__button-wrapper {
   text-align: center;
 }
 

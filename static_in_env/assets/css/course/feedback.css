@@ -116,9 +116,11 @@
   width: calc(30px * var(--ratio));
   height: calc(30px * var(--ratio));
 
-  margin-left: calc(7px * var(--ratio));
+  /* margin-left: calc(7px * var(--ratio)); */
   filter: invert(0%) sepia(38%) saturate(7%) hue-rotate(119deg) brightness(90%)
     contrast(53%);
+
+  transition: filter 0.2s ease-in-out;
 }
 
 #course-feedback .reviews .review,

@@ -38,12 +38,12 @@
 
 @import "https://thegoodzone.pythonanywhere.com/static/assets/css/courses/intro.css";
 @import "https://thegoodzone.pythonanywhere.com/static/assets/css/courses/courses-list.css";
-
 @import "https://thegoodzone.pythonanywhere.com/static/assets/css/courses/courses-list.css";
 
 @import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/intro.css";
 @import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/content.css";
 @import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/instructor.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/price.css";
 @import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/price.css";
 @import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/feedback.css";
 @import "https://thegoodzone.pythonanywhere.com/static/assets/css/course/suggest-courses.css";
@@ -97,7 +97,12 @@ ul {
   list-style: none;
 }
 
-section {
+ol {
+  margin-left: 20px;
+}
+
+main > section,
+main > div > section {
   margin-bottom: calc(70px * var(--ratio));
   /* width: 850px; */
 
@@ -109,7 +114,7 @@ section {
 }
 
 @media (max-width: 700px) {
-  section {
+  section:not(.block__curriculum__section) {
     width: 90%;
   }
 }
@@ -232,4 +237,24 @@ a,
 }
 .ahmed-pp {
   background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/testmonials/ahmed.jpg);
+}
+
+#thanks-intro h2,
+#recommended-courses h2,
+#course-intro h2,
+#course-content h2,
+#course-instructor h2,
+#course-price h2,
+#course-feedback h2,
+#course-suggest-courses h2,
+#coaching-testmonials h2 {
+  color: var(--main-color);
+  font-size: calc(30px * var(--ratio));
+  text-transform: capitalize;
+  margin-bottom: calc(53px * var(--ratio));
+  text-align: center;
+}
+
+section {
+  display: block;
 }
