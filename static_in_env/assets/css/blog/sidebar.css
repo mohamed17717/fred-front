@@ -1,7 +1,9 @@
 #blog-sidebar {
-  width: calc(402px * var(--ratio));
+  /* max-width: calc(402px * var(--ratio)); */
   padding: calc(70px * var(--ratio)) calc(30px * var(--ratio));
   background: #fff;
+
+  width: 100%;
 }
 
 #blog-sidebar > * {
@@ -25,7 +27,8 @@
 }
 #blog-sidebar .search-box input {
   padding: calc(19px * var(--ratio)) calc(25px * var(--ratio));
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  width: 90%;
   border-radius: calc(5px * var(--ratio)) 0 0 calc(5px * var(--ratio));
 
   /* margin-bottom: calc(25px * var(--ratio)); */
