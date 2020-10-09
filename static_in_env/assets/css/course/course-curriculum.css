@@ -47,6 +47,8 @@ ul {
   box-sizing: border-box;
   font-family: sans-serif;
   /* font-size: 62.5%; */
+
+  padding: 40px 0;
 }
 .block__curriculum .start {
   opacity: 0.5;
@@ -252,28 +254,32 @@ a {
   }
 }
 
-.block__curriculum__section__title.b-38982290-section_name_background_color {
+.block__curriculum__section__title {
   background-color: #efeff5;
 }
 
-.block__curriculum__section__list__item.b-38982290-lecture_name_background_color {
+.block__curriculum__section__list__item {
   background-color: #f9fafd;
 }
 
 @media screen and (min-width: 768px) {
-  .b-38982290-top {
+  /* .b-38982290-top {
     padding-top: 40px;
   }
 
   .b-38982290-bottom {
     padding-bottom: 40px;
-  }
+  } */
 }
 
-.block__curriculum__section__title.b-38982290-section_name_background_color {
+.block__curriculum__section__title {
   background-color: #efeff5;
 }
 
-.block__curriculum__section__list__item.b-38982290-lecture_name_background_color {
+.block__curriculum__section__list__item {
   background-color: #f9fafd;
+}
+
+.block__curriculum__section__list__item__lecture-name {
+  margin-right: 10px;
 }
