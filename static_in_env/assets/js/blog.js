@@ -20,8 +20,12 @@ posts.forEach(post => {
           class: 'info'
         },
         div({
-          class: 'title'
-        }, postData.title),
+            class: 'title'
+          },
+          a({
+            href: postData.url
+          }, postData.title)
+        ),
         p({
           class: 'overview'
         }, postData.description),
@@ -29,7 +33,10 @@ posts.forEach(post => {
             class: 'author'
           },
           div({
-            class: 'profile-pic author2'
+            class: 'profile-pic',
+            style: {
+              backgroundImage: `url(${postData.author_pp})`
+            }
           }),
           div({
             class: 'name'
@@ -40,7 +47,8 @@ posts.forEach(post => {
             class: 'bottom'
           },
           button({
-            class: 'outline light'
+            class: 'outline light',
+            'data-to': postData.url,
           }, 'read more'),
           div({
             class: 'date'

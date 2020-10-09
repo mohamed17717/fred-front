@@ -54,20 +54,20 @@ function setStyles(el, styles) {
 function appendAttrs(elm, attrs) {
   Object.keys(attrs).forEach((attr) => {
     // if (attr in elm) {
-      const value = attrs[attr];
+    const value = attrs[attr];
 
-      if (attr === `style`)
-        setStyles(elm, value);
-      else if (value){
-        // console.log('elm: ', elm)
-        // console.log('attr:', attr)
-        
-        // elm[attr] = value;
-        elm.setAttribute(attr, value)
-      }
+    if (attr === `style`)
+      setStyles(elm, value);
+    else if (value) {
+      // console.log('elm: ', elm)
+      // console.log('attr:', attr)
+
+      // elm[attr] = value;
+      elm.setAttribute(attr, value)
+    }
 
     // } else
-      // console.warn(`${attr} is not a valid property of a <${type}>`);
+    // console.warn(`${attr} is not a valid property of a <${type}>`);
 
   });
 }
@@ -98,4 +98,4 @@ const input = (...args) => createElm(`input`, ...args);
 const footer = (...args) => createElm(`footer`, ...args);
 const h3 = (...args) => createElm(`h3`, ...args);
 const aside = (...args) => createElm(`aside`, ...args);
-
+const link = (...args) => createElm(`link`, ...args);

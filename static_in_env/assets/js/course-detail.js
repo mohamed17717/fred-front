@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', e => {
   })
 
   // pricing 
-  const pricing = document.querySelector('.course-block')
+  const pricing = document.querySelector('div[class*="pricing_v"]')
   pricing.setAttribute('id', 'course-price')
   pricing.querySelectorAll('button').forEach(btn => btn.classList.add('solid'))
 })
