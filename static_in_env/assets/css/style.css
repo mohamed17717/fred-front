@@ -136,7 +136,8 @@ video:focus {
   outline: none;
 }
 
-button.solid {
+button.solid,
+a.solid {
   text-transform: uppercase;
   color: var(--invert-color);
   padding: calc(18px * var(--ratio)) calc(30px * var(--ratio));
