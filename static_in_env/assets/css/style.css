@@ -259,6 +259,6 @@ a,
   text-align: center;
 }
 
-form h2:last-child {
+#course-price form h2:last-child {
   margin-bottom: 0;
 }
