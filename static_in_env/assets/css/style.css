@@ -258,3 +258,7 @@ a,
   margin-bottom: calc(53px * var(--ratio));
   text-align: center;
 }
+
+form h2:last-child {
+  margin-bottom: 0;
+}
