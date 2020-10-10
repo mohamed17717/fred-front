@@ -155,6 +155,7 @@
 #blog .bolgs-view .item.cover {
   width: 100%;
   /* width: calc((355px * 2 + 32px) * var(--ratio)); */
+  min-width: calc(355px * 2 * var(--ratio));
   height: calc(235px * 2 * var(--ratio));
 
   border-radius: 4px;
@@ -332,6 +333,7 @@
 
     border-radius: 4px;
     overflow: hidden;
+    min-width: initial;
   }
 
   #blog .bolgs-view ul li {
