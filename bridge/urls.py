@@ -5,7 +5,7 @@ from django.urls import path
 
 from contactus.views import redirectMail
 from workaround.views import (
-    index, 
+    index,
 
     getUserRating,
     setRating,
@@ -15,6 +15,7 @@ from workaround.views import (
     listCoursesMostSell,
     listCoursesMostView,
     getCourse,
+    getInstructor,
     buyCourse,
     viewCourse,
     filterCourses,
@@ -31,10 +32,14 @@ from workaround.views import (
 
     listBlogs,
     setBlog,
+
+    listCategories,
 )
 
 urlpatterns = [
     path('', index),
+    # categories
+    path('categories/', listCategories),
     # course links
     path('rate/<str:courseId>/', setRating),
     path('rate/<str:courseId>/<str:userId>/', getUserRating),
@@ -44,6 +49,7 @@ urlpatterns = [
     path('courses/most-sell/', listCoursesMostSell),
     path('courses/most-view/', listCoursesMostView),
     path('course/<str:courseId>/', getCourse),
+    path('course/instructor/', getInstructor),
     path('buy-course/<str:courseId>/', buyCourse),
     path('view-course/<str:courseId>/', viewCourse),
     path('filter/<str:category>/', filterCourses),
@@ -56,10 +62,10 @@ urlpatterns = [
     # set coach
     path('set/course/', setCourse),
     path('delete/courses/', deleteCourses),
-    
+
     path('set/coach/', setCoach),
     path('delete/coaches/', deleteCoaches),
-    
+
     path('set/live-event/', setLiveEvent),
     path('delete/live-events/', deleteLiveEvents),
 

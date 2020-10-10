@@ -15,8 +15,9 @@ import json
 
 from .models import Coach, Course, LiveEvent, Rating, Review, Category, Blog
 
+
 def paginate(qs, page=1):
-    paginator = Paginator(qs, 20)
+    paginator = Paginator(qs, 1)
     try:
         paginatedData = paginator.page(page)
     except PageNotAnInteger:
@@ -29,8 +30,11 @@ def paginate(qs, page=1):
     return {
         'data': [item.serialize() for item in paginatedData],
         'total_pages': paginator.num_pages,
-        'current_page': page
+        'current_page': page,
+        'has_next': paginatedData.has_next(),
+        'has_prev': paginatedData.has_previous(),
     }
+
 
 def requiredFields(requiredFields=[]):
     def decorator(func):
@@ -52,6 +56,7 @@ def getUserRating(request, courseId, userId):
         return JsonResponse(rate)
     return HttpResponseNotFound()
 
+
 @require_http_methods(["POST"])
 def setRating(request, courseId):
     rate = request.POST.get('rate', None)
@@ -62,13 +67,13 @@ def setRating(request, courseId):
     if Rating.checkIfUserRate(courseId, userId):
         return HttpResponseForbidden()
 
-
     course = get_object_or_404(Course, publicId=courseId)
 
     rating = Rating(course=course, rate=rate, authorId=userId)
     rating.save()
 
     return HttpResponse(status=200)
+
 
 @require_http_methods(["POST"])
 def setReview(request, courseId):
@@ -79,11 +84,12 @@ def setReview(request, courseId):
         return HttpResponseBadRequest()
 
     course = get_object_or_404(Course, publicId=courseId)
-    
+
     review = Review(course=course, name=name, pp=pp, content=content)
     review.save()
 
     return HttpResponse(status=200)
+
 
 @require_http_methods(["GET"])
 def search(request):
@@ -96,10 +102,11 @@ def search(request):
     qs = qs.filter(
         Q(title__icontains=query) |
         Q(description__icontains=query) |
-        Q(category__name__icontains=query)
+        Q(categories__name__icontains=query)
     ).distinct()
 
-    return JsonResponse(paginate(qs, page))
+    return JsonResponse(paginate(qs, page), safe=False)
+
 
 @require_http_methods(["GET"])
 def listCourses(request):
@@ -109,21 +116,24 @@ def listCourses(request):
 
     return JsonResponse(data)
 
+
 @require_http_methods(["GET"])
 def listCoursesMostSell(request):
-    page = request.GET.get('page', 1)
+    # page = request.GET.get('page', 1)
     courses = Course.objects.all().order_by('-buy_count')[:10]
-    data = paginate(courses, page)
+    # data = paginate(courses, page)
+    data = [course.serialize() for course in courses]
+    return JsonResponse(data, safe=False)
 
-    return JsonResponse(data)
 
 @require_http_methods(["GET"])
 def listCoursesMostView(request):
-    page = request.GET.get('page', 1)
+    # page = request.GET.get('page', 1)
     courses = Course.objects.all().order_by('-view_count')[:10]
-    data = paginate(courses, page)
+    # data = paginate(courses, page)
+    data = [course.serialize() for course in courses]
+    return JsonResponse(data, safe=False)
 
-    return JsonResponse(data)
 
 @require_http_methods(["GET"])
 def getCourse(request, courseId):
@@ -131,6 +141,12 @@ def getCourse(request, courseId):
     data = course.serialize(full=True)
 
     return JsonResponse(data, safe=False)
+
+
+@require_http_methods(["POST"])
+def getInstructor(request):
+    pass
+
 
 @require_http_methods(["GET"])
 def buyCourse(request, courseId):
@@ -140,6 +156,7 @@ def buyCourse(request, courseId):
 
     return HttpResponse(status=200)
 
+
 @require_http_methods(["GET"])
 def viewCourse(request, courseId):
     course = get_object_or_404(Course, publicId=courseId)
@@ -148,18 +165,22 @@ def viewCourse(request, courseId):
 
     return HttpResponse(status=200)
 
+
 @require_http_methods(["GET"])
 def filterCourses(request, category):
     page = request.GET.get('page', 1)
 
-    category = get_object_or_404(Category, name=category)
-    courses = category.category_courses.all()
+    # category = get_object_or_404(Category, name=category)
+    # courses = category.category_courses.all()
+    courses = Course.objects.filter(Q(categories__name__icontains=category))
     return JsonResponse(paginate(courses, page))
+
 
 @require_http_methods(["GET"])
 def getRelatedCourses(request, courseId):
     course = get_object_or_404(Course, publicId=courseId)
     return JsonResponse(course.getRelatedCourses(), safe=False)
+
 
 @require_http_methods(["GET"])
 def listCoaches(request):
@@ -168,12 +189,14 @@ def listCoaches(request):
     data = [coach.serialize() for coach in coaches]
     return JsonResponse(data, safe=False)
 
+
 @require_http_methods(["GET"])
 def listLiveEvents(request):
     liveEvents = LiveEvent.objects.all()
 
     data = [liveEvent.serialize() for liveEvent in liveEvents]
     return JsonResponse(data, safe=False)
+
 
 def handelCourseData(data):
     data['categories'] = json.loads(data.get('categories', '[]'))
@@ -183,7 +206,7 @@ def handelCourseData(data):
 
 
 @require_http_methods(["POST"])
-@requiredFields(['title','publicId','thumbnail','price','author_name','author_pp'])
+@requiredFields(['title', 'publicId', 'thumbnail', 'price', 'author_name', 'author_pp'])
 def createCourse(request):
     data = request.POST.dict()
     data = handelCourseData(data)
@@ -193,6 +216,7 @@ def createCourse(request):
     course = Course(**data)
     course.save()
     return course
+
 
 @require_http_methods(["POST"])
 @requiredFields(['publicId'])
@@ -211,11 +235,11 @@ def setCourse(request):
         course.update(**data)
         course = course.first()
 
-
     course.setCategories(categories)
     course.setRelatedCourses(relatedCourses)
 
     return HttpResponse(status=200)
+
 
 @require_http_methods(["POST"])
 @requiredFields(['publicIds'])
@@ -236,6 +260,7 @@ def createCoach(request):
     coach.save()
     return HttpResponse(status=200)
 
+
 @require_http_methods(["POST"])
 @requiredFields(['publicId'])
 def setCoach(request):
@@ -245,7 +270,7 @@ def setCoach(request):
     if not coach:
         return createCoach(request)
 
-    coach.update(**request.POST.dict())        
+    coach.update(**request.POST.dict())
     return HttpResponse(status=200)
 
 
@@ -260,13 +285,13 @@ def deleteCoaches(request):
     return HttpResponse(status=200)
 
 
-
 @require_http_methods(["POST"])
 @requiredFields(['publicId', 'title', 'thumbnail', 'date', 'time', 'description', 'calendly'])
 def createLiveEvent(request):
     liveEvent = LiveEvent(**request.POST.dict())
     liveEvent.save()
     return HttpResponse(status=200)
+
 
 @require_http_methods(["POST"])
 @requiredFields(['publicId'])
@@ -277,7 +302,7 @@ def setLiveEvent(request):
     if not liveEvent:
         return createLiveEvent(request)
 
-    liveEvent.update(**request.POST.dict())        
+    liveEvent.update(**request.POST.dict())
     return HttpResponse(status=200)
 
 
@@ -302,10 +327,19 @@ def setBlog(request):
     blog.save()
     return HttpResponse(status=200)
 
+
 @require_http_methods(["GET"])
 def listBlogs(request):
     blogs = Blog.objects.all().order_by('-created')[:5]
     return JsonResponse([blog.serialize() for blog in blogs], safe=False)
 
+
 def index(request):
     return HttpResponse('Helllo world!!')
+
+
+@require_http_methods(['GET'])
+def listCategories(request):
+    categories = Category.objects.all()
+    data = [category.serialize() for category in categories]
+    return JsonResponse(data, safe=False)

@@ -15,7 +15,9 @@ SECRET_KEY = 's%kxhk+hk#n3fg_mv(d&jz%l0^e6da23664mwje#z)0j6n1dym'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    # 'thegoodzone.pythonanywhere.com'
+    # 'thegoodzone.pythonanywhere.com',
+    'localhost',
+    '127.0.0.1',
 ]
 
 
@@ -29,11 +31,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # third parties
+    'corsheaders',
+    # apps
     'contactus',
     'workaround'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -117,3 +124,13 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
 VENV_PATH = os.path.dirname(BASE_DIR)
 STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:5500',
+    # 'thegoodzone.pythonanywhere.com',
+    'https://thegoodzone.com',
+
+)
