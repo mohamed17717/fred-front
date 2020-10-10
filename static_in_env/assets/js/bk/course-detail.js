@@ -43,7 +43,7 @@ function handleCurriculumCollapse() {
 
 // instructor
 function renderInstructor() {
-  'course/instructor/',
+  // 'course/instructor/',
 }
 
 

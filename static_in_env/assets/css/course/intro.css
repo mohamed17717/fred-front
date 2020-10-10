@@ -1,7 +1,6 @@
 #course-intro {
   position: relative;
-  background: url(https://thegoodzone.pythonanywhere.com/static/assets/image/intro-bg.jpg)
-    no-repeat center center;
+  background: no-repeat center center;
   background-size: cover;
 
   width: 100%;
