@@ -132,5 +132,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:5500',
     # 'thegoodzone.pythonanywhere.com',
     'https://thegoodzone.com',
+    'https://thegoodzone.org',
+    'https://www.thegoodzone.org',
 
 )
