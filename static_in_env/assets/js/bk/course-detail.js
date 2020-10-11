@@ -134,7 +134,7 @@ function renderCourseFeedbackRatingProgress(rating) {
   `
 }
 
-function insertComment(comment) {
+function insertReview(review) {
   const reviewsContainer = document.querySelector('#course-feedback .reviews .reviews-box')
   reviewsContainer.innerHTML += `
   <div class="review">
@@ -168,7 +168,7 @@ function insertComment(comment) {
 
 function renderReviews(reviews) {
   reviews.forEach(review => {
-    insertComment(reviewsContainer, review)
+    insertReview(review)
 
   })
 }
@@ -311,7 +311,7 @@ function setReview() {
         if (status === 200) {
           notifyText(e.target, 'success!', 'post comment')
           container.querySelector('textarea').value = ''
-          insertComment(newComment)
+          insertReview(newComment)
         } else {
           notifyText(e.target, 'failed!', 'post comment')
 
