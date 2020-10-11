@@ -326,10 +326,31 @@ function renderCourseFeedbacks() {
     })
 }
 
+function getCurrentUserData() {
+  const userELm = document.querySelector('header button[onclick="toggleMenu(\'user-menu\')"]')
+  let user = {}
+  if (userELm) {
+    user = {
+      img: userELm.querySelector('img').getAttribute('src'),
+      email: userELm.querySelector('img').getAttribute('alt'),
+      name: userELm.querySelector('span').innerText
+    }
+  }
+}
+
+const anonUser = {
+  name: 'anonymous',
+  email: 'anon@anon.com',
+  pp: 'https://iptc.org/wp-content/uploads/2018/05/avatar-anonymous-300x300.png'
+};
+let currentUser = null;
 
 document.addEventListener('DOMContentLoaded', e => {
+  currentUser = getCurrentUserData()
+
   handleCurriculumCollapse()
   renderCourseFeedbacks()
   renderFeedbackRate()
   setReview()
+
 })
