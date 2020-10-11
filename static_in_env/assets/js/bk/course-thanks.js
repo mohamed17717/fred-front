@@ -38,7 +38,11 @@ function getRecommendedCourses() {
   const courseId = courseBtn.dataset.to
 
   const section = document.querySelector('#recommended-courses')
-  const container = document.querySelector('#recommended-courses .courses ul')
+  const container = section.querySelector('#recommended-courses .courses ul')
+
+  console.log('section: ', section)
+  console.log('container: ', container)
+
 
   const url = `${bk}/random-related-courses/${courseId}/`
   fetch(url)
@@ -89,5 +93,7 @@ function getRecommendedCourses() {
     })
 }
 
-courseBought()
-getRecommendedCourses()
+document.addEventListener('DOMContentLoaded', e => {
+  courseBought()
+  getRecommendedCourses()
+})
