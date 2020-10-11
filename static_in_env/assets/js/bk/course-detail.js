@@ -336,6 +336,8 @@ function getCurrentUserData() {
       name: userELm.querySelector('span').innerText
     }
   }
+
+  return user
 }
 
 const anonUser = {
