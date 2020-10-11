@@ -47,13 +47,12 @@ function renderCoaches() {
               </div>
 
               <div>
-                <a href="${coach.calendly}" class="outline" target="_blank">coaching with ${coach.name}</a>
+                <button class="outline" data-to="${coach.calendly}">coaching with ${coach.name}</button>
               </div>
             </div>
         `
       })
     })
-
 }
 
 renderCoaches()
