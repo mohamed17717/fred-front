@@ -6,6 +6,8 @@
   font-size: calc(40px * var(--ratio));
   text-align: center;
   margin-bottom: calc(15px * var(--ratio));
+
+  text-transform: capitalize;
 }
 
 #courses-list .title .line {

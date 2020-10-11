@@ -34,8 +34,7 @@ const postData = async (data) => {
 }
 
 
-const form = document.querySelector('#contact form');
-form.addEventListener('submit', e => {
+document.querySelector('#contact form').addEventListener('submit', e => {
   e.preventDefault();
 
   const formBtn = form.querySelector('button')
