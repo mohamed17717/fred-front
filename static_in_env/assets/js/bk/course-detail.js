@@ -196,7 +196,7 @@ const postData = async (url, data) => {
 
 function renderFeedbackRate() {
   // const user = {};
-  const user = currentUser || anonUser;
+  const user = currentUser.email ? currentUser : anonUser;
   console.log('user: ', user)
 
 
@@ -262,7 +262,8 @@ function notifyText(elm, text) {
 
 // reviewcourse
 function setReview() {
-  const user = currentUser || anonUser;
+  const user = currentUser.email ? currentUser : anonUser;
+  // const user = currentUser || anonUser;
   console.log('user: ', user)
 
 
@@ -335,13 +336,14 @@ function renderCourseFeedbacks() {
 }
 
 function getCurrentUserData() {
-  const userELm = document.querySelector('header button[onclick="toggleMenu(\'user-menu\')"]')
+  // const userELm = document.querySelector('header button[onclick="toggleMenu(\'user-menu\')"]')
+  const elm = document.querySelector('meta#fedora-data').dataset
   let user = {}
-  if (userELm) {
+  if (elm) {
     user = {
-      img: userELm.querySelector('img').getAttribute('src'),
-      email: userELm.querySelector('img').getAttribute('alt'),
-      name: userELm.querySelector('span').innerText
+      img: elm.gravatarUrl,
+      email: elm.email,
+      name: elm.name
     }
   }
 
