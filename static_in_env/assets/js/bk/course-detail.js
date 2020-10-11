@@ -21,9 +21,9 @@ function handleCurriculumCollapse() {
 
   console.log('sections: ', sections)
 
-  const sectionHeight = sections.querySelector('section').clientHeight;
+  const sectionHeight = sections.querySelector('section').offsetHeight;
   console.log('section: ', sections.querySelector('section'))
-  console.log('section height: ', sections.querySelector('section').clientHeight)
+  console.log('section height: ', sections.querySelector('section').offsetHeight)
 
   sections.style.height = `${sectionHeight}px`;
   sections.style.overflow = 'hidden';
