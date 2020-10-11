@@ -249,8 +249,8 @@ function setCourseRate(e, userId, courseId) {
 }
 
 
-function notifyText(elm, text) {
-  const defaultText = elm.innerText;
+function notifyText(elm, text, old) {
+  const defaultText = old || elm.innerText;
   elm.innerText = text
   elm.disabled = true;
 
@@ -301,10 +301,10 @@ function setReview() {
       content: container.querySelector('textarea').value
     }).then(res => res.status).then(status => {
       if (status === 200) {
-        notifyText(e.target, 'success!')
+        notifyText(e.target, 'success!', 'submit')
         container.querySelector('textarea').value = ''
       } else {
-        notifyText(e.target, 'failed!')
+        notifyText(e.target, 'failed!', 'submit')
 
       }
     })
@@ -342,6 +342,7 @@ function getCurrentUserData() {
   if (elm) {
     user = {
       img: elm.gravatarUrl,
+      pp: elm.gravatarUrl,
       email: elm.email,
       name: elm.name
     }
