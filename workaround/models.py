@@ -66,7 +66,7 @@ class Course(models.Model):
 
         return {
             'total': total,
-            'average': average,
+            'average': round(average, 1),
             'rates_counts': ratesCounts
         }
 
@@ -129,6 +129,7 @@ class Course(models.Model):
 
 
 class Review(models.Model):
+    authorId = models.CharField(max_length=64)
     course = models.ForeignKey(
         Course, on_delete=models.CASCADE, related_name='course_reviews')
     name = models.CharField(max_length=32)
@@ -137,10 +138,18 @@ class Review(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def serialize(self):
+        rating = Rating.objects.filter(
+            course=self.course, authorId=self.authorId).first()
+        if rating:
+            rating = rating.serialize()
+
         return {
             'name': self.name,
             'pp': self.pp,
             'content': self.content,
+            'created': self.created,
+            'authorId': self.authorId,
+            'rating': rating
         }
 
 

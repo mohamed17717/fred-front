@@ -17,7 +17,7 @@ from .models import Coach, Course, LiveEvent, Rating, Review, Category, Blog
 
 
 def paginate(qs, page=1):
-    paginator = Paginator(qs, 1)
+    paginator = Paginator(qs, 20)
     try:
         paginatedData = paginator.page(page)
     except PageNotAnInteger:
@@ -59,8 +59,10 @@ def getUserRating(request, courseId, userId):
 
 @require_http_methods(["POST"])
 def setRating(request, courseId):
-    rate = request.POST.get('rate', None)
-    userId = request.POST.get('userId')
+    data = json.loads(request.body.decode('utf-8'))
+
+    rate = data.get('rate', None)
+    userId = data.get('userId')
     if not (rate and userId):
         return HttpResponseBadRequest()
 
@@ -77,15 +79,25 @@ def setRating(request, courseId):
 
 @require_http_methods(["POST"])
 def setReview(request, courseId):
-    content = request.POST.get('content', None)
-    name = request.POST.get('name', None)
-    pp = request.POST.get('pp', None)
-    if not (content and name and pp):
+    data = json.loads(request.body.decode('utf-8'))
+
+    content = data.get('content', None)
+    name = data.get('name', None)
+    pp = data.get('pp', None)
+    userId = data.get('userId')
+
+    print(content)
+    print(name)
+    print(pp)
+    print(userId)
+
+    if not (content and name and pp and userId):
         return HttpResponseBadRequest()
 
     course = get_object_or_404(Course, publicId=courseId)
 
-    review = Review(course=course, name=name, pp=pp, content=content)
+    review = Review(course=course, name=name, pp=pp,
+                    content=content, authorId=userId)
     review.save()
 
     return HttpResponse(status=200)
