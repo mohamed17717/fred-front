@@ -33,21 +33,21 @@ const postData = async (data) => {
   return rawResponse;
 }
 
-
-document.querySelector('#contact form').addEventListener('submit', e => {
+const contacForm = document.querySelector('#contact form')
+contacForm.addEventListener('submit', e => {
   e.preventDefault();
 
-  const formBtn = form.querySelector('button')
+  const formBtn = contacForm.querySelector('button')
   formButtonDisabled(formBtn)
 
 
-  const data = extractFormDataJSON(form);
+  const data = extractFormDataJSON(contacForm);
   postData(data)
     .then(res => res.status)
     .then(status => {
       if (status === 200) {
         formButtonMsg(formBtn, 'success!!');
-        form.reset();
+        contacForm.reset();
       } else {
         formButtonMsg(formBtn, 'failed!!');
       }
@@ -57,6 +57,4 @@ document.querySelector('#contact form').addEventListener('submit', e => {
         formBtn.innerText = 'submit'
       }, 1200)
     })
-
-
 })
