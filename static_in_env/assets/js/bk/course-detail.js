@@ -19,7 +19,11 @@ function handleCurriculumCollapse() {
     </button>
   `)
 
+  console.log('sections: ', sections)
+
   const sectionHeight = sections.querySelector('section').clientHeight;
+  console.log('section: ', sections.querySelector('section'))
+  console.log('section height: ', sections.querySelector('section').clientHeight)
 
   sections.style.height = `${sectionHeight}px`;
   sections.style.overflow = 'hidden';
@@ -27,7 +31,7 @@ function handleCurriculumCollapse() {
 
   collapseBtn.addEventListener('click', e => {
     const status = sections.dataset.collapsestatus;
-    console.log(status)
+
     if (status == 1) {
       sections.style.height = 'auto';
       sections.dataset.collapsestatus = 0;
