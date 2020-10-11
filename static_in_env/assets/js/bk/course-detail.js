@@ -322,6 +322,60 @@ function renderInstructor() {
   // 'course/instructor/',
 }
 
+// recommended courses
+function getRecommendedCourses() {
+  const courseIdElm = document.querySelector('[data-courseid]')
+  if (!courseIdElm) return;
+
+  const courseId = courseIdElm.dataset.courseid
+
+  const section = document.querySelector('#course-suggest-courses')
+  const container = section.querySelector('.courses')
+
+  const url = `${bk}/random-related-courses/${courseId}/`
+  fetch(url)
+    .then(res => res.status === 200 ? res.json() : [])
+    .then(data => {
+      data.forEach(course => {
+        container.innerHTML += `
+          <div class="item card">
+            <div class="thumbnail" style="background-image: url(${course.thumbnail})"></div>
+
+            <div class="info">
+              <h3><a href="${course.url}">${course.title}</a></h3>
+
+
+              <div class="rating">
+                <div>${course.rating.average}</div>
+                <div class="stars">
+                  ${getCourseStars(course.rating.average)}
+                </div>
+                <div>
+                  (${course.rating.total} Ratings)
+                </div>
+              </div>
+
+              <p>
+                ${course.description}
+              </p>
+              <div class="footer">
+                <div class="author">
+                  <div class="avatar" style="background-image: url(${course.author_pp})"></div>
+                  <div class="name">${course.author_name}</div>
+                </div>
+                <div class="price">${course.price}</div>
+              </div>
+            </div>
+          </div>
+        `
+      })
+
+      if (data.length === 0) {
+        section.remove()
+      }
+    })
+}
+
 
 
 function renderCourseFeedbacks() {
@@ -373,5 +427,6 @@ document.addEventListener('DOMContentLoaded', e => {
   renderCourseFeedbacks()
   renderFeedbackRate()
   setReview()
+  getRecommendedCourses()
 
 })
