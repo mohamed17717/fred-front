@@ -46,11 +46,6 @@ function handleCurriculumCollapse() {
   curriculumContainer.appendChild(collapseBtn)
 }
 
-
-
-
-
-
 function getCourseStars(average) {
   const count = 5;
   const star1 = '<div class="icon icon-star-fill"></div>'
@@ -157,7 +152,7 @@ function insertReview(review) {
             ${getCourseStars(review.rating.rate)}
           </div>` : ''
         }
-        <div class="date">${review.created}</div>
+        <div class="date">${review.created || 'now'}</div>
       </div>
       <div class="opinion">
         ${review.content}

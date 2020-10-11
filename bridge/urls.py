@@ -20,6 +20,7 @@ from workaround.views import (
     viewCourse,
     filterCourses,
     getRelatedCourses,
+    getRandomRelatedCourses,
     listCoaches,
     listLiveEvents,
 
@@ -54,6 +55,7 @@ urlpatterns = [
     path('view-course/<str:courseId>/', viewCourse),
     path('filter/<str:category>/', filterCourses),
     path('related-courses/<str:courseId>/', getRelatedCourses),
+    path('random-related-courses/<str:courseId>/', getRandomRelatedCourses),
     # coaches
     path('coaches/', listCoaches),
     # live events

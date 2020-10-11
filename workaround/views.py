@@ -1,3 +1,4 @@
+import random
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import (
@@ -192,6 +193,23 @@ def filterCourses(request, category):
 def getRelatedCourses(request, courseId):
     course = get_object_or_404(Course, publicId=courseId)
     return JsonResponse(course.getRelatedCourses(), safe=False)
+
+
+@require_http_methods(["GET"])
+def getRandomRelatedCourses(request, courseId):
+    course = get_object_or_404(Course, publicId=courseId)
+
+    category = random.choice(course.categories.all())
+    if not category:
+        return HttpResponse(status=404)
+
+    qs = Course.objects.all()
+    qs = qs.filter(
+        Q(categories__name__icontains=category.name) & ~ Q(pk=course.pk)
+    ).distinct()
+
+    data = [c.serialize() for c in qs]
+    return JsonResponse(data, safe=False)
 
 
 @require_http_methods(["GET"])
