@@ -1,4 +1,4 @@
-const bk = 'http://127.0.0.1:8000';
+const bk = 'https://thegoodzone.pythonanywhere.com';
 
 function formButtonMsg(btn, msg) {
   btn.innerText = msg

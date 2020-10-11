@@ -1,4 +1,4 @@
-const bk = 'http://127.0.0.1:8000';
+const bk = 'https://thegoodzone.pythonanywhere.com';
 
 function createElmV2(html) {
   const div = document.createElement('div')

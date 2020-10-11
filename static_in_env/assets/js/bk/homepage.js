@@ -1,4 +1,4 @@
-const bk = 'http://127.0.0.1:8000';
+const bk = 'https://thegoodzone.pythonanywhere.com';
 
 function getCourseStars(average) {
   const count = 5;
@@ -33,7 +33,7 @@ function renderMostSellCourses() {
             <li class="item">
               <div class="thumbnail" style="background-image: url(${course.thumbnail})"></div>
               <div class="info">
-                <h3>${course.title}</h3>
+                <h3><a href="${course.url}">${course.title}</a></h3>
 
                 <div class="rating">
                   <div>${course.rating.average}</div>
