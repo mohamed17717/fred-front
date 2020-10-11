@@ -1,15 +1,6 @@
 const bk = 'http://127.0.0.1:8000';
 
-function notifyText(elm, text) {
-  const defaultText = elm.innerText;
-  elm.innerText = text
-  elm.disabled = true;
 
-  setTimeout(() => {
-    elm.innerText = defaultText
-    elm.disabled = false
-  }, 2000)
-}
 
 function getBoughtCourseFromLocalStorage() {
   return JSON.parse(localStorage.getItem('bought') || '[]')

@@ -24,7 +24,7 @@ function getCourseStars(average) {
 
   let stars = '';
   for (let i = 0; i < count; i++) {
-    if (average > 1)
+    if (average > .44)
       stars += star1
     else
       stars += star0

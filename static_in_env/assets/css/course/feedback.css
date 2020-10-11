@@ -120,7 +120,7 @@
   filter: invert(0%) sepia(38%) saturate(7%) hue-rotate(119deg) brightness(90%)
     contrast(53%);
 
-  transition: filter 0.2s ease-in-out;
+  /* transition: filter 0.2s ease-in-out; */
 }
 
 #course-feedback .reviews .review,
@@ -131,6 +131,7 @@
 
 #course-feedback .reviews .author {
   /* text-align: center; */
+  min-width: 100px;
   margin-right: calc(25px * var(--ratio));
 }
 #course-feedback .reviews .author .avatar {
