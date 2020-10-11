@@ -21,13 +21,13 @@ function handleCurriculumCollapse() {
 
   console.log('sections: ', sections)
 
-  const sectionHeight = sections.querySelector('section').offsetHeight;
-  console.log('section: ', sections.querySelector('section'))
-  console.log('section height: ', sections.querySelector('section').offsetHeight)
+  setTimeout(() => {
+    let sectionHeight = sections.querySelector('section').clientHeight;
 
-  sections.style.height = `${sectionHeight}px`;
-  sections.style.overflow = 'hidden';
-  sections.dataset.collapsestatus = 1;
+    sections.style.height = `${sectionHeight}px`;
+    sections.style.overflow = 'hidden';
+    sections.dataset.collapsestatus = 1;
+  }, 2000)
 
   collapseBtn.addEventListener('click', e => {
     const status = sections.dataset.collapsestatus;
@@ -36,6 +36,8 @@ function handleCurriculumCollapse() {
       sections.style.height = 'auto';
       sections.dataset.collapsestatus = 0;
     } else if (status == 0) {
+      let sectionHeight = sections.querySelector('section').clientHeight;
+
       sections.style.height = `${sectionHeight}px`;
       sections.dataset.collapsestatus = 1;
     }
@@ -372,10 +374,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
   console.log('currentUser: ', currentUser)
 
-  setTimeout(handleCurriculumCollapse, 1000)
-
-
-
+  handleCurriculumCollapse()
   renderCourseFeedbacks()
   renderFeedbackRate()
   setReview()
