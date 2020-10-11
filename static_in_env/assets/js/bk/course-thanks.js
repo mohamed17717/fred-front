@@ -34,15 +34,13 @@ function courseBought() {
 }
 
 function getRecommendedCourses() {
-  const courseBtn = document.querySelector('#thanks-intro button')
-  const courseId = courseBtn.dataset.to
+  const courseIdElm = document.querySelector('[data-courseid]')
+  if (!courseIdElm) return;
+
+  const courseId = courseIdElm.dataset.courseid
 
   const section = document.querySelector('#recommended-courses')
-  const container = section.querySelector('#recommended-courses .courses ul')
-
-  console.log('section: ', section)
-  console.log('container: ', container)
-
+  const container = section.querySelector('.courses ul')
 
   const url = `${bk}/random-related-courses/${courseId}/`
   fetch(url)
