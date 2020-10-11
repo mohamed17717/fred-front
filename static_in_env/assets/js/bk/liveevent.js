@@ -34,7 +34,8 @@ function renderLiveEvents() {
                   </div>
                 </div>
               </div>
-              <a href="${event.calendly}" target="_blank" class="outline">Register Now</a>
+
+              <button data-to="${event.calendly}" class="outline">Register Now</button>
             </div>
         `
       })
