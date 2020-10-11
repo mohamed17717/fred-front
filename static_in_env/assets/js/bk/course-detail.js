@@ -193,6 +193,8 @@ const postData = async (url, data) => {
 function renderFeedbackRate() {
   // const user = {};
   const user = currentUser || anonUser;
+  console.log('user: ', user)
+
 
   const courseId = document.querySelector('[data-courseid]').dataset.courseid;
   const userId = user.email || '16'; // user come from header
@@ -257,6 +259,8 @@ function notifyText(elm, text) {
 // reviewcourse
 function setReview() {
   const user = currentUser || anonUser;
+  console.log('user: ', user)
+
 
   const courseId = document.querySelector('[data-courseid]').dataset.courseid;
   const userId = user.email || '16'; // user come from header
@@ -349,6 +353,8 @@ let currentUser = null;
 
 document.addEventListener('DOMContentLoaded', e => {
   currentUser = getCurrentUserData()
+
+  console.log('currentUser: ', currentUser)
 
   handleCurriculumCollapse()
   renderCourseFeedbacks()
