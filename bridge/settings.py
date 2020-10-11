@@ -15,7 +15,7 @@ SECRET_KEY = 's%kxhk+hk#n3fg_mv(d&jz%l0^e6da23664mwje#z)0j6n1dym'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    # 'thegoodzone.pythonanywhere.com',
+    'thegoodzone.pythonanywhere.com',
     'localhost',
     '127.0.0.1',
 ]

@@ -1,3 +1,4 @@
+from django.utils import formats
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MaxValueValidator, MinValueValidator, URLValidator
@@ -114,7 +115,9 @@ class Course(models.Model):
             'author_name': self.author_name,
             'author_pp': self.author_pp,
             'buy_count': self.buy_count,
-
+            'view_count': self.view_count,
+            'created': formats.date_format(self.created, "SHORT_DATETIME_FORMAT"),
+            'url': self.url,
             'rating': self.getRates(),
         }
 
@@ -147,7 +150,7 @@ class Review(models.Model):
             'name': self.name,
             'pp': self.pp,
             'content': self.content,
-            'created': self.created,
+            'created': formats.date_format(self.created, "SHORT_DATETIME_FORMAT"),
             'authorId': self.authorId,
             'rating': rating
         }
@@ -260,6 +263,6 @@ class Blog(models.Model):
             'author_pp': self.author_pp,
             'date': self.date,
             'description': self.description,
-            'created': self.created,
+            'created':  formats.date_format(self.created, "SHORT_DATETIME_FORMAT"),
             'publicId': self.publicId,
         }
