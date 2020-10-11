@@ -372,7 +372,10 @@ document.addEventListener('DOMContentLoaded', e => {
 
   console.log('currentUser: ', currentUser)
 
-  handleCurriculumCollapse()
+  setTimeout(handleCurriculumCollapse, 1000)
+
+
+
   renderCourseFeedbacks()
   renderFeedbackRate()
   setReview()
