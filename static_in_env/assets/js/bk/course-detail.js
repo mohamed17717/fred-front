@@ -134,37 +134,42 @@ function renderCourseFeedbackRatingProgress(rating) {
   `
 }
 
+function insertComment(comment) {
+  const reviewsContainer = document.querySelector('#course-feedback .reviews .reviews-box')
+  reviewsContainer.innerHTML += `
+  <div class="review">
+    <div class="author">
+      <div class="avatar" style="background-image: url(${review.pp})"></div>
+      <!--
+      <div class="bow">instructor</div>
+      -->
+    </div>
+
+    <div class="info">
+      <div class="name">${review.name}</div>
+      <div class="meta">
+        ${
+          review.rating ?
+
+          `<div class="stars">
+            ${getCourseStars(review.rating.rate)}
+          </div>` : ''
+        }
+        <div class="date">${review.created}</div>
+      </div>
+      <div class="opinion">
+        ${review.content}
+      </div>
+    </div>
+  </div>
+`
+}
+
 
 function renderReviews(reviews) {
-  const reviewsContainer = document.querySelector('#course-feedback .reviews .reviews-box')
   reviews.forEach(review => {
-    reviewsContainer.innerHTML += `
-        <div class="review">
-          <div class="author">
-            <div class="avatar" style="background-image: url(${review.pp})"></div>
-            <!--
-            <div class="bow">instructor</div>
-            -->
-          </div>
+    insertComment(reviewsContainer, review)
 
-          <div class="info">
-            <div class="name">${review.name}</div>
-            <div class="meta">
-              ${
-                review.rating ?
-
-                `<div class="stars">
-                  ${getCourseStars(review.rating.rate)}
-                </div>` : ''
-              }
-              <div class="date">${review.created}</div>
-            </div>
-            <div class="opinion">
-              ${review.content}
-            </div>
-          </div>
-        </div>
-    `
   })
 }
 
@@ -294,20 +299,24 @@ function setReview() {
   container.querySelector('button').addEventListener('click', e => {
     notifyText(e.target, 'loading...')
 
-    postData(`${bk}/review/${courseId}/`, {
+    const newComment = {
       userId,
       'rate': e.target.dataset.ratevalue,
       ...user,
       content: container.querySelector('textarea').value
-    }).then(res => res.status).then(status => {
-      if (status === 200) {
-        notifyText(e.target, 'success!', 'submit')
-        container.querySelector('textarea').value = ''
-      } else {
-        notifyText(e.target, 'failed!', 'submit')
+    }
 
-      }
-    })
+    postData(`${bk}/review/${courseId}/`, newComment)
+      .then(res => res.status).then(status => {
+        if (status === 200) {
+          notifyText(e.target, 'success!', 'post comment')
+          container.querySelector('textarea').value = ''
+          insertComment(newComment)
+        } else {
+          notifyText(e.target, 'failed!', 'post comment')
+
+        }
+      })
   })
 }
 
