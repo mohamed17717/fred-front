@@ -33,6 +33,26 @@ function courseBought() {
   }
 }
 
+
+function getCourseStars(average) {
+  const count = 5;
+  const star1 = '<div class="icon icon-star-fill"></div>'
+  const star0 = '<div class="icon icon-star-outline"></div>'
+
+  let stars = '';
+  for (let i = 0; i < count; i++) {
+    if (average > .44)
+      stars += star1
+    else
+      stars += star0
+
+    average--;
+  }
+
+  return stars
+
+}
+
 function getRecommendedCourses() {
   const courseIdElm = document.querySelector('[data-courseid]')
   if (!courseIdElm) return;
