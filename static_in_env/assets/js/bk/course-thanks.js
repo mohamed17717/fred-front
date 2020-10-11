@@ -44,12 +44,7 @@ function getRecommendedCourses() {
 
   const url = `${bk}/random-related-courses/${courseId}/`
   fetch(url)
-    .then(res => res.status)
-    .then(status => {
-      if (status === 200)
-        return res.json();
-      return []
-    })
+    .then(res => res.status === 200 ? res.json : [])
     .then(data => {
       data.forEach(course => {
         container.innerHTML += `

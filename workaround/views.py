@@ -201,7 +201,7 @@ def getRandomRelatedCourses(request, courseId):
 
     category = random.choice(course.categories.all())
     if not category:
-        return HttpResponse(status=404)
+        return HttpResponse(status=304)
 
     qs = Course.objects.all()
     qs = qs.filter(
