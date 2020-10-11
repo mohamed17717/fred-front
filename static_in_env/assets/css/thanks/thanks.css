@@ -5,7 +5,7 @@
   text-align: center;
   background-color: #fff;
   width: 100%;
-  margin-bottom: calc(70px * var(--ratio));
+  /* margin-bottom: calc(70px * var(--ratio)); */
 }
 
 #thanks-intro section {
@@ -20,6 +20,7 @@
 
 #recommended-courses {
   max-width: 750px;
+  margin-top: calc(70px * var(--ratio));
 }
 
 #recommended-courses .courses {
