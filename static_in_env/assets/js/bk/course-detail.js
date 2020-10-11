@@ -191,7 +191,11 @@ const postData = async (url, data) => {
 
 
 function renderFeedbackRate() {
-  const user = {};
+  // const user = {};
+  const user = user || {
+    name: 'anonymous',
+    pp: 'https://iptc.org/wp-content/uploads/2018/05/avatar-anonymous-300x300.png'
+  };
 
   const courseId = document.querySelector('[data-courseid]').dataset.courseid;
   const userId = user.email || '16'; // user come from header
@@ -255,10 +259,11 @@ function notifyText(elm, text) {
 
 // reviewcourse
 function setReview() {
-  const user = {
-    name: 'moahmed mahmoud',
-    pp: 'google,com'
+  const user = user || {
+    name: 'anonymous',
+    pp: 'https://iptc.org/wp-content/uploads/2018/05/avatar-anonymous-300x300.png'
   };
+
   const courseId = document.querySelector('[data-courseid]').dataset.courseid;
   const userId = user.email || '16'; // user come from header
 
@@ -328,8 +333,9 @@ function renderCourseFeedbacks() {
 }
 
 
-
-handleCurriculumCollapse()
-renderCourseFeedbacks()
-renderFeedbackRate()
-setReview()
+document.addEventListener('DOMContentLoaded', e => {
+  handleCurriculumCollapse()
+  renderCourseFeedbacks()
+  renderFeedbackRate()
+  setReview()
+})
