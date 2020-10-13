@@ -1,30 +1,3 @@
-html,
-body,
-div,
-span,
-h4,
-a,
-img,
-strong,
-i,
-ul,
-li,
-section {
-  /* margin: 0;
-  padding: 0;
-  border: 0; */
-  /* font-size: 100%; */
-  /* font: inherit; */
-  /* vertical-align: baseline; */
-}
-section {
-  /* display: block; */
-}
-
-ul {
-  /* list-style: none; */
-}
-
 .rich-text h4 {
   font-size: 2.4rem;
   line-height: 3.6rem;
@@ -213,15 +186,7 @@ ul {
   font-family: sans-serif;
   font-size: 62.5%;
 } */
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-a {
-  text-decoration: none;
-  color: #54bab1;
-}
+
 
 .container {
   /* padding: 40px 0; */
