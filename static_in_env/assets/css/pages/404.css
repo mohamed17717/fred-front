@@ -1,1 +1,1 @@
-@import "https://thegoodzone.pythonanywhere.com/static/assets/css/404/404.css";
+#p404{display:flex;justify-content:start;align-items:center;text-align:center;padding:80px 0;margin-bottom:0}#p404>div{margin:auto}#p404 p{color:var(--main-color);font-size:calc(20px * var(--ratio));line-height:1.6;max-width:calc(453px * var(--ratio));text-align:center;margin:calc(70px * var(--ratio)) auto calc(35px * var(--ratio))}#p404 img{width:100%}
