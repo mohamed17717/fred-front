@@ -1,15 +1,6 @@
-map <options|options>, --default--, {{ normal text }}, (note)
-
-#type<coach|live event> --default is coach--
-{{ description }}
-
-
-
-
-
-#for coach only
+#for coach
 -----------------
-#type
+#coach
 {{ description }}
 #urls
 {{ facebook }}
@@ -18,13 +9,10 @@ map <options|options>, --default--, {{ normal text }}, (note)
 {{ twitter }}
 {{ calendly }}
 
-www.calendly.com
-www.facebook.com
-
 
 #for live event
 ----------------
-#type
+#live event
 {{ description }}
 
 #author_name
@@ -51,3 +39,6 @@ becuse regular image is very small
 or change size of his image
 
 (author_name) must be equal to (coach_name)
+
+
+

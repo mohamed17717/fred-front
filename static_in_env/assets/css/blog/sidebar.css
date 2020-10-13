@@ -1,6 +1,7 @@
 #blog-sidebar {
   /* max-width: calc(402px * var(--ratio)); */
   padding: calc(70px * var(--ratio)) calc(30px * var(--ratio));
+  padding: calc(30px * var(--ratio)) calc(15px * var(--ratio));
   background: #fff;
 
   width: 100%;
@@ -59,12 +60,16 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-color: red;
+  /* background-color: red; */
   margin-right: calc(20px * var(--ratio));
 }
 #blog-sidebar .recent-posts .poost:last-child,
 #blog-sidebar > :last-child {
   margin-bottom: 0;
+}
+
+#blog-sidebar a:hover {
+  color: var(--main-color);
 }
 
 #blog-sidebar .recent-posts .poost .image1 {

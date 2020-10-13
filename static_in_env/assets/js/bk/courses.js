@@ -113,6 +113,11 @@ function renderCourses() {
         coursesContainer.innerHTML += courseCard(course)
       })
 
+      if (courses.data.length === 0)
+        coursesContainer.replaceWith(div({
+          class: "empty-list-msg"
+        }, 'Theris no courses right now.'))
+
       return courses;
     })
     .then(renderPagination)

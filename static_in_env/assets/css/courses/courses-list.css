@@ -10,6 +10,18 @@
   text-transform: capitalize;
 }
 
+#courses-list .empty-list-msg {
+  font-weight: bold;
+  color: grey;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+  line-height: 1.6;
+}
+
 #courses-list .title .line {
   width: calc(115px * var(--ratio));
   margin: auto;
