@@ -1,0 +1,216 @@
+@import "https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap";
+
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/homepage/header.css";
+@import "https://thegoodzone.pythonanywhere.com/static/assets/css/homepage/footer.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  /* colors */
+  --body-bg: #f5f5f5;
+  --text-color: #000000;
+  --sub-text-color: #808080;
+  --invert-color: #ffffff;
+  --card1: #7c4ddb;
+  --card2: #3a6ee8;
+  --card3: #33c5d2;
+  --card4: #f26d7e;
+  --main-color: #f36523;
+  --shadow1: #695b5b29;
+  --shadow2: #e4e4e4;
+
+  /* spacing */
+  --ratio: calc(1080 / 1440);
+  --space-v: calc(28px * var(--ratio));
+  --space-h: calc(85px * var(--ratio));
+}
+
+body {
+  font-size: 16px;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 300;
+
+  background-color: var(--body-bg);
+}
+
+ul {
+  list-style: none;
+}
+
+ol {
+  margin-left: 20px;
+}
+
+section[id],
+div[id] > section {
+  margin-bottom: calc(70px * var(--ratio));
+  /* width: 850px; */
+
+  max-width: 850px;
+  width: 80%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  display: block;
+}
+
+@media (max-width: 700px) {
+  section:not(.block__curriculum__section) {
+    width: 90%;
+  }
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus,
+video:focus {
+  outline: none;
+}
+
+button.solid,
+a.solid {
+  text-transform: uppercase;
+  color: var(--invert-color);
+  padding: calc(18px * var(--ratio)) calc(30px * var(--ratio));
+  background-color: var(--main-color);
+  border-radius: calc(4px * var(--ratio));
+}
+
+button.outline,
+a.outline {
+  color: var(--main-color);
+  border: 1px solid currentColor;
+  padding: calc(18px * var(--ratio)) calc(30px * var(--ratio));
+  font-weight: normal;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-radius: calc(4px * var(--ratio));
+}
+button.outline.light,
+a.outline.light {
+  padding: calc(10px * var(--ratio)) calc(30px * var(--ratio));
+  border: 1px solid var(--main-color);
+  text-transform: capitalize;
+  font-weight: normal;
+}
+
+button.outline:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+button.solid:hover {
+  background-color: #000;
+}
+
+input,
+textarea {
+  border: 1px solid #ccc;
+}
+
+main {
+  padding-top: 91.02px;
+}
+
+/* images for static content */
+.avatar1 {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author1.jpg);
+}
+.avatar2 {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author2.jpg);
+}
+.avatar3 {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author3.jpg);
+}
+.avatar4 {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author4.jpg);
+}
+.avatar5 {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author5.jpg);
+}
+.avatar6 {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/author6.jpg);
+}
+.avatar7 {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g6.jpg);
+}
+.avatar8 {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g7.jpg);
+}
+.avatar9 {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g8.jpg);
+}
+.avatar10 {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/image/g9.jpg);
+}
+
+button,
+a,
+[role="button"],
+[role="link"] {
+  cursor: pointer;
+}
+
+.fred-pp {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/authors/mr-fred.jpg);
+}
+.nada-pp {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/authors/nada.jpg);
+}
+.dalia-pp {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/authors/dalia.png);
+}
+.rana-pp {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/authors/rana.jpg);
+}
+.sliem-pp {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/authors/dr-sliem.jpg);
+}
+.ebtsam-pp {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/testmonials/ebtsam.jpg);
+}
+.martin-pp {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/testmonials/martin.jpg);
+}
+.ahmed-pp {
+  background-image: url(https://thegoodzone.pythonanywhere.com/static/assets/testmonials/ahmed.jpg);
+}
+
+#thanks-intro h2,
+#recommended-courses h2,
+#course-intro h2,
+#course-content h2,
+#course-instructor h2,
+#course-price h2,
+#course-feedback h2,
+#course-suggest-courses h2,
+#coaching-testmonials h2 {
+  color: var(--main-color);
+  font-size: calc(30px * var(--ratio));
+  text-transform: capitalize;
+  margin-bottom: calc(53px * var(--ratio));
+  text-align: center;
+}
+
+#course-price form h2:last-child {
+  margin-bottom: 0;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
