@@ -35,9 +35,11 @@ class Course(models.Model):
     publicId = models.CharField(max_length=32)
     description = models.CharField(max_length=512, null=True, blank=True)
     thumbnail = models.URLField(max_length=200)
-    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    author_name = models.CharField(max_length=32)
-    author_pp = models.URLField(max_length=200)
+
+    price = models.CharField(max_length=16)
+
+    author_name = models.CharField(max_length=32, null=True)
+    author_pp = models.URLField(max_length=200, null=True)
 
     buy_count = models.IntegerField(default=0)
     view_count = models.IntegerField(default=0)
@@ -105,6 +107,14 @@ class Course(models.Model):
     def __str__(self):
         return self.title
 
+    def getInstructor(self):
+        instructor = Instructor.objects.filter(name=self.author_name).first()
+        data = None
+        if instructor:
+            data = instructor.serialize()
+
+        return data
+
     def serialize(self, full=False):
         course = {
             'title': self.title,
@@ -126,9 +136,15 @@ class Course(models.Model):
                 'categories': self.getCategories(),
                 'reviews': self.getReviews(),
                 'relatedCourses': self.getRelatedCourses(),
+                'instructor': self.getInstructor(),
             })
 
         return course
+
+    # def save(self, *args, **kwargs):
+    #     if self.author_name:
+    #         self.author_name = self.author_name.lower()
+    #     return super().save(*args, **kwargs)
 
 
 class Review(models.Model):
@@ -150,9 +166,9 @@ class Review(models.Model):
             'name': self.name,
             'pp': self.pp,
             'content': self.content,
-            'created': formats.date_format(self.created, "SHORT_DATETIME_FORMAT"),
             'authorId': self.authorId,
-            'rating': rating
+            'rating': rating,
+            'created':  formats.date_format(self.created, "SHORT_DATETIME_FORMAT"),
         }
 
 
@@ -165,7 +181,10 @@ class Rating(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def serialize(self):
-        return {'rate': self.rate}
+        return {
+            'rate': self.rate,
+            'created':  formats.date_format(self.created, "SHORT_DATETIME_FORMAT"),
+        }
 
     @staticmethod
     def checkIfUserRate(courseId, userId):
@@ -174,6 +193,43 @@ class Rating(models.Model):
         if len(rates) > 0:
             return rates[0].serialize()
         return False
+
+
+class Instructor(models.Model):
+    name = models.CharField(max_length=32)
+    pp = models.URLField(max_length=200)
+    description = models.CharField(max_length=512)
+
+    url = models.URLField(max_length=200)
+
+    publicId = models.CharField(max_length=32)
+
+    facebook = models.URLField(max_length=200, null=True, blank=True)
+    twitter = models.URLField(max_length=200, null=True, blank=True)
+    instagram = models.URLField(max_length=200, null=True, blank=True)
+    site = models.URLField(max_length=200, null=True, blank=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+    def serialize(self):
+        return {
+            'name': self.name,
+            'pp': self.pp,
+            'description': self.description,
+            'facebook': self.facebook,
+            'twitter': self.twitter,
+            'instagram': self.instagram,
+            'site': self.site,
+            'created':  formats.date_format(self.created, "SHORT_DATETIME_FORMAT"),
+        }
+
+    def save(self, *args, **kwargs):
+        if self.name:
+            self.name = self.name.lower()
+        return super().save(*args, **kwargs)
 
 
 class Coach(models.Model):
@@ -206,6 +262,7 @@ class Coach(models.Model):
             'instagram': self.instagram,
             'site': self.site,
             'calendly': self.calendly,
+            'created':  formats.date_format(self.created, "SHORT_DATETIME_FORMAT"),
         }
 
 
@@ -236,6 +293,7 @@ class LiveEvent(models.Model):
             'date': self.date,
             'description': self.description,
             'calendly': self.calendly,
+            'created':  formats.date_format(self.created, "SHORT_DATETIME_FORMAT"),
         }
 
 

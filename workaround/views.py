@@ -14,7 +14,7 @@ from django.views.decorators.http import require_http_methods
 
 import json
 
-from .models import Coach, Course, LiveEvent, Rating, Review, Category, Blog
+from .models import Coach, Course, LiveEvent, Rating, Review, Category, Blog, Instructor
 
 
 def paginate(qs, page=1):
@@ -156,11 +156,6 @@ def getCourse(request, courseId):
     return JsonResponse(data, safe=False)
 
 
-@require_http_methods(["POST"])
-def getInstructor(request):
-    pass
-
-
 @require_http_methods(["GET"])
 def buyCourse(request, courseId):
     course = get_object_or_404(Course, publicId=courseId)
@@ -228,23 +223,31 @@ def listLiveEvents(request):
     return JsonResponse(data, safe=False)
 
 
-def handelCourseData(data):
-    data['categories'] = json.loads(data.get('categories', '[]'))
-    data['relatedCourses'] = json.loads(data.get('relatedCourses', '[]'))
+def handelCourseData(request):
+    data = {}
+    # print('\n\nData: ', data, '\n\n')
+    data['categories'] = request.POST.getlist('categories') or []
+    data['relatedCourses'] = request.POST.getlist('relatedCourses') or []
 
+    # print('\n\n', data, '\n\n')
     return data
 
 
+# 'author_name', 'author_pp'
 @require_http_methods(["POST"])
-@requiredFields(['title', 'publicId', 'thumbnail', 'price', 'author_name', 'author_pp'])
+@requiredFields(['title', 'publicId', 'thumbnail', 'price'])
 def createCourse(request):
     data = request.POST.dict()
-    data = handelCourseData(data)
+    data.update(handelCourseData(request))
     data.pop('categories')
     data.pop('relatedCourses')
 
     course = Course(**data)
     course.save()
+
+    # print(course)
+    # print('\n\ncourse: ', course, '\n\n')
+
     return course
 
 
@@ -252,7 +255,8 @@ def createCourse(request):
 @requiredFields(['publicId'])
 def setCourse(request):
     data = request.POST.dict()
-    data = handelCourseData(data)
+    # data = handelCourseData(request)
+    data.update(handelCourseData(request))
 
     categories = Category.setCategories(data.pop('categories'))
     relatedCourses = data.pop('relatedCourses')
@@ -265,6 +269,8 @@ def setCourse(request):
         course.update(**data)
         course = course.first()
 
+    print('\n\ndata: ', data, '\n\n')
+    # print('\n\ncourse: ', course, '\n\n')
     course.setCategories(categories)
     course.setRelatedCourses(relatedCourses)
 
@@ -274,8 +280,9 @@ def setCourse(request):
 @require_http_methods(["POST"])
 @requiredFields(['publicIds'])
 def deleteCourses(request):
-    publicIds = request.POST.get('publicIds')
-    publicIds = json.loads(publicIds)
+    publicIds = request.POST.getlist('publicIds')
+    # publicIds = json.loads(publicIds)
+    print('\n\n\n', publicIds, '\n\n\n')
 
     for course in Course.objects.all():
         if course.publicId not in publicIds:
@@ -286,29 +293,32 @@ def deleteCourses(request):
 @require_http_methods(["POST"])
 @requiredFields(['publicId', 'name', 'pp', 'description', 'calendly'])
 def createCoach(request):
-    coach = Coach(**request.POST.dict())
+    data = request.POST.dict()
+    coach = Coach(**data)
     coach.save()
-    return HttpResponse(status=200)
+    return coach
 
 
 @require_http_methods(["POST"])
 @requiredFields(['publicId'])
 def setCoach(request):
+    data = request.POST.dict()
+
     publicId = request.POST.get('publicId')
-
     coach = Coach.objects.filter(publicId=publicId)
-    if not coach:
-        return createCoach(request)
 
-    coach.update(**request.POST.dict())
+    if not coach:
+        createCoach(request)
+    else:
+        coach.update(**data)
+
     return HttpResponse(status=200)
 
 
 @require_http_methods(["POST"])
 @requiredFields(['publicIds'])
 def deleteCoaches(request):
-    publicIds = request.POST.get('publicIds')
-    publicIds = json.loads(publicIds)
+    publicIds = request.POST.getlist('publicIds')
     for coach in Coach.objects.all():
         if coach.publicId not in publicIds:
             coach.delete()
@@ -318,29 +328,32 @@ def deleteCoaches(request):
 @require_http_methods(["POST"])
 @requiredFields(['publicId', 'title', 'thumbnail', 'date', 'time', 'description', 'calendly'])
 def createLiveEvent(request):
+    data = request.POST.dict()
     liveEvent = LiveEvent(**request.POST.dict())
     liveEvent.save()
-    return HttpResponse(status=200)
+    return liveEvent
 
 
 @require_http_methods(["POST"])
 @requiredFields(['publicId'])
 def setLiveEvent(request):
+    data = request.POST.dict()
+
     publicId = request.POST.get('publicId')
 
     liveEvent = LiveEvent.objects.filter(publicId=publicId)
     if not liveEvent:
-        return createLiveEvent(request)
-
-    liveEvent.update(**request.POST.dict())
+        createLiveEvent(request)
+    else:
+        liveEvent.update(**request.POST.dict())
     return HttpResponse(status=200)
 
 
 @require_http_methods(["POST"])
 @requiredFields(['publicIds'])
 def deleteLiveEvents(request):
-    publicIds = request.POST.get('publicIds')
-    publicIds = json.loads(publicIds)
+    publicIds = request.POST.getlist('publicIds')
+    # publicIds = json.loads(publicIds)
 
     for liveEvent in LiveEvent.objects.all():
         if liveEvent.publicId not in publicIds:
@@ -350,7 +363,7 @@ def deleteLiveEvents(request):
 
 # blogs
 @require_http_methods(["POST"])
-@requiredFields(['publicId', 'title', 'thumbnail', 'url', 'author_name', 'author_pp', 'date', 'description'])
+@requiredFields(['publicId', 'title', 'url', 'author_name', 'author_pp', 'date', 'description'])
 def setBlog(request):
     data = request.POST.dict()
     blog = Blog(**data)
@@ -373,3 +386,36 @@ def listCategories(request):
     categories = Category.objects.all()
     data = [category.serialize() for category in categories]
     return JsonResponse(data, safe=False)
+
+
+@require_http_methods(["POST"])
+@requiredFields(['publicId', 'name', 'pp', 'description'])
+def createInstructor(request):
+    instructor = Instructor(**request.POST.dict())
+    instructor.save()
+    return instructor
+
+
+@require_http_methods(["POST"])
+@requiredFields(['publicId'])
+def setInstructor(request):
+    publicId = request.POST.get('publicId')
+
+    instructor = Instructor.objects.filter(publicId=publicId)
+    if not instructor:
+        createInstructor(request)
+    else:
+        instructor.update(**request.POST.dict())
+
+    return HttpResponse(status=200)
+
+
+@require_http_methods(["POST"])
+@requiredFields(['publicIds'])
+def deleteInstructors(request):
+    publicIds = request.POST.getlist('publicIds')
+    # publicIds = json.loads(publicIds)
+    for instructor in Instructor.objects.all():
+        if instructor.publicId not in publicIds:
+            instructor.delete()
+    return HttpResponse(status=200)

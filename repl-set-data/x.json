@@ -1,0 +1,27 @@
+{
+  "coach": [{
+    "publicId": "18105",
+    "url": "https://www.thegoodzone.org/p/test11",
+    "facebook": "facebook.com/coach/",
+    "instagram": "instagram.com/coach/",
+    "calendly": "calendly.com/coach/",
+    "name": "test1",
+    "pp": "https://assets.teachablecdn.com/icons/default-creator-product-image-v2.png"
+  }],
+  "live event": [{
+    "publicId": "18112",
+    "url": "https://www.thegoodzone.org/p/live-event-test",
+    "thumbnail": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/V9IBUglcQHakoeKKGoGx",
+    "title": "live event test",
+    "time": "6:30",
+    "date": "18 April 2020",
+    "calendly": "calendly.com/live-event"
+  }],
+  "course": [{
+    "publicId": "18108",
+    "url": "https://www.thegoodzone.org/p/course-instructor-name-test",
+    "site": "",
+    "name": "course instructor name test",
+    "pp": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/U1WKZVgwQzaFV1vsi6v6"
+  }]
+}

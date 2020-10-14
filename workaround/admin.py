@@ -7,7 +7,8 @@ from .models import (
     LiveEvent,
     Rating,
     Review,
-    Blog
+    Blog,
+    Instructor
 )
 
 admin.site.register(Category)
@@ -17,3 +18,4 @@ admin.site.register(LiveEvent)
 admin.site.register(Rating)
 admin.site.register(Review)
 admin.site.register(Blog)
+admin.site.register(Instructor)

@@ -15,7 +15,6 @@ from workaround.views import (
     listCoursesMostSell,
     listCoursesMostView,
     getCourse,
-    getInstructor,
     buyCourse,
     viewCourse,
     filterCourses,
@@ -35,6 +34,9 @@ from workaround.views import (
     setBlog,
 
     listCategories,
+
+    setInstructor,
+    deleteInstructors,
 )
 
 urlpatterns = [
@@ -50,7 +52,6 @@ urlpatterns = [
     path('courses/most-sell/', listCoursesMostSell),
     path('courses/most-view/', listCoursesMostView),
     path('course/<str:courseId>/', getCourse),
-    path('course/instructor/', getInstructor),
     path('buy-course/<str:courseId>/', buyCourse),
     path('view-course/<str:courseId>/', viewCourse),
     path('filter/<str:category>/', filterCourses),
@@ -74,9 +75,11 @@ urlpatterns = [
     path('set/blog/', setBlog),
     path('blogs/', listBlogs),
 
+    path('set/instructor/', setInstructor),
+    path('delete/instructors/', deleteInstructors),
 
     path('admin/', admin.site.urls),
-    path('contact-us/', redirectMail)
+    path('contact-us/', redirectMail),
 ]
 
 if settings.DEBUG:
