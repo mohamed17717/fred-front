@@ -27,7 +27,7 @@
 #live event
 {{ description }}
 
-#author_name
+#name
 {{ name }}
 
 #time

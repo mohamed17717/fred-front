@@ -141,10 +141,10 @@ class Course(models.Model):
 
         return course
 
-    # def save(self, *args, **kwargs):
-    #     if self.author_name:
-    #         self.author_name = self.author_name.lower()
-    #     return super().save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        if self.author_name:
+            self.author_name = self.author_name.lower()
+        return super().save(*args, **kwargs)
 
 
 class Review(models.Model):
@@ -296,6 +296,10 @@ class LiveEvent(models.Model):
             'created':  formats.date_format(self.created, "SHORT_DATETIME_FORMAT"),
         }
 
+    def save(self, *args, **kwargs):
+        if self.name:
+            self.name = self.name.upper()
+        return super().save(*args, **kwargs)
 
 class Blog(models.Model):
     title = models.CharField(max_length=256)

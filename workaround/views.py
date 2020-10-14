@@ -18,7 +18,7 @@ from .models import Coach, Course, LiveEvent, Rating, Review, Category, Blog, In
 
 
 def paginate(qs, page=1):
-    paginator = Paginator(qs, 20)
+    paginator = Paginator(qs, 18)
     try:
         paginatedData = paginator.page(page)
     except PageNotAnInteger:
