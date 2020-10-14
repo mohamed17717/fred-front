@@ -32,6 +32,7 @@ from workaround.views import (
 
     listBlogs,
     setBlog,
+    deleteBlogs,
 
     listCategories,
 
@@ -73,6 +74,7 @@ urlpatterns = [
     path('delete/live-events/', deleteLiveEvents),
 
     path('set/blog/', setBlog),
+    path('delete/blogs/', deleteBlogs),
     path('blogs/', listBlogs),
 
     path('set/instructor/', setInstructor),

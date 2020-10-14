@@ -362,6 +362,15 @@ def deleteLiveEvents(request):
 
 
 # blogs
+def deleteBlogs(request):
+    publicIds = request.POST.getlist('publicIds')
+
+    for blog in Blog.objects.all():
+        if blog.publicId not in publicIds:
+            blog.delete()
+    return HttpResponse(status=200)
+
+
 @require_http_methods(["POST"])
 @requiredFields(['publicId', 'title', 'url', 'author_name', 'author_pp', 'date', 'description'])
 def setBlog(request):

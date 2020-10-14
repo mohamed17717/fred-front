@@ -1,3 +1,4 @@
+from flask import Flask
 import requests
 import re
 from scraper.Scraper import Scraper
@@ -244,7 +245,7 @@ def getBlogsCards(soup):
 # set data to backend
 
 def updateDB(items, delPath, setPath):
-    bk = 'http://127.0.0.1:8000'
+    bk = 'https://thegoodzone.pythonanywhere.com'
 
     publicIds = [item['publicId'] for item in items]
     print(publicIds)
@@ -255,62 +256,78 @@ def updateDB(items, delPath, setPath):
         requests.post(f'{bk}{setPath}', data=item)
 
 
-protocol = 'https'
-domain = 'www.thegoodzone.org'
-s = Scraper()
-
-coursesUrl = f'{protocol}://{domain}/courses'
-s.get(coursesUrl)
-coursesSoup = s.html_soup()
-
-
-blogsUrl = f'{protocol}://{domain}/blog'
-s.get(blogsUrl)
-blogsSoup = s.html_soup()
-
-
-def getCourses():
+def getCourses(coursesSoup):
     courses = getCoursesCards(coursesSoup, isSetCategories=True)
     return courses
 
 
-def getCoaches():
+def getCoaches(coursesSoup):
     coaching = getCoachingCards(coursesSoup)
     return coaching
 
 
-def getBlogs():
+def getBlogs(blogsSoup):
     blogs = getBlogsCards(blogsSoup)
     return blogs
 
 
-pathes = [
-    {
-        'delPath': '/delete/courses/',
-        'setPath': '/set/course/',
-        'items': getCourses()
-    },
-    {
-        'delPath': '/delete/coaches/',
-        'setPath': '/set/coach/',
-        'items': getCoaches()['coach']
-    },
-    {
-        'delPath': '/delete/instructors/',
-        'setPath': '/set/instructor/',
-        'items': getCoaches()['course']
-    },
-    {
-        'delPath': '/delete/live-events/',
-        'setPath': '/set/live-event/',
-        'items': getCoaches()['live event']
-    },
-    {
-        'delPath': '/delete/blogs/',
-        'setPath': '/set/blog/',
-        'items': getBlogs()
-    },
-]
+def getTheGoodZoneDataAndMyPathes():
 
-for p in pathes:
-    updateDB(**p)
+    s = Scraper()
+
+    coursesUrl = f'{protocol}://{domain}/courses'
+    s.get(coursesUrl)
+    coursesSoup = s.html_soup()
+
+    blogsUrl = f'{protocol}://{domain}/blog'
+    s.get(blogsUrl)
+    blogsSoup = s.html_soup()
+
+    return [
+        {
+            'delPath': '/delete/courses/',
+            'setPath': '/set/course/',
+            'items': getCourses(coursesSoup)
+        },
+        {
+            'delPath': '/delete/coaches/',
+            'setPath': '/set/coach/',
+            'items': getCoaches(coursesSoup)['coach']
+        },
+        {
+            'delPath': '/delete/instructors/',
+            'setPath': '/set/instructor/',
+            'items': getCoaches(coursesSoup)['course']
+        },
+        {
+            'delPath': '/delete/live-events/',
+            'setPath': '/set/live-event/',
+            'items': getCoaches(coursesSoup)['live event']
+        },
+        {
+            'delPath': '/delete/blogs/',
+            'setPath': '/set/blog/',
+            'items': getBlogs(blogsSoup)
+        },
+    ]
+
+
+def setToMyDB():
+    pathes = getTheGoodZoneDataAndMyPathes()
+    for p in pathes:
+        updateDB(**p)
+
+
+protocol = 'https'
+domain = 'www.thegoodzone.org'
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    setToMyDB()
+    return 'hello world'
+
+
+app.run(host='0.0.0.0', port=8080)
