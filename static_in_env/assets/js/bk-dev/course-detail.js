@@ -318,8 +318,43 @@ function setReview() {
 }
 
 // instructor
-function renderInstructor() {
-  // 'course/instructor/',
+function renderInstructor(instructor) {
+  const section = document.querySelector('#course-instructor');
+  const container = section.querySelector('.card');
+
+  if (!instructor)
+    section.remove()
+
+  container.innerHTML = `
+      <div class="image" style="background-image: url(${instructor.pp})"></div>
+      <div class="info">
+        <h3>
+          ${instructor.name}
+        </h3>
+        <!-- <div class="job-title">Co-Founder & CTO</div> -->
+        <p>
+          ${instructor.description}
+        </p>
+        <div class="social">
+          ${
+            instructor.instagram &&
+            '<a target="_blank" href="'+ instructor.instagram + '" class="icon icon-insta"></a>' || ''
+          }
+          ${
+            instructor.facebook &&
+            '<a target="_blank" href="'+ instructor.facebook + '" class="icon icon-fb"></a>' || ''
+          }
+          ${
+            instructor.twitter &&
+            '<a target="_blank" href="'+ instructor.twitter + '" class="icon icon-twt"></a>' || ''
+          }
+          ${
+            instructor.site &&
+            '<a target="_blank" href="'+ instructor.site + '" class="icon icon-site"></a>' || ''
+          }
+        </div>
+      </div>
+  `
 }
 
 // recommended courses
@@ -392,8 +427,11 @@ function renderCourseFeedbacks() {
       renderCourseFeedbackRatingTotal(data.rating)
       renderCourseFeedbackRatingProgress(data.rating)
 
+      renderInstructor(data.instructor)
+
     })
 }
+
 
 function getCurrentUserData() {
   // const userELm = document.querySelector('header button[onclick="toggleMenu(\'user-menu\')"]')
