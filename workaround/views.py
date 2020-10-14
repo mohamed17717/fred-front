@@ -373,10 +373,28 @@ def deleteBlogs(request):
 
 @require_http_methods(["POST"])
 @requiredFields(['publicId', 'title', 'url', 'author_name', 'author_pp', 'date', 'description'])
-def setBlog(request):
+def createBlog(request):
     data = request.POST.dict()
+
+    if not data.get('thumbnail'):
+        data['thumbnail'] = 'https://martinsitconsulting.com/wp-content/themes/fox/images/placeholder.jpg'
+
     blog = Blog(**data)
     blog.save()
+    return blog
+
+
+@require_http_methods(["POST"])
+@requiredFields(['publicId'])
+def setBlog(request):
+    data = request.POST.dict()
+    publicId = request.POST.get('publicId')
+
+    blog = Blog.objects.filter(publicId=publicId)
+    if not blog:
+        createBlog(request)
+    else:
+        blog.update(**request.POST.dict())
     return HttpResponse(status=200)
 
 
