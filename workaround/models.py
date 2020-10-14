@@ -121,7 +121,7 @@ class Course(models.Model):
             'publicId': self.publicId,
             'description': self.description,
             'thumbnail': self.thumbnail,
-            'price': self.price if float(self.price) > 0 else 'free',
+            'price': self.price,  # if float(self.price) > 0 else 'free',
             'author_name': self.author_name,
             'author_pp': self.author_pp,
             'buy_count': self.buy_count,
