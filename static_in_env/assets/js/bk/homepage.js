@@ -110,9 +110,10 @@ function renderBlogs() {
         `
       })
 
-      if (blogs.length < 5)
+      if (blogs.length < 5) {
         section.remove()
-      else
+        document.querySelector('#coaching').style.marginBottom = '0';
+      } else
         blogHomebageResponsive()
 
     })
