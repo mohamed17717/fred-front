@@ -49,10 +49,7 @@ function renderMostSellCourses() {
                   ${course.description}
                 </p>
                 <div class="footer">
-                  <div class="author">
-                    <div class="avatar" style="background-image: url(${course.author_pp})"></div>
-                    <div class="name">${course.author_name}</div>
-                  </div>
+                  ${course.author_name ? '<div class="author"><div class="avatar" style="background-image: url(' + course.author_pp + ')"></div><div class="name">'+ course.author_name + '</div></div>' : ''}
                   <div class="price">${course.price}</div>
                 </div>
               </div>
@@ -69,16 +66,16 @@ function renderMostSellCourses() {
 
 function blogHomebageResponsive() {
   const homepageBlog = document.querySelector('#blog');
-  if (homepageBlog) {
-    window.addEventListener('resize', e => {
-      console.log('window resized')
-      if (window.innerWidth < 1080)
-        homepageBlog.querySelector('.item:first-child').classList.remove('cover');
-      else
-        homepageBlog.querySelector('.item:first-child').classList.add('cover');
-    });
+  const handle = () => {
+    if (window.innerWidth < 1080)
+      homepageBlog.querySelector('.item:first-child').classList.remove('cover');
+    else
+      homepageBlog.querySelector('.item:first-child').classList.add('cover');
   }
 
+  handle()
+  if (homepageBlog)
+    window.addEventListener('resize', e => handle());
 }
 
 function renderBlogs() {
@@ -113,13 +110,11 @@ function renderBlogs() {
         `
       })
 
-      if (blogs.length < 5) {
-        // section.remove()
+      if (blogs.length < 5)
+        section.remove()
+      else
         blogHomebageResponsive()
 
-      } else {
-        blogHomebageResponsive()
-      }
     })
 
 }

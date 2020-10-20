@@ -1,0 +1,51 @@
+@media (max-width: 1080px) {
+  #blog .blogs-view ul {
+    justify-content: center !important;
+  }
+}
+
+#blog .item .info .author .avatar {
+  flex-shrink: 0;
+}
+
+#blog .item .info {
+  position: relative;
+}
+
+#blog .item .info .footer {
+  padding: calc(22px * var(--ratio)) calc(30px * var(--ratio));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#instructors .cards .card .info .social .icon:hover {
+  filter: invert(45%) sepia(32%) saturate(2410%) hue-rotate(347deg)
+    brightness(99%) contrast(93%);
+}
+
+#intro .cards {
+  top: calc(100vh - 25px) !important;
+}
+
+#intro .cards .card {
+  cursor: pointer;
+}
+
+@media (max-width: 854px) {
+  #intro {
+    margin-bottom: calc((225px * 2 + 52px) * var(--ratio)) !important;
+  }
+}
+
+@media (max-width: 435px) {
+  #intro {
+    margin-bottom: calc((268px * 4 + 81px) * var(--ratio)) !important;
+  }
+}
+@media (max-width: 419px) {
+  #intro {
+    margin-bottom: calc((268px * 4 + 81px) * var(--ratio)) !important;
+  }
+}
