@@ -1,1 +1,126 @@
-const bk="https://thegoodzone.pythonanywhere.com";function getCourseStars(n){let e="";for(let i=0;i<5;i++)e+=n>.44?'<div class="icon icon-star-fill"></div>':'<div class="icon icon-star-outline"></div>',n--;return e}function renderMostSellCourses(){const n=document.querySelector("#courses"),e=n.querySelector("ul");fetch(`${bk}/courses/most-sell/`).then(n=>n.json()).then(i=>{i.forEach(n=>{console.log(n),e.innerHTML+=`\n<li class="item">\n  <div class="thumbnail" style="background-image: url(${n.thumbnail})"></div>\n  <div class="info">\n<h3><a href="${n.url}">${n.title}</a></h3>\n\n<div class="rating">\n  <div>${n.rating.average}</div>\n  <div class="stars">\n${getCourseStars(n.rating.average)}\n  </div>\n  <div>\n(${n.rating.total} Ratings)\n  </div>\n</div>\n\n<p>\n  ${n.description}\n</p>\n<div class="footer">\n  <div class="author">\n<div class="avatar" style="background-image: url(${n.author_pp})"></div>\n<div class="name">${n.author_name}</div>\n  </div>\n  <div class="price">${n.price}</div>\n</div>\n  </div>\n</li>\n`}),0===i.length&&n.remove()})}function blogHomebageResponsive(){const n=document.querySelector("#blog");n&&(window.innerWidth<1080?n.querySelector(".item:first-child").classList.remove("cover"):n.querySelector(".item:first-child").classList.add("cover"))}function renderBlogs(){const n=document.querySelector("#blog"),e=n.querySelector("ul");fetch(`${bk}/blogs/`).then(n=>n.json()).then(i=>{i.slice(0,5).forEach(n=>{console.log(n),e.innerHTML+=`\n<li class="item">\n  <div class="thumbnail" style="background-image: url(${n.thumbnail})"></div>\n  <div class="info">\n<h3>${n.title}</h3>\n<p>\n  ${n.description}\n</p>\n<div class="footer">\n  <div class="author">\n<div class="avatar" style="background-image: url(${n.author_pp})"></div>\n<div class="name">${n.author_name}</div>\n  </div>\n  <div class="date">${n.date}</div>\n</div>\n  </div>\n</li>\n`}),0===i.length&&n.remove()}).then(()=>{blogHomebageResponsive()})}renderMostSellCourses(),renderBlogs();
+const bk = 'https://thegoodzone.pythonanywhere.com';
+
+function getCourseStars(average) {
+  const count = 5;
+  const star1 = '<div class="icon icon-star-fill"></div>'
+  const star0 = '<div class="icon icon-star-outline"></div>'
+
+  let stars = '';
+  for (let i = 0; i < count; i++) {
+    if (average > .44)
+      stars += star1
+    else
+      stars += star0
+
+    average--;
+  }
+
+  return stars
+
+}
+
+function renderMostSellCourses() {
+  const section = document.querySelector('#courses')
+  const coursesContainer = section.querySelector('ul');
+  const url = `${bk}/courses/most-sell/`
+
+  fetch(url)
+    .then(res => res.json())
+    .then(courses => {
+      courses.forEach(course => {
+        console.log(course)
+        coursesContainer.innerHTML += `
+            <li class="item">
+              <div class="thumbnail" style="background-image: url(${course.thumbnail})"></div>
+              <div class="info">
+                <h3><a href="${course.url}">${course.title}</a></h3>
+
+                <div class="rating">
+                  <div>${course.rating.average}</div>
+                  <div class="stars">
+                    ${getCourseStars(course.rating.average)}
+                  </div>
+                  <div>
+                    (${course.rating.total} Ratings)
+                  </div>
+                </div>
+
+                <p>
+                  ${course.description}
+                </p>
+                <div class="footer">
+                  <div class="author">
+                    <div class="avatar" style="background-image: url(${course.author_pp})"></div>
+                    <div class="name">${course.author_name}</div>
+                  </div>
+                  <div class="price">${course.price}</div>
+                </div>
+              </div>
+            </li>
+        `
+      })
+
+      if (courses.length === 0) {
+        section.remove()
+      }
+    })
+
+}
+
+function blogHomebageResponsive() {
+  const homepageBlog = document.querySelector('#blog');
+  if (homepageBlog) {
+    window.addEventListener('resize', e => {
+      if (window.innerWidth < 1080)
+        homepageBlog.querySelector('.item:first-child').classList.remove('cover');
+      else
+        homepageBlog.querySelector('.item:first-child').classList.add('cover');
+    });
+  }
+
+}
+
+function renderBlogs() {
+
+  const section = document.querySelector('#blog')
+  const blogsContainer = section.querySelector('ul');
+  const url = `${bk}/blogs/`
+
+  fetch(url)
+    .then(res => res.json())
+    .then(blogs => {
+
+      blogs.slice(0, 5).forEach(blog => {
+        console.log(blog)
+        blogsContainer.innerHTML += `
+            <li class="item">
+              <div class="thumbnail" style="background-image: url(${blog.thumbnail})"></div>
+              <div class="info">
+                <h3>${blog.title}</h3>
+                <p>
+                  ${blog.description}
+                </p>
+                <div class="footer">
+                  <div class="author">
+                    <div class="avatar" style="background-image: url(${blog.author_pp})"></div>
+                    <div class="name">${blog.author_name}</div>
+                  </div>
+                  <div class="date">${blog.date}</div>
+                </div>
+              </div>
+            </li>
+        `
+      })
+
+      if (blogs.length < 5) {
+        // section.remove()
+        blogHomebageResponsive()
+
+      } else {
+        blogHomebageResponsive()
+      }
+    })
+
+}
+renderMostSellCourses()
+renderBlogs()

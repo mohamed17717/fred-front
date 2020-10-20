@@ -70,11 +70,14 @@ function renderMostSellCourses() {
 function blogHomebageResponsive() {
   const homepageBlog = document.querySelector('#blog');
   if (homepageBlog) {
-    if (window.innerWidth < 1080)
-      homepageBlog.querySelector('.item:first-child').classList.remove('cover');
-    else
-      homepageBlog.querySelector('.item:first-child').classList.add('cover');
+    window.addEventListener('resize', e => {
+      if (window.innerWidth < 1080)
+        homepageBlog.querySelector('.item:first-child').classList.remove('cover');
+      else
+        homepageBlog.querySelector('.item:first-child').classList.add('cover');
+    });
   }
+
 }
 
 function renderBlogs() {
@@ -109,12 +112,13 @@ function renderBlogs() {
         `
       })
 
-      if (blogs.length === 0) {
-        section.remove()
-      }
-    }).then(() => {
+      if (blogs.length < 5) {
+        // section.remove()
+        blogHomebageResponsive()
 
-      blogHomebageResponsive()
+      } else {
+        blogHomebageResponsive()
+      }
     })
 
 }
