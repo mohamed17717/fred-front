@@ -48,6 +48,7 @@
 
 .hs > * {
   flex-shrink: 0;
+  margin-right: 15px;
 }
 
 /* .hs:before,
