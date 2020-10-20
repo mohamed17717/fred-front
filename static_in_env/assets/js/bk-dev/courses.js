@@ -38,7 +38,7 @@ function getCourseStars(average) {
 
 function courseCard(course) {
   return `
-    <div class="item card">
+    <div class="item card" data-to="${course.url}">
       <div class="thumbnail" style="background-image: url(${course.thumbnail})"></div>
       <div class="info">
         <h3><a href="${course.url}">${course.title}</a></h3>

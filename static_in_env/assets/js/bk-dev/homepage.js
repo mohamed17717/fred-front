@@ -30,7 +30,7 @@ function renderMostSellCourses() {
       courses.forEach(course => {
         console.log(course)
         coursesContainer.innerHTML += `
-            <li class="item">
+            <li class="item" data-to="${course.url}">
               <div class="thumbnail" style="background-image: url(${course.thumbnail})"></div>
               <div class="info">
                 <h3><a href="${course.url}">${course.title}</a></h3>

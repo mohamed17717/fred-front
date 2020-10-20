@@ -68,7 +68,7 @@ function getRecommendedCourses() {
     .then(data => {
       data.forEach(course => {
         container.innerHTML += `
-          <li class="item card">
+          <li class="item card" data-to="${course.url}">
             <div class="thumbnail" style="background-image: url(${course.thumbnail})"></div>
 
             <div class="info">
