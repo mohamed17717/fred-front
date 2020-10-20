@@ -71,6 +71,7 @@ function blogHomebageResponsive() {
   const homepageBlog = document.querySelector('#blog');
   if (homepageBlog) {
     window.addEventListener('resize', e => {
+      console.log('window resized')
       if (window.innerWidth < 1080)
         homepageBlog.querySelector('.item:first-child').classList.remove('cover');
       else
