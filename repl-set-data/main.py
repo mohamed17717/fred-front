@@ -147,7 +147,7 @@ def extractCourseCard(card):
         if price.lower() == 'free':
             price = 0
         else:
-            price = float(price)
+            # price = float(price)
 
     data = {
         'publicId': card.select_one('[data-course-id]')['data-course-id'],

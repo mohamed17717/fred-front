@@ -1,0 +1,94 @@
+REFRESH DB (open this url it may take a while): https://fred.mohamedmahmoud7.repl.co
+
+
+
+#for coach
+-----------------
+#coach
+{{ description }}
+#urls
+{{ facebook }}
+{{ instagram }}
+{{ website }}
+{{ twitter }}
+
+{{ calendly }}
+
+
+---- example ----
+#coach
+he is amazing coach
+
+#urls
+https://facebook.com/coach-account
+https://instagram.com/coach-account
+https://calendly.com/coach-account
+
+___________________________________________________________________
+
+
+
+#for course instructor
+-----------------
+#course
+{{ description }}
+#urls
+{{ facebook }}
+{{ instagram }}
+{{ website }}
+{{ twitter }}
+
+
+---- example ----
+#course
+he is amazing instructor
+
+#urls
+https://facebook.com/instructor-account
+https://instagram.com/instructor-account
+
+
+___________________________________________________________________
+
+
+
+#for live event
+----------------
+#live event
+{{ description }}
+
+#name
+{{ name }}
+
+#time
+{{ hh:mm }}
+
+#date
+{{ dd-mm-yyyy }}
+
+#urls
+{{ calendly }}
+
+
+---- example ----
+#live event
+live event of the century, don't miss it.
+
+#urls
+https://calendly.com/live-event-account
+
+#name
+Ali Ali
+
+#time
+06:30
+
+#date
+20-11-2020
+
+___________________________________________________________________
+
+
+#blog
+-------
+set an image in blog content to show in blog tab, otherwise  default image will show
