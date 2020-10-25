@@ -7,4 +7,9 @@ document.addEventListener('DOMContentLoaded', e => {
   const pricing = document.querySelector('div[class*="pricing_v"]')
   pricing.setAttribute('id', 'course-price')
   pricing.querySelectorAll('button').forEach(btn => btn.classList.add('solid'))
+
+  // user enrolled
+  const enrolledElm = document.querySelector('[data-enrolled]')
+  if(enrolledElm && enrolledElm.dataset.enrolled === "true")
+    pricing.remove()
 })
