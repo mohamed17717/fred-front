@@ -17,11 +17,11 @@ function renderLiveEvents() {
               <div class="card" style="background-image: url(${event.thumbnail});">
                 <div class="date">
                   <div class="d">${date[0]}</div>
-                  <div class="m-y">${months[date[1]-1]}, ${date[2]}</div>
+                  ${months[date[1]-1] ? '<div class="m-y">' + months[date[1]-1] + ', ' + date[2] + '</div>' : ''}
                 </div>
 
                 <div class="info">
-                  <div class="name">
+                  <div class="name" style="text-transform: capitalize;">
                     ${event.title}
                   </div>
 

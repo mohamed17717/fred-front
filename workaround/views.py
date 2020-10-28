@@ -446,3 +446,11 @@ def deleteInstructors(request):
         if instructor.publicId not in publicIds:
             instructor.delete()
     return HttpResponse(status=200)
+
+
+@require_http_methods(["GET"])
+def deleteCategories(request):
+    for obj in Category.objects.get.all():
+        obj.delete()
+
+    return HttpResponse(status=200)

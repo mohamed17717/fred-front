@@ -146,7 +146,7 @@ def extractCourseCard(card):
     if price:
         if price.lower() == 'free':
             price = 0
-        else:
+        # else:
             # price = float(price)
 
     data = {
@@ -311,8 +311,13 @@ def getTheGoodZoneDataAndMyPathes():
         },
     ]
 
+def removeCategories():
+    bk = 'https://thegoodzone.pythonanywhere.com'
+    requests.post(f'{bk}/delete/categories/')
+
 
 def setToMyDB():
+    removeCategories()
     pathes = getTheGoodZoneDataAndMyPathes()
     for p in pathes:
         updateDB(**p)

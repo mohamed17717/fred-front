@@ -38,6 +38,8 @@ from workaround.views import (
 
     setInstructor,
     deleteInstructors,
+
+    deleteCategories,
 )
 
 urlpatterns = [
@@ -79,6 +81,8 @@ urlpatterns = [
 
     path('set/instructor/', setInstructor),
     path('delete/instructors/', deleteInstructors),
+
+    path('delete/categories/', deleteCategories),
 
     path('admin/', admin.site.urls),
     path('contact-us/', redirectMail),
