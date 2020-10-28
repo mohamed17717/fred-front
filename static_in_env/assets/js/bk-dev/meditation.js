@@ -79,20 +79,15 @@ function getPath(number) {
 }
 
 function getURL(dPage) {
+  // diffrent from courses
   const params = new Map(location.search.slice(1).split('&').map(kv => kv.split('=')))
   // param value decodeURI(x.get('filter'))
 
   let page = dPage || decodeURI(params.get('page') || 1);
-  let q = decodeURI(params.get('q') || '');
-  let filter = decodeURI(params.get('filter') || '');
+  let q = 'meditation'
 
   let url = `${bk}`
-  let path = `/courses/?page=${page}`
-
-  if (q)
-    path = `/search/?q=${q}&page=${page}`
-  else if (filter)
-    path = `/filter/${filter}/?page=${page}`
+  path = `/search/?q=${q}&page=${page}`
 
   return url + path
 }
