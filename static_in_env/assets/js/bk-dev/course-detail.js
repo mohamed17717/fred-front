@@ -10,7 +10,7 @@ function createElmV2(html) {
 // curriculum collapse
 function handleCurriculumCollapse() {
   const curriculumContainer = document.querySelector('.block__curriculum')
-  const sections = curriculumContainer.querySelector('.block_curriculum_sections')
+  let sections = curriculumContainer.querySelector('.block_curriculum_sections')
   const collapseBtn = createElmV2(`
     <button class="block__curriculum__view-all-lectures-btn" type="button">
       <span>Show All Lectures</span>
@@ -19,7 +19,17 @@ function handleCurriculumCollapse() {
     </button>
   `)
 
-  console.log('sections: ', sections)
+  let collapseOldBtn = curriculumContainer.querySelector('button');
+  if (collapseOldBtn)
+    collapseOldBtn.remove()
+
+  let index = 0
+  sections.querySelectorAll('section').forEach(item => {
+    if (index > 3)
+      item.remove()
+    index++
+  })
+
 
   setTimeout(() => {
     let sectionHeight = sections.querySelector('section').clientHeight;
@@ -311,7 +321,6 @@ function setReview() {
           insertReview(newComment)
         } else {
           notifyText(e.target, 'failed!', 'post comment')
-
         }
       })
   })
@@ -331,7 +340,6 @@ function renderInstructor(instructor) {
         <h3>
           ${instructor.name}
         </h3>
-        <!-- <div class="job-title">Co-Founder & CTO</div> -->
         <p>
           ${instructor.description}
         </p>
