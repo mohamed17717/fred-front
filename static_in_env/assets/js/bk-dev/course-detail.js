@@ -19,7 +19,7 @@ function handleCurriculumCollapse() {
     </button>
   `)
 
-  let collapseOldBtn = curriculumContainer.querySelector('button');
+  let collapseOldBtn = document.querySelector('.block__curriculum > button');
   if (collapseOldBtn)
     collapseOldBtn.remove()
 
