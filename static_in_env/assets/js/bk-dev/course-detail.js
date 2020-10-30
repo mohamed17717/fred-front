@@ -111,31 +111,31 @@ function renderCourseFeedbackRatingProgress(rating) {
           <div class="progress">
             <div class="fill" style="width: ${rating.rates_counts[4] / rating.total * 100}%;"></div>
           </div>
-          <div>(5/5) - ${(rating.rates_counts[4] / rating.total * 100).toFixed(1)}%</div>
+          <div>(5/5) - ${(rating.rates_counts[4] / rating.total * 100 || 0).toFixed(1)}%</div>
         </li>
         <li>
           <div class="progress">
             <div class="fill" style="width: ${rating.rates_counts[3] / rating.total * 100}%;"></div>
           </div>
-          <div>(4/5) - ${(rating.rates_counts[3] / rating.total * 100).toFixed(1)}%</div>
+          <div>(4/5) - ${(rating.rates_counts[3] / rating.total * 100 || 0).toFixed(1)}%</div>
         </li>
         <li>
           <div class="progress">
             <div class="fill" style="width: ${rating.rates_counts[2] / rating.total * 100}%;"></div>
           </div>
-          <div>(3/5) - ${(rating.rates_counts[2] / rating.total * 100).toFixed(1)}%</div>
+          <div>(3/5) - ${(rating.rates_counts[2] / rating.total * 100 || 0).toFixed(1)}%</div>
         </li>
         <li>
           <div class="progress">
             <div class="fill" style="width: ${rating.rates_counts[1] / rating.total * 100}%;"></div>
           </div>
-          <div>(2/5) - ${(rating.rates_counts[1] / rating.total * 100).toFixed(1)}%</div>
+          <div>(2/5) - ${(rating.rates_counts[1] / rating.total * 100 || 0).toFixed(1)}%</div>
         </li>
         <li>
           <div class="progress">
             <div class="fill" style="width: ${rating.rates_counts[0] / rating.total * 100}%;"></div>
           </div>
-          <div>(1/5) - ${(rating.rates_counts[0] / rating.total * 100).toFixed(1)}%</div>
+          <div>(1/5) - ${(rating.rates_counts[0] / rating.total * 100 || 0).toFixed(1)}%</div>
         </li>
       </ul>
   `
@@ -207,13 +207,18 @@ const postData = async (url, data) => {
 
 
 function renderFeedbackRate() {
+  if(!isUserEnrolled()){
+    const rate = document.querySelector('.rating .rate')
+    rate.title = "You must be enrolled in course to rate."
+    rate.style.opacity = '.4';
+    return
+  }
+
   // const user = {};
   const user = currentUser.email ? currentUser : anonUser;
-  console.log('user: ', user)
-
 
   const courseId = document.querySelector('[data-courseid]').dataset.courseid;
-  const userId = user.email || '16'; // user come from header
+  const userId = user.email; // user come from header
 
   // feedback
   const ratingStars = document.querySelectorAll('.rating .rate .stars .icon')
@@ -272,12 +277,18 @@ function notifyText(elm, text, old) {
   }, 2000)
 }
 
+function isUserEnrolled(){
+  const elm = document.querySelector('[data-enrolled]')
+  return elm.dataset.enrolled.toString() == "true"
+}
+
 // reviewcourse
 function setReview() {
+  if(!isUserEnrolled())
+    return 
+
   const user = currentUser.email ? currentUser : anonUser;
   // const user = currentUser || anonUser;
-  console.log('user: ', user)
-
 
   const courseId = document.querySelector('[data-courseid]').dataset.courseid;
   const userId = user.email || '16'; // user come from header
@@ -287,9 +298,6 @@ function setReview() {
   container.innerHTML = `
       <div class="author">
         <div class="avatar" style="background-image: url(${user.pp})"></div>
-        <!--
-        <div class="bow">instructor</div>
-        -->
       </div>
 
       <div class="info">
@@ -421,13 +429,13 @@ function getRecommendedCourses() {
 function renderCourseFeedbacks() {
   const courseId = document.querySelector('[data-courseid]').dataset.courseid;
 
+
   const url = `${bk}/course/${courseId}`;
-  console.log(url)
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      console.log(data)
       renderCourseIntroRating(data.rating)
+
       renderReviews(data.reviews)
       renderCourseFeedbackRatingTotal(data.rating)
       renderCourseFeedbackRatingProgress(data.rating)
@@ -463,8 +471,6 @@ let currentUser = null;
 
 document.addEventListener('DOMContentLoaded', e => {
   currentUser = getCurrentUserData()
-
-  console.log('currentUser: ', currentUser)
 
   handleCurriculumCollapse()
   renderCourseFeedbacks()

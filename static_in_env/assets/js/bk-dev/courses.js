@@ -132,9 +132,12 @@ function renderPagination(page) {
     ${page.has_prev ? '<a href="'+ getPath(page.current_page-1) + '" class="btn prev"></a>' : ''}
     
       <ul>
+        ${page.current_page - 1 > 2 ? paginationLink(1) + '<li>...</li>'  : ''}
+
         ${page.has_prev ? paginationLink(page.current_page-1) : ''}
         ${paginationLink(page.current_page, true)}
         ${page.has_next ? paginationLink(+page.current_page+1) : ''}
+
         ${page.total_pages - page.current_page > 2 ? '<li>...</li>' + paginationLink(page.total_pages) : ''}
       </ul>
 

@@ -8,7 +8,7 @@ function getBoughtCourseFromLocalStorage() {
 
 function setBoughtCourseInLocalStorage(courseId) {
   const bought = getBoughtCourseFromLocalStorage()
-  console.log(typeof bought)
+
   bought.push(courseId)
 
   localStorage.setItem('bought', JSON.stringify(bought))

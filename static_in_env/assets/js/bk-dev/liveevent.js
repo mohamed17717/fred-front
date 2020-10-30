@@ -9,7 +9,6 @@ function renderLiveEvents() {
     .then(res => res.json())
     .then(events => {
       events.forEach(event => {
-        console.log(event)
         date = event.date.split('-')
 
         eventsContainer.innerHTML += `

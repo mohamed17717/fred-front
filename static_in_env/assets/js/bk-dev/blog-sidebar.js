@@ -10,7 +10,6 @@ function renderRecentBlogs() {
     .then(res => res.json())
     .then(blogs => {
       blogs.forEach(blog => {
-        console.log(blog)
         blogsContainer.innerHTML += `
             <div class="poost">
               <div class="image" style="background-image: url(${blog.thumbnail})"></div>

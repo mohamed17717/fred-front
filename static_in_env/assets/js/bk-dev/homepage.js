@@ -28,7 +28,6 @@ function renderMostSellCourses() {
     .then(res => res.json())
     .then(courses => {
       courses.forEach(course => {
-        console.log(course)
         coursesContainer.innerHTML += `
             <li class="item" data-to="${course.url}">
               <div class="thumbnail" style="background-image: url(${course.thumbnail})"></div>
@@ -89,7 +88,6 @@ function renderBlogs() {
     .then(blogs => {
 
       blogs.slice(0, 5).forEach(blog => {
-        console.log(blog)
         blogsContainer.innerHTML += `
             <li class="item">
               <div class="thumbnail" style="background-image: url(${blog.thumbnail})"></div>
@@ -119,5 +117,8 @@ function renderBlogs() {
     })
 
 }
+
+
+
 renderMostSellCourses()
 renderBlogs()

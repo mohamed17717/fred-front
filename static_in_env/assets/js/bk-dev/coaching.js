@@ -6,13 +6,11 @@ function renderCoaches() {
   const coachesContainer = document.querySelector('#coaching-coaches');
   const url = `${bk}/coaches/`
 
-  console.log('get coaches')
 
   fetch(url)
     .then(res => res.json())
     .then(coaches => {
       coaches.forEach(coach => {
-        console.log(coach)
         coachesContainer.innerHTML += `
             <div>
               <div class="card">
@@ -46,8 +44,8 @@ function renderCoaches() {
                 </div>
               </div>
 
-              <div>
-                <button class="outline" data-to="${coach.calendly}">coaching with ${coach.name}</button>
+              <div style="margin: calc(45px * var(--ratio)) auto calc(60px * var(--ratio));text-align: center;">
+                <a style="display: inline-block;" class="outline" href="${coach.calendly}" target="_blank">coaching with ${coach.name}</a>
               </div>
             </div>
         `
