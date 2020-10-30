@@ -256,9 +256,27 @@ def updateDB(items, delPath, setPath):
         requests.post(f'{bk}{setPath}', data=item)
 
 
-def getCourses(coursesSoup):
-    courses = getCoursesCards(coursesSoup, isSetCategories=True)
-    return courses
+def getCourses():
+    allCourses = []
+    courses = []
+    first = True
+
+    s = Scraper()
+    pageNum = 1
+    while courses or first:
+        first = False
+        allCourses.extend(courses)
+
+
+        coursesUrl = f'{protocol}://{domain}/courses?page={pageNum}'
+        s.get(coursesUrl)
+        coursesSoup = s.html_soup()
+
+        courses = getCoursesCards(coursesSoup, isSetCategories=True)
+
+        pageNum += 1
+
+    return allCourses
 
 
 def getCoaches(coursesSoup):
@@ -287,7 +305,7 @@ def getTheGoodZoneDataAndMyPathes():
         {
             'delPath': '/delete/courses/',
             'setPath': '/set/course/',
-            'items': getCourses(coursesSoup)
+            'items': getCourses()
         },
         {
             'delPath': '/delete/coaches/',
