@@ -10,7 +10,7 @@ function renderCategories() {
     .then(categories => {
       categories.forEach(category => {
         categoriesContainer.innerHTML += `
-          <a href="?filter=${category.name}&page=1">${category.name}</a>
+          <a href="/p/courses?filter=${category.name}&page=1">${category.name}</a>
         `
       })
     })
