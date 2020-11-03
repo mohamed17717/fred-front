@@ -48,7 +48,7 @@ function renderMostSellCourses() {
                   ${course.description}
                 </p>
                 <div class="footer">
-                  ${course.author_name ? '<div class="author"><div class="avatar" style="background-image: url(' + course.author_pp + ')"></div><div class="name">'+ course.author_name + '</div></div>' : ''}
+                  ${course.author_name ? '<div class="author"><div class="avatar" style="flex-shrink: 0;background-image: url(' + course.author_pp + ')"></div><div class="name">'+ course.author_name + '</div></div>' : ''}
                   <div class="price">${course.price}</div>
                 </div>
               </div>
@@ -98,7 +98,7 @@ function renderBlogs() {
                 </p>
                 <div class="footer">
                   <div class="author">
-                    <div class="avatar" style="background-image: url(${blog.author_pp})"></div>
+                    <div class="avatar" style="flex-shrink: 0;background-image: url(${blog.author_pp})"></div>
                     <div class="name">${blog.author_name}</div>
                   </div>
                   <div class="date">${blog.date}</div>
