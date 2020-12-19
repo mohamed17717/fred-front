@@ -448,9 +448,11 @@ def deleteInstructors(request):
     return HttpResponse(status=200)
 
 
-@require_http_methods(["GET"])
+@require_http_methods(["POST"])
 def deleteCategories(request):
-    for obj in Category.objects.get.all():
-        obj.delete()
+    categories = request.POST.dict().get('categories', [])
+    for obj in Category.objects.all():
+        if obj.name not in categories:
+            obj.delete()
 
     return HttpResponse(status=200)
