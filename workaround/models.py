@@ -52,6 +52,9 @@ class Course(models.Model):
     relatedCourses = models.ManyToManyField(
         'self', related_name='related_courses', symmetrical=False, blank=True)
 
+    full_description = models.TextField(null=True, blank=True)
+
+
     def getReviews(self):
         reviews = self.course_reviews.all()
         return [review.serialize() for review in reviews]

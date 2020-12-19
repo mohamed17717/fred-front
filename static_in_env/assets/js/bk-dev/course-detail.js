@@ -200,7 +200,6 @@ function insertReview(review) {
 function renderReviews(reviews) {
   reviews.forEach(review => {
     insertReview(review)
-
   })
 }
 
@@ -448,6 +447,22 @@ function getRecommendedCourses() {
     })
 }
 
+function getCourseFullDescription() {
+  const courseIdElm = document.querySelector('[data-courseid]')
+  if (!courseIdElm) return;
+
+  const courseId = courseIdElm.dataset.courseid
+  const descriptionElm = document.querySelector('#course-content section p')
+
+  const url = `${bk}/course-description/${courseId}/`
+  fetch(url)
+    .then(res => res.status === 200 ? res.json() : null)
+    .then(data => {
+      if (data)
+        descriptionElm.innerText = data.full_description
+    })
+}
+
 
 
 function renderCourseFeedbacks() {
@@ -502,4 +517,5 @@ document.addEventListener('DOMContentLoaded', e => {
   setReview()
   getRecommendedCourses()
 
+  getCourseFullDescription()
 })

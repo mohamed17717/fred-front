@@ -40,6 +40,9 @@ from workaround.views import (
     deleteInstructors,
 
     deleteCategories,
+
+    getCourseDescription,
+    setCourseDescription,
 )
 
 urlpatterns = [
@@ -60,7 +63,9 @@ urlpatterns = [
     path('filter/<str:category>/', filterCourses),
     path('related-courses/<str:courseId>/', getRelatedCourses),
     path('random-related-courses/<str:courseId>/', getRandomRelatedCourses),
-    # coaches
+    path('course-description/<str:courseId>/', getCourseDescription),
+    path('set-course-description/', setCourseDescription),
+    # coache
     path('coaches/', listCoaches),
     # live events
     path('live-events/', listLiveEvents),
