@@ -201,7 +201,7 @@ def getRandomRelatedCourses(request, courseId):
     qs = Course.objects.all()
     qs = qs.filter(
         Q(categories__name__icontains=category.name) & ~ Q(pk=course.pk)
-    ).distinct()
+    ).distinct()[:6]
 
     data = [c.serialize() for c in qs]
     return JsonResponse(data, safe=False)
