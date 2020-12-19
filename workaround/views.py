@@ -465,6 +465,7 @@ def deleteCategories(request):
     return HttpResponse(status=200)
 
 @require_http_methods(["POST"])
+@requiredFields(['url', 'description'])
 def setCourseDescription(request):
     url = request.POST.get('url', '').split('/')[-1]
     description = request.POST.get('description', '')
