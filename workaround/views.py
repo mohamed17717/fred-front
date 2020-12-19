@@ -470,7 +470,7 @@ def setCourseDescription(request):
     url = request.POST.get('url', '').split('/')[-1]
     description = request.POST.get('description', None)
 
-    course = course.objects.filter(url__endswith=url).first()
+    course = course.objects.filter(url__iendswith=url).first()
     if not course:
         return HttpResponseNotFound()
 
