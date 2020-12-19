@@ -8,53 +8,77 @@ function createElmV2(html) {
 }
 
 // curriculum collapse
-function handleCurriculumCollapse() {
-  const curriculumContainer = document.querySelector('.block__curriculum')
-  let sections = curriculumContainer.querySelector('.block_curriculum_sections')
-  const collapseBtn = createElmV2(`
-    <button class="block__curriculum__view-all-lectures-btn" type="button">
-      <span>Show All Lectures</span>
-      <img alt="show all lectures icon" class="block__curriculum__view-all-lectures-btn-icon__svg"
-        src="https://fedora.teachablecdn.com/assets/icons/chevron-down-solid-263093b97bd01b06adb0ad6caee9cc0ed3fd93607596fb8dee102ebd20d6d85e.svg">
-    </button>
-  `)
 
+
+// function handleCurriculumCollapse() {
+//   const curriculumContainer = document.querySelector('.block__curriculum')
+//   let sections = curriculumContainer.querySelector('.block_curriculum_sections')
+//   const collapseBtn = createElmV2(`
+//     <button class="block__curriculum__view-all-lectures-btn" type="button">
+//       <span>Show All Lectures</span>
+//       <img alt="show all lectures icon" class="block__curriculum__view-all-lectures-btn-icon__svg"
+//         src="https://fedora.teachablecdn.com/assets/icons/chevron-down-solid-263093b97bd01b06adb0ad6caee9cc0ed3fd93607596fb8dee102ebd20d6d85e.svg">
+//     </button>
+//   `)
+
+//   let collapseOldBtn = document.querySelector('.block__curriculum > button');
+//   if (collapseOldBtn)
+//     collapseOldBtn.remove()
+
+//   let index = 0
+//   sections.querySelectorAll('section').forEach(item => {
+//     if (index > 3)
+//       item.remove()
+//     index++
+//   })
+
+
+//   setTimeout(() => {
+//     let sectionHeight = sections.querySelector('section').clientHeight;
+
+//     sections.style.height = `${sectionHeight}px`;
+//     sections.style.overflow = 'hidden';
+//     sections.dataset.collapsestatus = 1;
+//   }, 2000)
+
+//   collapseBtn.addEventListener('click', e => {
+//     const status = sections.dataset.collapsestatus;
+
+//     if (status == 1) {
+//       sections.style.height = 'auto';
+//       sections.dataset.collapsestatus = 0;
+//     } else if (status == 0) {
+//       let sectionHeight = sections.querySelector('section').clientHeight;
+
+//       sections.style.height = `${sectionHeight}px`;
+//       sections.dataset.collapsestatus = 1;
+//     }
+//   })
+
+//   curriculumContainer.appendChild(collapseBtn)
+// }
+
+
+function handleCurriculumCollapse() {
   let collapseOldBtn = document.querySelector('.block__curriculum > button');
   if (collapseOldBtn)
     collapseOldBtn.remove()
 
-  let index = 0
-  sections.querySelectorAll('section').forEach(item => {
-    if (index > 3)
-      item.remove()
-    index++
+  const titles = document.querySelectorAll('.block__curriculum__section__title')
+  titles.forEach(title => {
+    title.addEventListener('click', e => {
+      const clickedElm = e.target;
+      let parentSection = clickedElm;
+      while(parentSection.tagName !== 'SECTION'){
+        parentSection = parentSection.parentElement
+      }
+
+      parentSection.querySelector('ul').classList.toggle('show')
+    })
   })
-
-
-  setTimeout(() => {
-    let sectionHeight = sections.querySelector('section').clientHeight;
-
-    sections.style.height = `${sectionHeight}px`;
-    sections.style.overflow = 'hidden';
-    sections.dataset.collapsestatus = 1;
-  }, 2000)
-
-  collapseBtn.addEventListener('click', e => {
-    const status = sections.dataset.collapsestatus;
-
-    if (status == 1) {
-      sections.style.height = 'auto';
-      sections.dataset.collapsestatus = 0;
-    } else if (status == 0) {
-      let sectionHeight = sections.querySelector('section').clientHeight;
-
-      sections.style.height = `${sectionHeight}px`;
-      sections.dataset.collapsestatus = 1;
-    }
-  })
-
-  curriculumContainer.appendChild(collapseBtn)
 }
+
+
 
 function getCourseStars(average) {
   const count = 5;
