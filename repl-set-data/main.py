@@ -44,6 +44,9 @@ def parseCoaching(text):
     elif data.get('course', None):
         data['type'] = 'course'
         data['description'] = data['course']
+    elif data.get('description', None):
+        data['type'] = 'description'
+        data['description'] = data['description']
 
     urls = data.get('urls', '').split('\n')
     for url in urls:
@@ -93,6 +96,7 @@ def getCoachingCards(soup):
         'coach': [],
         'live event': [],
         'course': [],
+        'description': []
     }
 
     for card in cards:
@@ -107,11 +111,11 @@ def getCoachingCards(soup):
         s.get(url)
         tempSoup = s.html_soup()
 
-        descriptionContentELm = tempSoup.select_one(
-            '.course-block.custom_html')
+        descriptionContentELm = tempSoup.select_one('.course-block.custom_html')
 
         # print('Desc: ', descriptionContentELm.text)
-        if not (descriptionContentELm and any([t in descriptionContentELm.text for t in ['course', 'coach', 'live event']])):
+        types = ['description', 'course', 'coach', 'live event']
+        if not (descriptionContentELm and any([t in descriptionContentELm.text for t in types])):
             continue
 
         descriptionContent = descriptionContentELm.text
@@ -132,7 +136,7 @@ def getCategoriesURLs(soup):
     data = []
     for url in urls:
         data.append({
-            'name': url.text,
+            'name': re.sub(r'\(\d+\)', '', url.text).strip(),
             'url': f'{protocol}://{domain}{url["href"]}'
         })
 
@@ -184,7 +188,7 @@ def getCoursesCards(soup, isSetCategories=False):
 
         categoriesUrls = getCategoriesURLs(soup)
         for category in categoriesUrls:
-            name = category.get('name')
+            name = category.get('name', '')
             url = category.get('url')
 
             s.get(url)
@@ -244,19 +248,22 @@ def getBlogsCards(soup):
 
 # set data to backend
 
-def updateDB(items, delPath, setPath):
+def updateDB(items=[], delPath='', setPath=''):
     bk = 'https://thegoodzone.pythonanywhere.com'
 
-    publicIds = [item['publicId'] for item in items]
-    print(publicIds)
-    requests.post(f'{bk}{delPath}', data={'publicIds': publicIds})
+    if delPath:
+        publicIds = [item['publicId'] for item in items]
+        # print(publicIds)
+        requests.post(f'{bk}{delPath}', data={'publicIds': publicIds})
 
     for item in items:
-        print(item)
-        requests.post(f'{bk}{setPath}', data=item)
+        # print(item)
+        res = requests.post(f'{bk}{setPath}', data=item)
+        print(setPath, ':', item, f'({res.status_code})')
 
 
 def getCourses():
+    # print('get all courses')
     allCourses = []
     courses = []
     first = True
@@ -269,6 +276,7 @@ def getCourses():
 
 
         coursesUrl = f'{protocol}://{domain}/courses?page={pageNum}'
+        # print('\n\n\nurl: ', coursesUrl, '\n\n\n\n')
         s.get(coursesUrl)
         coursesSoup = s.html_soup()
 
@@ -323,6 +331,10 @@ def getTheGoodZoneDataAndMyPathes():
             'items': getCoaches(coursesSoup)['live event']
         },
         {
+            'setPath': '/set-course-description/',
+            'items': getCoaches(coursesSoup)['description']
+        },
+        {
             'delPath': '/delete/blogs/',
             'setPath': '/set/blog/',
             'items': getBlogs(blogsSoup)
@@ -331,14 +343,23 @@ def getTheGoodZoneDataAndMyPathes():
 
 def removeCategories():
     bk = 'https://thegoodzone.pythonanywhere.com'
-    requests.post(f'{bk}/delete/categories/')
+    requests.get(f'{bk}/delete/categories/')
 
+isUpdating = False
 
 def setToMyDB():
+    global isUpdating
+    isUpdating = True
+
     removeCategories()
     pathes = getTheGoodZoneDataAndMyPathes()
     for p in pathes:
-        updateDB(**p)
+        try:
+            updateDB(**p)
+        except:
+            pass
+
+    isUpdating = False
 
 
 protocol = 'https'
@@ -349,8 +370,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    setToMyDB()
-    return 'hello world'
+    if not isUpdating:
+        setToMyDB()
+    return 'updating now'
 
 
 app.run(host='0.0.0.0', port=8080)

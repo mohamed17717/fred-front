@@ -1,6 +1,23 @@
 REFRESH DB (open this url it may take a while): https://fred.mohamedmahmoud7.repl.co
 
+#for course description
+-----------------
+#description
+{{ description }}
 
+#url
+{{ course url on teachable }}
+
+
+---- example ----
+#description
+this course is really useful.
+
+#url
+https://www.thegoodzone.org/p/creating-a-workplace-wellness-program
+
+
+-----------------------------------------------------------
 
 #for coach
 -----------------
