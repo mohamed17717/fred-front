@@ -36,7 +36,7 @@ class Course(models.Model):
     description = models.CharField(max_length=512, null=True, blank=True)
     thumbnail = models.URLField(max_length=200)
 
-    price = models.CharField(max_length=16)
+    price = models.CharField(max_length=16, null=True, blank=True)
 
     author_name = models.CharField(max_length=32, null=True)
     author_pp = models.URLField(max_length=200, null=True)
